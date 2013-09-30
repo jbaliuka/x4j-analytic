@@ -1,0 +1,4 @@
+"DEFAULT", "mm\/dd\/yyyy", "MM/dd/yyyy"
+"US", "mm\/dd\/yyyy", "MM/dd/yyyy"
+"JP", "yyyy\-dd\-mm", "yyyy-dd-MM"
+"CN", "yyyy\-dd\-mm", "yyyy-dd-MM"

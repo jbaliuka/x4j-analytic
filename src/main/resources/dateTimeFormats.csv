@@ -1,0 +1,4 @@
+"DEFAULT", "mm/dd/yyyy h:mm AM/PM", "MM/dd/yyyy h:mm a"
+"US", "mm/dd/yyyy h:mm AM/PM", "MM/dd/yyyy h:mm a"
+"JP", "yyyy\-dd\-mm h:mm", "yyyy-dd-MM H:mm"
+"CN", "yyyy\-dd\-mm h:mm", "yyyy-dd-MM H:mm"

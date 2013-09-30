@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report-metadata xmlns="http://www.exigen.com/reportMetadata"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.example.org/reportMetadata reportMetadata.xsd">
+
+	<id>testTableMacro.xml</id>
+	<name>Test Table Macro</name>
+	<category>Data Dictionary>Data Quality</category>	
+	<template>testTableMacro.xlsx</template>
+	
+	
+	<query>
+		<name>sanityCheckData</name>
+		<sql>
+		<![CDATA[
+			SELECT * FROM SANITY_CHECK
+			ORDER BY TIMESTAMP DESC			
+		]]>
+  		</sql>
+	</query>
+
+</report-metadata>

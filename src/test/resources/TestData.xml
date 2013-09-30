@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:report-metadata xmlns:tns="http://www.exigen.com/reportMetadata"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://www.example.org/reportMetadata reportMetadata.xsd">
+	
+	<tns:id>parent.xml</tns:id>
+	
+	<tns:name>Parent</tns:name>
+	
+	<tns:category></tns:category>
+	
+	<tns:description>common queries and parameters</tns:description>
+	
+	<tns:template></tns:template>
+	
+	<tns:parameter>
+	    <tns:description>LOB</tns:description>
+		<tns:name>lob</tns:name>
+		<tns:category>General</tns:category>
+		<tns:type>MULTILOOKUP</tns:type>
+	</tns:parameter>
+	
+	
+	<tns:parameter>
+	    <tns:description>Product</tns:description>
+		<tns:name>product</tns:name>
+		<tns:category>General</tns:category>
+		<tns:type>MULTILOOKUP</tns:type>
+	</tns:parameter>
+	
+	<tns:parameter>
+	    <tns:description>State</tns:description>
+		<tns:name>risk_state</tns:name>
+		<tns:category>General</tns:category>
+		<tns:type>MULTILOOKUP</tns:type>
+	</tns:parameter>
+	
+	<tns:parameter>
+	    <tns:description>Agency</tns:description>
+		<tns:name>agency</tns:name>
+		<tns:category>General</tns:category>
+		<tns:type>MULTILOOKUP</tns:type>
+	</tns:parameter>
+	
+	
+	
+	<tns:query>
+		<tns:name>risk_state</tns:name>
+		<tns:sql>
+			SELECT
+			  RISK_STATE_CODE,
+			  DESCRIPTION 
+			FROM RISK_STATE
+			ORDER BY DESCRIPTION
+  		</tns:sql>
+	</tns:query>
+	
+	<tns:query>
+		<tns:name>product</tns:name>
+		<tns:sql>
+			SELECT DISTINCT
+			  PRODUCT_CODE,
+			  PRODUCT_NAME
+			FROM PRODUCT WHERE LOBCD IN (:lob)
+  		</tns:sql>
+	</tns:query>
+	
+	<tns:query>
+		<tns:name>lob</tns:name>
+		<tns:sql>
+			SELECT DISTINCT
+			  LOBCD,
+			  LOB_DESCRIPTION			  
+			FROM PRODUCT
+  		</tns:sql>
+	</tns:query>
+	
+	<tns:query>
+		<tns:name>agency</tns:name>
+		<tns:sql>
+			SELECT DISTINCT
+			  AGENCY_CD,
+              AGENCY_NAME
+			FROM AGENCY
+  		</tns:sql>
+	</tns:query>
+	
+		<tns:query>
+		<tns:name>billing_transaction_type</tns:name>
+		<tns:sql>
+			 SELECT BILLING_TRANSACTION_CODE,
+			        DESCRIPTION
+			 FROM BILLING_TRANSACTION_TYPE
+		</tns:sql>
+	</tns:query>
+	
+	<tns:attribute>
+	 <tns:name>PARENT_FILTER</tns:name>
+	 <tns:value>(
+	            (  RISK_STATE_CODE in  (:risk_state) OR RISK_STATE_CODE IS NULL )
+				 AND  PRODUCT_CODE in  (:product) 
+				 AND ( AGENCY_CODE  in (:agency) OR AGENCY_CODE IS NULL )
+				)</tns:value>
+	</tns:attribute>
+	
+</tns:report-metadata>

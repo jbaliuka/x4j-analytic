@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report-metadata xmlns="http://www.exigen.com/reportMetadata"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.example.org/reportMetadata reportMetadata.xsd">
+
+	<id>MockData.xml</id>
+	<name>Mock Data</name>
+	<category>Samples</category>	
+	<template>samples/MockData.xlsx</template>
+	
+	
+	<query>
+		<name>Table1</name>
+		<sql>
+		  Sample uses mock data but normally it should be SQL query		
+  		</sql>
+	</query>
+
+</report-metadata>

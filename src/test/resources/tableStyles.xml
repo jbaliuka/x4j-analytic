@@ -1,0 +1,5279 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<styleSheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main">
+	<fonts count="1">
+		<font>
+			<sz val="11" />
+			<color theme="1" />
+			<name val="Calibri" />
+			<family val="2" />
+			<scheme val="minor" />
+		</font>
+	</fonts>
+	<fills count="2">
+		<fill>
+			<patternFill patternType="none" />
+		</fill>
+		<fill>
+			<patternFill patternType="gray125" />
+		</fill>
+	</fills>
+	<borders count="1">
+		<border>
+			<left />
+			<right />
+			<top />
+			<bottom />
+			<diagonal />
+		</border>
+	</borders>
+	<cellStyleXfs count="1">
+		<xf numFmtId="0" fontId="0" fillId="0" borderId="0" />
+	</cellStyleXfs>
+	<cellXfs count="1">
+		<xf numFmtId="0" fontId="0" fillId="0" borderId="0" xfId="0" />
+	</cellXfs>
+	<cellStyles count="1">
+		<cellStyle name="Normal" xfId="0" builtinId="0" />
+	</cellStyles>
+	<dxfs count="434">
+		<dxf>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="8" tint="0.59999389629810485" />
+					<bgColor theme="8" tint="0.59999389629810485" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="8" tint="0.59999389629810485" />
+					<bgColor theme="8" tint="0.59999389629810485" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="1" />
+			</font>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="1" />
+			</font>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="1" />
+			</font>
+			<border>
+				<top style="double">
+					<color theme="1" />
+				</top>
+			</border>
+		</dxf>
+		<dxf>
+			<font>
+				<color theme="0" />
+			</font>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="9" />
+					<bgColor theme="9" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="8" tint="0.79998168889431442" />
+					<bgColor theme="8" tint="0.79998168889431442" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="6" tint="0.59999389629810485" />
+					<bgColor theme="6" tint="0.59999389629810485" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="6" tint="0.59999389629810485" />
+					<bgColor theme="6" tint="0.59999389629810485" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="1" />
+			</font>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="1" />
+			</font>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="1" />
+			</font>
+			<border>
+				<top style="double">
+					<color theme="1" />
+				</top>
+			</border>
+		</dxf>
+		<dxf>
+			<font>
+				<color theme="0" />
+			</font>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="7" />
+					<bgColor theme="7" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="6" tint="0.79998168889431442" />
+					<bgColor theme="6" tint="0.79998168889431442" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="4" tint="0.59999389629810485" />
+					<bgColor theme="4" tint="0.59999389629810485" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="4" tint="0.59999389629810485" />
+					<bgColor theme="4" tint="0.59999389629810485" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="1" />
+			</font>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="1" />
+			</font>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="1" />
+			</font>
+			<border>
+				<top style="double">
+					<color theme="1" />
+				</top>
+			</border>
+		</dxf>
+		<dxf>
+			<font>
+				<color theme="0" />
+			</font>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="5" />
+					<bgColor theme="5" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="4" tint="0.79998168889431442" />
+					<bgColor theme="4" tint="0.79998168889431442" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="0" tint="-0.34998626667073579" />
+					<bgColor theme="0" tint="-0.34998626667073579" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="0" tint="-0.34998626667073579" />
+					<bgColor theme="0" tint="-0.34998626667073579" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="1" />
+			</font>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="1" />
+			</font>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="1" />
+			</font>
+			<border>
+				<top style="double">
+					<color theme="1" />
+				</top>
+			</border>
+		</dxf>
+		<dxf>
+			<font>
+				<color theme="0" />
+			</font>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="1" />
+					<bgColor theme="1" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="0" tint="-0.14999847407452621" />
+					<bgColor theme="0" tint="-0.14999847407452621" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="9" tint="-0.249977111117893" />
+					<bgColor theme="9" tint="-0.249977111117893" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="9" tint="-0.249977111117893" />
+					<bgColor theme="9" tint="-0.249977111117893" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="0" />
+			</font>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="9" tint="-0.249977111117893" />
+					<bgColor theme="9" tint="-0.249977111117893" />
+				</patternFill>
+			</fill>
+			<border>
+				<left style="medium">
+					<color theme="0" />
+				</left>
+			</border>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="0" />
+			</font>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="9" tint="-0.249977111117893" />
+					<bgColor theme="9" tint="-0.249977111117893" />
+				</patternFill>
+			</fill>
+			<border>
+				<right style="medium">
+					<color theme="0" />
+				</right>
+			</border>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="0" />
+			</font>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="9" tint="-0.499984740745262" />
+					<bgColor theme="9" tint="-0.499984740745262" />
+				</patternFill>
+			</fill>
+			<border>
+				<top style="medium">
+					<color theme="0" />
+				</top>
+			</border>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="0" />
+			</font>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="1" />
+					<bgColor theme="1" />
+				</patternFill>
+			</fill>
+			<border>
+				<bottom style="medium">
+					<color theme="0" />
+				</bottom>
+			</border>
+		</dxf>
+		<dxf>
+			<font>
+				<color theme="0" />
+			</font>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="9" />
+					<bgColor theme="9" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="8" tint="-0.249977111117893" />
+					<bgColor theme="8" tint="-0.249977111117893" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="8" tint="-0.249977111117893" />
+					<bgColor theme="8" tint="-0.249977111117893" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="0" />
+			</font>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="8" tint="-0.249977111117893" />
+					<bgColor theme="8" tint="-0.249977111117893" />
+				</patternFill>
+			</fill>
+			<border>
+				<left style="medium">
+					<color theme="0" />
+				</left>
+			</border>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="0" />
+			</font>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="8" tint="-0.249977111117893" />
+					<bgColor theme="8" tint="-0.249977111117893" />
+				</patternFill>
+			</fill>
+			<border>
+				<right style="medium">
+					<color theme="0" />
+				</right>
+			</border>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="0" />
+			</font>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="8" tint="-0.499984740745262" />
+					<bgColor theme="8" tint="-0.499984740745262" />
+				</patternFill>
+			</fill>
+			<border>
+				<top style="medium">
+					<color theme="0" />
+				</top>
+			</border>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="0" />
+			</font>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="1" />
+					<bgColor theme="1" />
+				</patternFill>
+			</fill>
+			<border>
+				<bottom style="medium">
+					<color theme="0" />
+				</bottom>
+			</border>
+		</dxf>
+		<dxf>
+			<font>
+				<color theme="0" />
+			</font>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="8" />
+					<bgColor theme="8" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="7" tint="-0.249977111117893" />
+					<bgColor theme="7" tint="-0.249977111117893" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="7" tint="-0.249977111117893" />
+					<bgColor theme="7" tint="-0.249977111117893" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="0" />
+			</font>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="7" tint="-0.249977111117893" />
+					<bgColor theme="7" tint="-0.249977111117893" />
+				</patternFill>
+			</fill>
+			<border>
+				<left style="medium">
+					<color theme="0" />
+				</left>
+			</border>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="0" />
+			</font>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="7" tint="-0.249977111117893" />
+					<bgColor theme="7" tint="-0.249977111117893" />
+				</patternFill>
+			</fill>
+			<border>
+				<right style="medium">
+					<color theme="0" />
+				</right>
+			</border>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="0" />
+			</font>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="7" tint="-0.499984740745262" />
+					<bgColor theme="7" tint="-0.499984740745262" />
+				</patternFill>
+			</fill>
+			<border>
+				<top style="medium">
+					<color theme="0" />
+				</top>
+			</border>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="0" />
+			</font>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="1" />
+					<bgColor theme="1" />
+				</patternFill>
+			</fill>
+			<border>
+				<bottom style="medium">
+					<color theme="0" />
+				</bottom>
+			</border>
+		</dxf>
+		<dxf>
+			<font>
+				<color theme="0" />
+			</font>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="7" />
+					<bgColor theme="7" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="6" tint="-0.249977111117893" />
+					<bgColor theme="6" tint="-0.249977111117893" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="6" tint="-0.249977111117893" />
+					<bgColor theme="6" tint="-0.249977111117893" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="0" />
+			</font>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="6" tint="-0.249977111117893" />
+					<bgColor theme="6" tint="-0.249977111117893" />
+				</patternFill>
+			</fill>
+			<border>
+				<left style="medium">
+					<color theme="0" />
+				</left>
+			</border>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="0" />
+			</font>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="6" tint="-0.249977111117893" />
+					<bgColor theme="6" tint="-0.249977111117893" />
+				</patternFill>
+			</fill>
+			<border>
+				<right style="medium">
+					<color theme="0" />
+				</right>
+			</border>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="0" />
+			</font>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="6" tint="-0.499984740745262" />
+					<bgColor theme="6" tint="-0.499984740745262" />
+				</patternFill>
+			</fill>
+			<border>
+				<top style="medium">
+					<color theme="0" />
+				</top>
+			</border>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="0" />
+			</font>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="1" />
+					<bgColor theme="1" />
+				</patternFill>
+			</fill>
+			<border>
+				<bottom style="medium">
+					<color theme="0" />
+				</bottom>
+			</border>
+		</dxf>
+		<dxf>
+			<font>
+				<color theme="0" />
+			</font>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="6" />
+					<bgColor theme="6" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="5" tint="-0.249977111117893" />
+					<bgColor theme="5" tint="-0.249977111117893" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="5" tint="-0.249977111117893" />
+					<bgColor theme="5" tint="-0.249977111117893" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="0" />
+			</font>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="5" tint="-0.249977111117893" />
+					<bgColor theme="5" tint="-0.249977111117893" />
+				</patternFill>
+			</fill>
+			<border>
+				<left style="medium">
+					<color theme="0" />
+				</left>
+			</border>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="0" />
+			</font>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="5" tint="-0.249977111117893" />
+					<bgColor theme="5" tint="-0.249977111117893" />
+				</patternFill>
+			</fill>
+			<border>
+				<right style="medium">
+					<color theme="0" />
+				</right>
+			</border>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="0" />
+			</font>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="5" tint="-0.499984740745262" />
+					<bgColor theme="5" tint="-0.499984740745262" />
+				</patternFill>
+			</fill>
+			<border>
+				<top style="medium">
+					<color theme="0" />
+				</top>
+			</border>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="0" />
+			</font>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="1" />
+					<bgColor theme="1" />
+				</patternFill>
+			</fill>
+			<border>
+				<bottom style="medium">
+					<color theme="0" />
+				</bottom>
+			</border>
+		</dxf>
+		<dxf>
+			<font>
+				<color theme="0" />
+			</font>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="5" />
+					<bgColor theme="5" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="4" tint="-0.249977111117893" />
+					<bgColor theme="4" tint="-0.249977111117893" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="4" tint="-0.249977111117893" />
+					<bgColor theme="4" tint="-0.249977111117893" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="0" />
+			</font>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="4" tint="-0.249977111117893" />
+					<bgColor theme="4" tint="-0.249977111117893" />
+				</patternFill>
+			</fill>
+			<border>
+				<left style="medium">
+					<color theme="0" />
+				</left>
+			</border>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="0" />
+			</font>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="4" tint="-0.249977111117893" />
+					<bgColor theme="4" tint="-0.249977111117893" />
+				</patternFill>
+			</fill>
+			<border>
+				<right style="medium">
+					<color theme="0" />
+				</right>
+			</border>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="0" />
+			</font>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="4" tint="-0.499984740745262" />
+					<bgColor theme="4" tint="-0.499984740745262" />
+				</patternFill>
+			</fill>
+			<border>
+				<top style="medium">
+					<color theme="0" />
+				</top>
+			</border>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="0" />
+			</font>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="1" />
+					<bgColor theme="1" />
+				</patternFill>
+			</fill>
+			<border>
+				<bottom style="medium">
+					<color theme="0" />
+				</bottom>
+			</border>
+		</dxf>
+		<dxf>
+			<font>
+				<color theme="0" />
+			</font>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="4" />
+					<bgColor theme="4" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="1" tint="0.249977111117893" />
+					<bgColor theme="1" tint="0.249977111117893" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="1" tint="0.249977111117893" />
+					<bgColor theme="1" tint="0.249977111117893" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="0" />
+			</font>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="1" tint="0.249977111117893" />
+					<bgColor theme="1" tint="0.249977111117893" />
+				</patternFill>
+			</fill>
+			<border>
+				<left style="medium">
+					<color theme="0" />
+				</left>
+			</border>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="0" />
+			</font>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="1" tint="0.249977111117893" />
+					<bgColor theme="1" tint="0.249977111117893" />
+				</patternFill>
+			</fill>
+			<border>
+				<right style="medium">
+					<color theme="0" />
+				</right>
+			</border>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="0" />
+			</font>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="1" tint="0.14999847407452621" />
+					<bgColor theme="1" tint="0.14999847407452621" />
+				</patternFill>
+			</fill>
+			<border>
+				<top style="medium">
+					<color theme="0" />
+				</top>
+			</border>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="0" />
+			</font>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="1" />
+					<bgColor theme="1" />
+				</patternFill>
+			</fill>
+			<border>
+				<bottom style="medium">
+					<color theme="0" />
+				</bottom>
+			</border>
+		</dxf>
+		<dxf>
+			<font>
+				<color theme="0" />
+			</font>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="1" tint="0.44999542222357858" />
+					<bgColor theme="1" tint="0.44999542222357858" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="9" tint="0.59999389629810485" />
+					<bgColor theme="9" tint="0.59999389629810485" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="9" tint="0.59999389629810485" />
+					<bgColor theme="9" tint="0.59999389629810485" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="1" />
+			</font>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="1" />
+			</font>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="1" />
+			</font>
+			<border>
+				<top style="medium">
+					<color theme="9" />
+				</top>
+			</border>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="1" />
+			</font>
+		</dxf>
+		<dxf>
+			<font>
+				<color theme="1" />
+			</font>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="9" tint="0.79998168889431442" />
+					<bgColor theme="9" tint="0.79998168889431442" />
+				</patternFill>
+			</fill>
+			<border>
+				<left style="thin">
+					<color theme="9" tint="0.39997558519241921" />
+				</left>
+				<right style="thin">
+					<color theme="9" tint="0.39997558519241921" />
+				</right>
+				<top style="thin">
+					<color theme="9" tint="0.39997558519241921" />
+				</top>
+				<bottom style="thin">
+					<color theme="9" tint="0.39997558519241921" />
+				</bottom>
+				<vertical style="thin">
+					<color theme="9" tint="0.39997558519241921" />
+				</vertical>
+				<horizontal style="thin">
+					<color theme="9" tint="0.39997558519241921" />
+				</horizontal>
+			</border>
+		</dxf>
+		<dxf>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="8" tint="0.59999389629810485" />
+					<bgColor theme="8" tint="0.59999389629810485" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="8" tint="0.59999389629810485" />
+					<bgColor theme="8" tint="0.59999389629810485" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="1" />
+			</font>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="1" />
+			</font>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="1" />
+			</font>
+			<border>
+				<top style="medium">
+					<color theme="8" />
+				</top>
+			</border>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="1" />
+			</font>
+		</dxf>
+		<dxf>
+			<font>
+				<color theme="1" />
+			</font>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="8" tint="0.79998168889431442" />
+					<bgColor theme="8" tint="0.79998168889431442" />
+				</patternFill>
+			</fill>
+			<border>
+				<left style="thin">
+					<color theme="8" tint="0.39997558519241921" />
+				</left>
+				<right style="thin">
+					<color theme="8" tint="0.39997558519241921" />
+				</right>
+				<top style="thin">
+					<color theme="8" tint="0.39997558519241921" />
+				</top>
+				<bottom style="thin">
+					<color theme="8" tint="0.39997558519241921" />
+				</bottom>
+				<vertical style="thin">
+					<color theme="8" tint="0.39997558519241921" />
+				</vertical>
+				<horizontal style="thin">
+					<color theme="8" tint="0.39997558519241921" />
+				</horizontal>
+			</border>
+		</dxf>
+		<dxf>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="7" tint="0.59999389629810485" />
+					<bgColor theme="7" tint="0.59999389629810485" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="7" tint="0.59999389629810485" />
+					<bgColor theme="7" tint="0.59999389629810485" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="1" />
+			</font>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="1" />
+			</font>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="1" />
+			</font>
+			<border>
+				<top style="medium">
+					<color theme="7" />
+				</top>
+			</border>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="1" />
+			</font>
+		</dxf>
+		<dxf>
+			<font>
+				<color theme="1" />
+			</font>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="7" tint="0.79998168889431442" />
+					<bgColor theme="7" tint="0.79998168889431442" />
+				</patternFill>
+			</fill>
+			<border>
+				<left style="thin">
+					<color theme="7" tint="0.39997558519241921" />
+				</left>
+				<right style="thin">
+					<color theme="7" tint="0.39997558519241921" />
+				</right>
+				<top style="thin">
+					<color theme="7" tint="0.39997558519241921" />
+				</top>
+				<bottom style="thin">
+					<color theme="7" tint="0.39997558519241921" />
+				</bottom>
+				<vertical style="thin">
+					<color theme="7" tint="0.39997558519241921" />
+				</vertical>
+				<horizontal style="thin">
+					<color theme="7" tint="0.39997558519241921" />
+				</horizontal>
+			</border>
+		</dxf>
+		<dxf>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="6" tint="0.59999389629810485" />
+					<bgColor theme="6" tint="0.59999389629810485" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="6" tint="0.59999389629810485" />
+					<bgColor theme="6" tint="0.59999389629810485" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="1" />
+			</font>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="1" />
+			</font>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="1" />
+			</font>
+			<border>
+				<top style="medium">
+					<color theme="6" />
+				</top>
+			</border>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="1" />
+			</font>
+		</dxf>
+		<dxf>
+			<font>
+				<color theme="1" />
+			</font>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="6" tint="0.79998168889431442" />
+					<bgColor theme="6" tint="0.79998168889431442" />
+				</patternFill>
+			</fill>
+			<border>
+				<left style="thin">
+					<color theme="6" tint="0.39997558519241921" />
+				</left>
+				<right style="thin">
+					<color theme="6" tint="0.39997558519241921" />
+				</right>
+				<top style="thin">
+					<color theme="6" tint="0.39997558519241921" />
+				</top>
+				<bottom style="thin">
+					<color theme="6" tint="0.39997558519241921" />
+				</bottom>
+				<vertical style="thin">
+					<color theme="6" tint="0.39997558519241921" />
+				</vertical>
+				<horizontal style="thin">
+					<color theme="6" tint="0.39997558519241921" />
+				</horizontal>
+			</border>
+		</dxf>
+		<dxf>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="5" tint="0.59999389629810485" />
+					<bgColor theme="5" tint="0.59999389629810485" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="5" tint="0.59999389629810485" />
+					<bgColor theme="5" tint="0.59999389629810485" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="1" />
+			</font>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="1" />
+			</font>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="1" />
+			</font>
+			<border>
+				<top style="medium">
+					<color theme="5" />
+				</top>
+			</border>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="1" />
+			</font>
+		</dxf>
+		<dxf>
+			<font>
+				<color theme="1" />
+			</font>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="5" tint="0.79998168889431442" />
+					<bgColor theme="5" tint="0.79998168889431442" />
+				</patternFill>
+			</fill>
+			<border>
+				<left style="thin">
+					<color theme="5" tint="0.39997558519241921" />
+				</left>
+				<right style="thin">
+					<color theme="5" tint="0.39997558519241921" />
+				</right>
+				<top style="thin">
+					<color theme="5" tint="0.39997558519241921" />
+				</top>
+				<bottom style="thin">
+					<color theme="5" tint="0.39997558519241921" />
+				</bottom>
+				<vertical style="thin">
+					<color theme="5" tint="0.39997558519241921" />
+				</vertical>
+				<horizontal style="thin">
+					<color theme="5" tint="0.39997558519241921" />
+				</horizontal>
+			</border>
+		</dxf>
+		<dxf>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="4" tint="0.59999389629810485" />
+					<bgColor theme="4" tint="0.59999389629810485" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="4" tint="0.59999389629810485" />
+					<bgColor theme="4" tint="0.59999389629810485" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="1" />
+			</font>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="1" />
+			</font>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="1" />
+			</font>
+			<border>
+				<top style="medium">
+					<color theme="4" />
+				</top>
+			</border>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="1" />
+			</font>
+		</dxf>
+		<dxf>
+			<font>
+				<color theme="1" />
+			</font>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="4" tint="0.79998168889431442" />
+					<bgColor theme="4" tint="0.79998168889431442" />
+				</patternFill>
+			</fill>
+			<border>
+				<left style="thin">
+					<color theme="4" tint="0.39997558519241921" />
+				</left>
+				<right style="thin">
+					<color theme="4" tint="0.39997558519241921" />
+				</right>
+				<top style="thin">
+					<color theme="4" tint="0.39997558519241921" />
+				</top>
+				<bottom style="thin">
+					<color theme="4" tint="0.39997558519241921" />
+				</bottom>
+				<vertical style="thin">
+					<color theme="4" tint="0.39997558519241921" />
+				</vertical>
+				<horizontal style="thin">
+					<color theme="4" tint="0.39997558519241921" />
+				</horizontal>
+			</border>
+		</dxf>
+		<dxf>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="0" tint="-0.34998626667073579" />
+					<bgColor theme="0" tint="-0.34998626667073579" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="0" tint="-0.34998626667073579" />
+					<bgColor theme="0" tint="-0.34998626667073579" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="1" />
+			</font>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="1" />
+			</font>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="1" />
+			</font>
+			<border>
+				<top style="medium">
+					<color theme="1" />
+				</top>
+			</border>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="1" />
+			</font>
+		</dxf>
+		<dxf>
+			<font>
+				<color theme="1" />
+			</font>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="0" tint="-0.14999847407452621" />
+					<bgColor theme="0" tint="-0.14999847407452621" />
+				</patternFill>
+			</fill>
+			<border>
+				<left style="thin">
+					<color theme="1" />
+				</left>
+				<right style="thin">
+					<color theme="1" />
+				</right>
+				<top style="thin">
+					<color theme="1" />
+				</top>
+				<bottom style="thin">
+					<color theme="1" />
+				</bottom>
+				<vertical style="thin">
+					<color theme="1" />
+				</vertical>
+				<horizontal style="thin">
+					<color theme="1" />
+				</horizontal>
+			</border>
+		</dxf>
+		<dxf>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="0" tint="-0.14999847407452621" />
+					<bgColor theme="0" tint="-0.14999847407452621" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="0" tint="-0.14999847407452621" />
+					<bgColor theme="0" tint="-0.14999847407452621" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="0" />
+			</font>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="9" />
+					<bgColor theme="9" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="0" />
+			</font>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="9" />
+					<bgColor theme="9" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<border>
+				<top style="double">
+					<color theme="1" />
+				</top>
+			</border>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="0" />
+			</font>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="9" />
+					<bgColor theme="9" />
+				</patternFill>
+			</fill>
+			<border>
+				<bottom style="medium">
+					<color theme="1" />
+				</bottom>
+			</border>
+		</dxf>
+		<dxf>
+			<font>
+				<color theme="1" />
+			</font>
+			<border>
+				<top style="medium">
+					<color theme="1" />
+				</top>
+				<bottom style="medium">
+					<color theme="1" />
+				</bottom>
+			</border>
+		</dxf>
+		<dxf>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="0" tint="-0.14999847407452621" />
+					<bgColor theme="0" tint="-0.14999847407452621" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="0" tint="-0.14999847407452621" />
+					<bgColor theme="0" tint="-0.14999847407452621" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="0" />
+			</font>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="8" />
+					<bgColor theme="8" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="0" />
+			</font>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="8" />
+					<bgColor theme="8" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<border>
+				<top style="double">
+					<color theme="1" />
+				</top>
+			</border>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="0" />
+			</font>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="8" />
+					<bgColor theme="8" />
+				</patternFill>
+			</fill>
+			<border>
+				<bottom style="medium">
+					<color theme="1" />
+				</bottom>
+			</border>
+		</dxf>
+		<dxf>
+			<font>
+				<color theme="1" />
+			</font>
+			<border>
+				<top style="medium">
+					<color theme="1" />
+				</top>
+				<bottom style="medium">
+					<color theme="1" />
+				</bottom>
+			</border>
+		</dxf>
+		<dxf>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="0" tint="-0.14999847407452621" />
+					<bgColor theme="0" tint="-0.14999847407452621" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="0" tint="-0.14999847407452621" />
+					<bgColor theme="0" tint="-0.14999847407452621" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="0" />
+			</font>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="7" />
+					<bgColor theme="7" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="0" />
+			</font>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="7" />
+					<bgColor theme="7" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<border>
+				<top style="double">
+					<color theme="1" />
+				</top>
+			</border>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="0" />
+			</font>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="7" />
+					<bgColor theme="7" />
+				</patternFill>
+			</fill>
+			<border>
+				<bottom style="medium">
+					<color theme="1" />
+				</bottom>
+			</border>
+		</dxf>
+		<dxf>
+			<font>
+				<color theme="1" />
+			</font>
+			<border>
+				<top style="medium">
+					<color theme="1" />
+				</top>
+				<bottom style="medium">
+					<color theme="1" />
+				</bottom>
+			</border>
+		</dxf>
+		<dxf>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="0" tint="-0.14999847407452621" />
+					<bgColor theme="0" tint="-0.14999847407452621" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="0" tint="-0.14999847407452621" />
+					<bgColor theme="0" tint="-0.14999847407452621" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="0" />
+			</font>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="6" />
+					<bgColor theme="6" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="0" />
+			</font>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="6" />
+					<bgColor theme="6" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<border>
+				<top style="double">
+					<color theme="1" />
+				</top>
+			</border>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="0" />
+			</font>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="6" />
+					<bgColor theme="6" />
+				</patternFill>
+			</fill>
+			<border>
+				<bottom style="medium">
+					<color theme="1" />
+				</bottom>
+			</border>
+		</dxf>
+		<dxf>
+			<font>
+				<color theme="1" />
+			</font>
+			<border>
+				<top style="medium">
+					<color theme="1" />
+				</top>
+				<bottom style="medium">
+					<color theme="1" />
+				</bottom>
+			</border>
+		</dxf>
+		<dxf>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="0" tint="-0.14999847407452621" />
+					<bgColor theme="0" tint="-0.14999847407452621" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="0" tint="-0.14999847407452621" />
+					<bgColor theme="0" tint="-0.14999847407452621" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="0" />
+			</font>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="5" />
+					<bgColor theme="5" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="0" />
+			</font>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="5" />
+					<bgColor theme="5" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<border>
+				<top style="double">
+					<color theme="1" />
+				</top>
+			</border>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="0" />
+			</font>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="5" />
+					<bgColor theme="5" />
+				</patternFill>
+			</fill>
+			<border>
+				<bottom style="medium">
+					<color theme="1" />
+				</bottom>
+			</border>
+		</dxf>
+		<dxf>
+			<font>
+				<color theme="1" />
+			</font>
+			<border>
+				<top style="medium">
+					<color theme="1" />
+				</top>
+				<bottom style="medium">
+					<color theme="1" />
+				</bottom>
+			</border>
+		</dxf>
+		<dxf>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="0" tint="-0.14999847407452621" />
+					<bgColor theme="0" tint="-0.14999847407452621" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="0" tint="-0.14999847407452621" />
+					<bgColor theme="0" tint="-0.14999847407452621" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="0" />
+			</font>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="4" />
+					<bgColor theme="4" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="0" />
+			</font>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="4" />
+					<bgColor theme="4" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<border>
+				<top style="double">
+					<color theme="1" />
+				</top>
+			</border>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="0" />
+			</font>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="4" />
+					<bgColor theme="4" />
+				</patternFill>
+			</fill>
+			<border>
+				<bottom style="medium">
+					<color theme="1" />
+				</bottom>
+			</border>
+		</dxf>
+		<dxf>
+			<font>
+				<color theme="1" />
+			</font>
+			<border>
+				<top style="medium">
+					<color theme="1" />
+				</top>
+				<bottom style="medium">
+					<color theme="1" />
+				</bottom>
+			</border>
+		</dxf>
+		<dxf>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="0" tint="-0.14999847407452621" />
+					<bgColor theme="0" tint="-0.14999847407452621" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="0" tint="-0.14999847407452621" />
+					<bgColor theme="0" tint="-0.14999847407452621" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="0" />
+			</font>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="1" />
+					<bgColor theme="1" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="0" />
+			</font>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="1" />
+					<bgColor theme="1" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<border>
+				<top style="double">
+					<color theme="1" />
+				</top>
+			</border>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="0" />
+			</font>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="1" />
+					<bgColor theme="1" />
+				</patternFill>
+			</fill>
+			<border>
+				<bottom style="medium">
+					<color theme="1" />
+				</bottom>
+			</border>
+		</dxf>
+		<dxf>
+			<font>
+				<color theme="1" />
+			</font>
+			<border>
+				<left style="thin">
+					<color theme="1" />
+				</left>
+				<right style="thin">
+					<color theme="1" />
+				</right>
+				<top style="medium">
+					<color theme="1" />
+				</top>
+				<bottom style="medium">
+					<color theme="1" />
+				</bottom>
+				<vertical style="thin">
+					<color theme="1" />
+				</vertical>
+				<horizontal style="thin">
+					<color theme="1" />
+				</horizontal>
+			</border>
+		</dxf>
+		<dxf>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="9" tint="0.59999389629810485" />
+					<bgColor theme="9" tint="0.59999389629810485" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="9" tint="0.59999389629810485" />
+					<bgColor theme="9" tint="0.59999389629810485" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="0" />
+			</font>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="9" />
+					<bgColor theme="9" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="0" />
+			</font>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="9" />
+					<bgColor theme="9" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="0" />
+			</font>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="9" />
+					<bgColor theme="9" />
+				</patternFill>
+			</fill>
+			<border>
+				<top style="thick">
+					<color theme="0" />
+				</top>
+			</border>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="0" />
+			</font>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="9" />
+					<bgColor theme="9" />
+				</patternFill>
+			</fill>
+			<border>
+				<bottom style="thick">
+					<color theme="0" />
+				</bottom>
+			</border>
+		</dxf>
+		<dxf>
+			<font>
+				<color theme="1" />
+			</font>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="9" tint="0.79998168889431442" />
+					<bgColor theme="9" tint="0.79998168889431442" />
+				</patternFill>
+			</fill>
+			<border>
+				<vertical style="thin">
+					<color theme="0" />
+				</vertical>
+				<horizontal style="thin">
+					<color theme="0" />
+				</horizontal>
+			</border>
+		</dxf>
+		<dxf>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="8" tint="0.59999389629810485" />
+					<bgColor theme="8" tint="0.59999389629810485" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="8" tint="0.59999389629810485" />
+					<bgColor theme="8" tint="0.59999389629810485" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="0" />
+			</font>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="8" />
+					<bgColor theme="8" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="0" />
+			</font>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="8" />
+					<bgColor theme="8" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="0" />
+			</font>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="8" />
+					<bgColor theme="8" />
+				</patternFill>
+			</fill>
+			<border>
+				<top style="thick">
+					<color theme="0" />
+				</top>
+			</border>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="0" />
+			</font>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="8" />
+					<bgColor theme="8" />
+				</patternFill>
+			</fill>
+			<border>
+				<bottom style="thick">
+					<color theme="0" />
+				</bottom>
+			</border>
+		</dxf>
+		<dxf>
+			<font>
+				<color theme="1" />
+			</font>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="8" tint="0.79998168889431442" />
+					<bgColor theme="8" tint="0.79998168889431442" />
+				</patternFill>
+			</fill>
+			<border>
+				<vertical style="thin">
+					<color theme="0" />
+				</vertical>
+				<horizontal style="thin">
+					<color theme="0" />
+				</horizontal>
+			</border>
+		</dxf>
+		<dxf>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="7" tint="0.59999389629810485" />
+					<bgColor theme="7" tint="0.59999389629810485" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="7" tint="0.59999389629810485" />
+					<bgColor theme="7" tint="0.59999389629810485" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="0" />
+			</font>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="7" />
+					<bgColor theme="7" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="0" />
+			</font>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="7" />
+					<bgColor theme="7" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="0" />
+			</font>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="7" />
+					<bgColor theme="7" />
+				</patternFill>
+			</fill>
+			<border>
+				<top style="thick">
+					<color theme="0" />
+				</top>
+			</border>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="0" />
+			</font>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="7" />
+					<bgColor theme="7" />
+				</patternFill>
+			</fill>
+			<border>
+				<bottom style="thick">
+					<color theme="0" />
+				</bottom>
+			</border>
+		</dxf>
+		<dxf>
+			<font>
+				<color theme="1" />
+			</font>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="7" tint="0.79998168889431442" />
+					<bgColor theme="7" tint="0.79998168889431442" />
+				</patternFill>
+			</fill>
+			<border>
+				<vertical style="thin">
+					<color theme="0" />
+				</vertical>
+				<horizontal style="thin">
+					<color theme="0" />
+				</horizontal>
+			</border>
+		</dxf>
+		<dxf>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="6" tint="0.59999389629810485" />
+					<bgColor theme="6" tint="0.59999389629810485" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="6" tint="0.59999389629810485" />
+					<bgColor theme="6" tint="0.59999389629810485" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="0" />
+			</font>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="6" />
+					<bgColor theme="6" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="0" />
+			</font>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="6" />
+					<bgColor theme="6" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="0" />
+			</font>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="6" />
+					<bgColor theme="6" />
+				</patternFill>
+			</fill>
+			<border>
+				<top style="thick">
+					<color theme="0" />
+				</top>
+			</border>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="0" />
+			</font>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="6" />
+					<bgColor theme="6" />
+				</patternFill>
+			</fill>
+			<border>
+				<bottom style="thick">
+					<color theme="0" />
+				</bottom>
+			</border>
+		</dxf>
+		<dxf>
+			<font>
+				<color theme="1" />
+			</font>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="6" tint="0.79998168889431442" />
+					<bgColor theme="6" tint="0.79998168889431442" />
+				</patternFill>
+			</fill>
+			<border>
+				<vertical style="thin">
+					<color theme="0" />
+				</vertical>
+				<horizontal style="thin">
+					<color theme="0" />
+				</horizontal>
+			</border>
+		</dxf>
+		<dxf>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="5" tint="0.59999389629810485" />
+					<bgColor theme="5" tint="0.59999389629810485" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="5" tint="0.59999389629810485" />
+					<bgColor theme="5" tint="0.59999389629810485" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="0" />
+			</font>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="5" />
+					<bgColor theme="5" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="0" />
+			</font>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="5" />
+					<bgColor theme="5" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="0" />
+			</font>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="5" />
+					<bgColor theme="5" />
+				</patternFill>
+			</fill>
+			<border>
+				<top style="thick">
+					<color theme="0" />
+				</top>
+			</border>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="0" />
+			</font>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="5" />
+					<bgColor theme="5" />
+				</patternFill>
+			</fill>
+			<border>
+				<bottom style="thick">
+					<color theme="0" />
+				</bottom>
+			</border>
+		</dxf>
+		<dxf>
+			<font>
+				<color theme="1" />
+			</font>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="5" tint="0.79998168889431442" />
+					<bgColor theme="5" tint="0.79998168889431442" />
+				</patternFill>
+			</fill>
+			<border>
+				<vertical style="thin">
+					<color theme="0" />
+				</vertical>
+				<horizontal style="thin">
+					<color theme="0" />
+				</horizontal>
+			</border>
+		</dxf>
+		<dxf>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="4" tint="0.59999389629810485" />
+					<bgColor theme="4" tint="0.59999389629810485" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="4" tint="0.59999389629810485" />
+					<bgColor theme="4" tint="0.59999389629810485" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="0" />
+			</font>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="4" />
+					<bgColor theme="4" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="0" />
+			</font>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="4" />
+					<bgColor theme="4" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="0" />
+			</font>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="4" />
+					<bgColor theme="4" />
+				</patternFill>
+			</fill>
+			<border>
+				<top style="thick">
+					<color theme="0" />
+				</top>
+			</border>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="0" />
+			</font>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="4" />
+					<bgColor theme="4" />
+				</patternFill>
+			</fill>
+			<border>
+				<bottom style="thick">
+					<color theme="0" />
+				</bottom>
+			</border>
+		</dxf>
+		<dxf>
+			<font>
+				<color theme="1" />
+			</font>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="4" tint="0.79998168889431442" />
+					<bgColor theme="4" tint="0.79998168889431442" />
+				</patternFill>
+			</fill>
+			<border>
+				<vertical style="thin">
+					<color theme="0" />
+				</vertical>
+				<horizontal style="thin">
+					<color theme="0" />
+				</horizontal>
+			</border>
+		</dxf>
+		<dxf>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="0" tint="-0.34998626667073579" />
+					<bgColor theme="0" tint="-0.34998626667073579" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="0" tint="-0.34998626667073579" />
+					<bgColor theme="0" tint="-0.34998626667073579" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="0" />
+			</font>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="1" />
+					<bgColor theme="1" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="0" />
+			</font>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="1" />
+					<bgColor theme="1" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="0" />
+			</font>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="1" />
+					<bgColor theme="1" />
+				</patternFill>
+			</fill>
+			<border>
+				<top style="thick">
+					<color theme="0" />
+				</top>
+			</border>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="0" />
+			</font>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="1" />
+					<bgColor theme="1" />
+				</patternFill>
+			</fill>
+			<border>
+				<bottom style="thick">
+					<color theme="0" />
+				</bottom>
+			</border>
+		</dxf>
+		<dxf>
+			<font>
+				<color theme="1" />
+			</font>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="0" tint="-0.14999847407452621" />
+					<bgColor theme="0" tint="-0.14999847407452621" />
+				</patternFill>
+			</fill>
+			<border>
+				<vertical style="thin">
+					<color theme="0" />
+				</vertical>
+				<horizontal style="thin">
+					<color theme="0" />
+				</horizontal>
+			</border>
+		</dxf>
+		<dxf>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="9" tint="0.79998168889431442" />
+					<bgColor theme="9" tint="0.79998168889431442" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="9" tint="0.79998168889431442" />
+					<bgColor theme="9" tint="0.79998168889431442" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="1" />
+			</font>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="1" />
+			</font>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="1" />
+			</font>
+			<border>
+				<top style="double">
+					<color theme="9" />
+				</top>
+			</border>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="0" />
+			</font>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="9" />
+					<bgColor theme="9" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<font>
+				<color theme="1" />
+			</font>
+			<border>
+				<left style="thin">
+					<color theme="9" tint="0.39997558519241921" />
+				</left>
+				<right style="thin">
+					<color theme="9" tint="0.39997558519241921" />
+				</right>
+				<top style="thin">
+					<color theme="9" tint="0.39997558519241921" />
+				</top>
+				<bottom style="thin">
+					<color theme="9" tint="0.39997558519241921" />
+				</bottom>
+				<horizontal style="thin">
+					<color theme="9" tint="0.39997558519241921" />
+				</horizontal>
+			</border>
+		</dxf>
+		<dxf>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="8" tint="0.79998168889431442" />
+					<bgColor theme="8" tint="0.79998168889431442" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="8" tint="0.79998168889431442" />
+					<bgColor theme="8" tint="0.79998168889431442" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="1" />
+			</font>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="1" />
+			</font>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="1" />
+			</font>
+			<border>
+				<top style="double">
+					<color theme="8" />
+				</top>
+			</border>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="0" />
+			</font>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="8" />
+					<bgColor theme="8" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<font>
+				<color theme="1" />
+			</font>
+			<border>
+				<left style="thin">
+					<color theme="8" tint="0.39997558519241921" />
+				</left>
+				<right style="thin">
+					<color theme="8" tint="0.39997558519241921" />
+				</right>
+				<top style="thin">
+					<color theme="8" tint="0.39997558519241921" />
+				</top>
+				<bottom style="thin">
+					<color theme="8" tint="0.39997558519241921" />
+				</bottom>
+				<horizontal style="thin">
+					<color theme="8" tint="0.39997558519241921" />
+				</horizontal>
+			</border>
+		</dxf>
+		<dxf>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="7" tint="0.79998168889431442" />
+					<bgColor theme="7" tint="0.79998168889431442" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="7" tint="0.79998168889431442" />
+					<bgColor theme="7" tint="0.79998168889431442" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="1" />
+			</font>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="1" />
+			</font>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="1" />
+			</font>
+			<border>
+				<top style="double">
+					<color theme="7" />
+				</top>
+			</border>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="0" />
+			</font>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="7" />
+					<bgColor theme="7" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<font>
+				<color theme="1" />
+			</font>
+			<border>
+				<left style="thin">
+					<color theme="7" tint="0.39997558519241921" />
+				</left>
+				<right style="thin">
+					<color theme="7" tint="0.39997558519241921" />
+				</right>
+				<top style="thin">
+					<color theme="7" tint="0.39997558519241921" />
+				</top>
+				<bottom style="thin">
+					<color theme="7" tint="0.39997558519241921" />
+				</bottom>
+				<horizontal style="thin">
+					<color theme="7" tint="0.39997558519241921" />
+				</horizontal>
+			</border>
+		</dxf>
+		<dxf>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="6" tint="0.79998168889431442" />
+					<bgColor theme="6" tint="0.79998168889431442" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="6" tint="0.79998168889431442" />
+					<bgColor theme="6" tint="0.79998168889431442" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="1" />
+			</font>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="1" />
+			</font>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="1" />
+			</font>
+			<border>
+				<top style="double">
+					<color theme="6" />
+				</top>
+			</border>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="0" />
+			</font>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="6" />
+					<bgColor theme="6" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<font>
+				<color theme="1" />
+			</font>
+			<border>
+				<left style="thin">
+					<color theme="6" tint="0.39997558519241921" />
+				</left>
+				<right style="thin">
+					<color theme="6" tint="0.39997558519241921" />
+				</right>
+				<top style="thin">
+					<color theme="6" tint="0.39997558519241921" />
+				</top>
+				<bottom style="thin">
+					<color theme="6" tint="0.39997558519241921" />
+				</bottom>
+				<horizontal style="thin">
+					<color theme="6" tint="0.39997558519241921" />
+				</horizontal>
+			</border>
+		</dxf>
+		<dxf>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="5" tint="0.79998168889431442" />
+					<bgColor theme="5" tint="0.79998168889431442" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="5" tint="0.79998168889431442" />
+					<bgColor theme="5" tint="0.79998168889431442" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="1" />
+			</font>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="1" />
+			</font>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="1" />
+			</font>
+			<border>
+				<top style="double">
+					<color theme="5" />
+				</top>
+			</border>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="0" />
+			</font>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="5" />
+					<bgColor theme="5" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<font>
+				<color theme="1" />
+			</font>
+			<border>
+				<left style="thin">
+					<color theme="5" tint="0.39997558519241921" />
+				</left>
+				<right style="thin">
+					<color theme="5" tint="0.39997558519241921" />
+				</right>
+				<top style="thin">
+					<color theme="5" tint="0.39997558519241921" />
+				</top>
+				<bottom style="thin">
+					<color theme="5" tint="0.39997558519241921" />
+				</bottom>
+				<horizontal style="thin">
+					<color theme="5" tint="0.39997558519241921" />
+				</horizontal>
+			</border>
+		</dxf>
+		<dxf>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="4" tint="0.79998168889431442" />
+					<bgColor theme="4" tint="0.79998168889431442" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="4" tint="0.79998168889431442" />
+					<bgColor theme="4" tint="0.79998168889431442" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="1" />
+			</font>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="1" />
+			</font>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="1" />
+			</font>
+			<border>
+				<top style="double">
+					<color theme="4" />
+				</top>
+			</border>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="0" />
+			</font>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="4" />
+					<bgColor theme="4" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<font>
+				<color theme="1" />
+			</font>
+			<border>
+				<left style="thin">
+					<color theme="4" tint="0.39997558519241921" />
+				</left>
+				<right style="thin">
+					<color theme="4" tint="0.39997558519241921" />
+				</right>
+				<top style="thin">
+					<color theme="4" tint="0.39997558519241921" />
+				</top>
+				<bottom style="thin">
+					<color theme="4" tint="0.39997558519241921" />
+				</bottom>
+				<horizontal style="thin">
+					<color theme="4" tint="0.39997558519241921" />
+				</horizontal>
+			</border>
+		</dxf>
+		<dxf>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="0" tint="-0.14999847407452621" />
+					<bgColor theme="0" tint="-0.14999847407452621" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="0" tint="-0.14999847407452621" />
+					<bgColor theme="0" tint="-0.14999847407452621" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="1" />
+			</font>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="1" />
+			</font>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="1" />
+			</font>
+			<border>
+				<top style="double">
+					<color theme="1" />
+				</top>
+			</border>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="0" />
+			</font>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="1" />
+					<bgColor theme="1" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<font>
+				<color theme="1" />
+			</font>
+			<border>
+				<left style="thin">
+					<color theme="1" />
+				</left>
+				<right style="thin">
+					<color theme="1" />
+				</right>
+				<top style="thin">
+					<color theme="1" />
+				</top>
+				<bottom style="thin">
+					<color theme="1" />
+				</bottom>
+				<horizontal style="thin">
+					<color theme="1" />
+				</horizontal>
+			</border>
+		</dxf>
+		<dxf>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="9" tint="0.79998168889431442" />
+					<bgColor theme="9" tint="0.79998168889431442" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="9" tint="0.79998168889431442" />
+					<bgColor theme="9" tint="0.79998168889431442" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="1" />
+			</font>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="1" />
+			</font>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="1" />
+			</font>
+			<border>
+				<top style="double">
+					<color theme="9" />
+				</top>
+			</border>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="1" />
+			</font>
+			<border>
+				<bottom style="medium">
+					<color theme="9" />
+				</bottom>
+			</border>
+		</dxf>
+		<dxf>
+			<font>
+				<color theme="1" />
+			</font>
+			<border>
+				<left style="thin">
+					<color theme="9" />
+				</left>
+				<right style="thin">
+					<color theme="9" />
+				</right>
+				<top style="thin">
+					<color theme="9" />
+				</top>
+				<bottom style="thin">
+					<color theme="9" />
+				</bottom>
+				<vertical style="thin">
+					<color theme="9" />
+				</vertical>
+				<horizontal style="thin">
+					<color theme="9" />
+				</horizontal>
+			</border>
+		</dxf>
+		<dxf>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="8" tint="0.79998168889431442" />
+					<bgColor theme="8" tint="0.79998168889431442" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="8" tint="0.79998168889431442" />
+					<bgColor theme="8" tint="0.79998168889431442" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="1" />
+			</font>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="1" />
+			</font>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="1" />
+			</font>
+			<border>
+				<top style="double">
+					<color theme="8" />
+				</top>
+			</border>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="1" />
+			</font>
+			<border>
+				<bottom style="medium">
+					<color theme="8" />
+				</bottom>
+			</border>
+		</dxf>
+		<dxf>
+			<font>
+				<color theme="1" />
+			</font>
+			<border>
+				<left style="thin">
+					<color theme="8" />
+				</left>
+				<right style="thin">
+					<color theme="8" />
+				</right>
+				<top style="thin">
+					<color theme="8" />
+				</top>
+				<bottom style="thin">
+					<color theme="8" />
+				</bottom>
+				<vertical style="thin">
+					<color theme="8" />
+				</vertical>
+				<horizontal style="thin">
+					<color theme="8" />
+				</horizontal>
+			</border>
+		</dxf>
+		<dxf>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="7" tint="0.79998168889431442" />
+					<bgColor theme="7" tint="0.79998168889431442" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="7" tint="0.79998168889431442" />
+					<bgColor theme="7" tint="0.79998168889431442" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="1" />
+			</font>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="1" />
+			</font>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="1" />
+			</font>
+			<border>
+				<top style="double">
+					<color theme="7" />
+				</top>
+			</border>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="1" />
+			</font>
+			<border>
+				<bottom style="medium">
+					<color theme="7" />
+				</bottom>
+			</border>
+		</dxf>
+		<dxf>
+			<font>
+				<color theme="1" />
+			</font>
+			<border>
+				<left style="thin">
+					<color theme="7" />
+				</left>
+				<right style="thin">
+					<color theme="7" />
+				</right>
+				<top style="thin">
+					<color theme="7" />
+				</top>
+				<bottom style="thin">
+					<color theme="7" />
+				</bottom>
+				<vertical style="thin">
+					<color theme="7" />
+				</vertical>
+				<horizontal style="thin">
+					<color theme="7" />
+				</horizontal>
+			</border>
+		</dxf>
+		<dxf>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="6" tint="0.79998168889431442" />
+					<bgColor theme="6" tint="0.79998168889431442" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="6" tint="0.79998168889431442" />
+					<bgColor theme="6" tint="0.79998168889431442" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="1" />
+			</font>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="1" />
+			</font>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="1" />
+			</font>
+			<border>
+				<top style="double">
+					<color theme="6" />
+				</top>
+			</border>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="1" />
+			</font>
+			<border>
+				<bottom style="medium">
+					<color theme="6" />
+				</bottom>
+			</border>
+		</dxf>
+		<dxf>
+			<font>
+				<color theme="1" />
+			</font>
+			<border>
+				<left style="thin">
+					<color theme="6" />
+				</left>
+				<right style="thin">
+					<color theme="6" />
+				</right>
+				<top style="thin">
+					<color theme="6" />
+				</top>
+				<bottom style="thin">
+					<color theme="6" />
+				</bottom>
+				<vertical style="thin">
+					<color theme="6" />
+				</vertical>
+				<horizontal style="thin">
+					<color theme="6" />
+				</horizontal>
+			</border>
+		</dxf>
+		<dxf>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="5" tint="0.79998168889431442" />
+					<bgColor theme="5" tint="0.79998168889431442" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="5" tint="0.79998168889431442" />
+					<bgColor theme="5" tint="0.79998168889431442" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="1" />
+			</font>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="1" />
+			</font>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="1" />
+			</font>
+			<border>
+				<top style="double">
+					<color theme="5" />
+				</top>
+			</border>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="1" />
+			</font>
+			<border>
+				<bottom style="medium">
+					<color theme="5" />
+				</bottom>
+			</border>
+		</dxf>
+		<dxf>
+			<font>
+				<color theme="1" />
+			</font>
+			<border>
+				<left style="thin">
+					<color theme="5" />
+				</left>
+				<right style="thin">
+					<color theme="5" />
+				</right>
+				<top style="thin">
+					<color theme="5" />
+				</top>
+				<bottom style="thin">
+					<color theme="5" />
+				</bottom>
+				<vertical style="thin">
+					<color theme="5" />
+				</vertical>
+				<horizontal style="thin">
+					<color theme="5" />
+				</horizontal>
+			</border>
+		</dxf>
+		<dxf>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="4" tint="0.79998168889431442" />
+					<bgColor theme="4" tint="0.79998168889431442" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="4" tint="0.79998168889431442" />
+					<bgColor theme="4" tint="0.79998168889431442" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="1" />
+			</font>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="1" />
+			</font>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="1" />
+			</font>
+			<border>
+				<top style="double">
+					<color theme="4" />
+				</top>
+			</border>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="1" />
+			</font>
+			<border>
+				<bottom style="medium">
+					<color theme="4" />
+				</bottom>
+			</border>
+		</dxf>
+		<dxf>
+			<font>
+				<color theme="1" />
+			</font>
+			<border>
+				<left style="thin">
+					<color theme="4" />
+				</left>
+				<right style="thin">
+					<color theme="4" />
+				</right>
+				<top style="thin">
+					<color theme="4" />
+				</top>
+				<bottom style="thin">
+					<color theme="4" />
+				</bottom>
+				<vertical style="thin">
+					<color theme="4" />
+				</vertical>
+				<horizontal style="thin">
+					<color theme="4" />
+				</horizontal>
+			</border>
+		</dxf>
+		<dxf>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="0" tint="-0.14999847407452621" />
+					<bgColor theme="0" tint="-0.14999847407452621" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="0" tint="-0.14999847407452621" />
+					<bgColor theme="0" tint="-0.14999847407452621" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="1" />
+			</font>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="1" />
+			</font>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="1" />
+			</font>
+			<border>
+				<top style="double">
+					<color theme="1" />
+				</top>
+			</border>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="1" />
+			</font>
+			<border>
+				<bottom style="medium">
+					<color theme="1" />
+				</bottom>
+			</border>
+		</dxf>
+		<dxf>
+			<font>
+				<color theme="1" />
+			</font>
+			<border>
+				<left style="thin">
+					<color theme="1" />
+				</left>
+				<right style="thin">
+					<color theme="1" />
+				</right>
+				<top style="thin">
+					<color theme="1" />
+				</top>
+				<bottom style="thin">
+					<color theme="1" />
+				</bottom>
+				<vertical style="thin">
+					<color theme="1" />
+				</vertical>
+				<horizontal style="thin">
+					<color theme="1" />
+				</horizontal>
+			</border>
+		</dxf>
+		<dxf>
+			<border>
+				<left style="thin">
+					<color theme="9" />
+				</left>
+			</border>
+		</dxf>
+		<dxf>
+			<border>
+				<left style="thin">
+					<color theme="9" />
+				</left>
+			</border>
+		</dxf>
+		<dxf>
+			<border>
+				<top style="thin">
+					<color theme="9" />
+				</top>
+			</border>
+		</dxf>
+		<dxf>
+			<border>
+				<top style="thin">
+					<color theme="9" />
+				</top>
+			</border>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="1" />
+			</font>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="1" />
+			</font>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="1" />
+			</font>
+			<border>
+				<top style="double">
+					<color theme="9" />
+				</top>
+			</border>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="0" />
+			</font>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="9" />
+					<bgColor theme="9" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<font>
+				<color theme="1" />
+			</font>
+			<border>
+				<left style="thin">
+					<color theme="9" />
+				</left>
+				<right style="thin">
+					<color theme="9" />
+				</right>
+				<top style="thin">
+					<color theme="9" />
+				</top>
+				<bottom style="thin">
+					<color theme="9" />
+				</bottom>
+			</border>
+		</dxf>
+		<dxf>
+			<border>
+				<left style="thin">
+					<color theme="8" />
+				</left>
+			</border>
+		</dxf>
+		<dxf>
+			<border>
+				<left style="thin">
+					<color theme="8" />
+				</left>
+			</border>
+		</dxf>
+		<dxf>
+			<border>
+				<top style="thin">
+					<color theme="8" />
+				</top>
+			</border>
+		</dxf>
+		<dxf>
+			<border>
+				<top style="thin">
+					<color theme="8" />
+				</top>
+			</border>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="1" />
+			</font>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="1" />
+			</font>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="1" />
+			</font>
+			<border>
+				<top style="double">
+					<color theme="8" />
+				</top>
+			</border>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="0" />
+			</font>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="8" />
+					<bgColor theme="8" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<font>
+				<color theme="1" />
+			</font>
+			<border>
+				<left style="thin">
+					<color theme="8" />
+				</left>
+				<right style="thin">
+					<color theme="8" />
+				</right>
+				<top style="thin">
+					<color theme="8" />
+				</top>
+				<bottom style="thin">
+					<color theme="8" />
+				</bottom>
+			</border>
+		</dxf>
+		<dxf>
+			<border>
+				<left style="thin">
+					<color theme="7" />
+				</left>
+			</border>
+		</dxf>
+		<dxf>
+			<border>
+				<left style="thin">
+					<color theme="7" />
+				</left>
+			</border>
+		</dxf>
+		<dxf>
+			<border>
+				<top style="thin">
+					<color theme="7" />
+				</top>
+			</border>
+		</dxf>
+		<dxf>
+			<border>
+				<top style="thin">
+					<color theme="7" />
+				</top>
+			</border>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="1" />
+			</font>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="1" />
+			</font>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="1" />
+			</font>
+			<border>
+				<top style="double">
+					<color theme="7" />
+				</top>
+			</border>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="0" />
+			</font>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="7" />
+					<bgColor theme="7" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<font>
+				<color theme="1" />
+			</font>
+			<border>
+				<left style="thin">
+					<color theme="7" />
+				</left>
+				<right style="thin">
+					<color theme="7" />
+				</right>
+				<top style="thin">
+					<color theme="7" />
+				</top>
+				<bottom style="thin">
+					<color theme="7" />
+				</bottom>
+			</border>
+		</dxf>
+		<dxf>
+			<border>
+				<left style="thin">
+					<color theme="6" />
+				</left>
+			</border>
+		</dxf>
+		<dxf>
+			<border>
+				<left style="thin">
+					<color theme="6" />
+				</left>
+			</border>
+		</dxf>
+		<dxf>
+			<border>
+				<top style="thin">
+					<color theme="6" />
+				</top>
+			</border>
+		</dxf>
+		<dxf>
+			<border>
+				<top style="thin">
+					<color theme="6" />
+				</top>
+			</border>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="1" />
+			</font>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="1" />
+			</font>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="1" />
+			</font>
+			<border>
+				<top style="double">
+					<color theme="6" />
+				</top>
+			</border>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="0" />
+			</font>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="6" />
+					<bgColor theme="6" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<font>
+				<color theme="1" />
+			</font>
+			<border>
+				<left style="thin">
+					<color theme="6" />
+				</left>
+				<right style="thin">
+					<color theme="6" />
+				</right>
+				<top style="thin">
+					<color theme="6" />
+				</top>
+				<bottom style="thin">
+					<color theme="6" />
+				</bottom>
+			</border>
+		</dxf>
+		<dxf>
+			<border>
+				<left style="thin">
+					<color theme="5" />
+				</left>
+			</border>
+		</dxf>
+		<dxf>
+			<border>
+				<left style="thin">
+					<color theme="5" />
+				</left>
+			</border>
+		</dxf>
+		<dxf>
+			<border>
+				<top style="thin">
+					<color theme="5" />
+				</top>
+			</border>
+		</dxf>
+		<dxf>
+			<border>
+				<top style="thin">
+					<color theme="5" />
+				</top>
+			</border>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="1" />
+			</font>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="1" />
+			</font>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="1" />
+			</font>
+			<border>
+				<top style="double">
+					<color theme="5" />
+				</top>
+			</border>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="0" />
+			</font>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="5" />
+					<bgColor theme="5" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<font>
+				<color theme="1" />
+			</font>
+			<border>
+				<left style="thin">
+					<color theme="5" />
+				</left>
+				<right style="thin">
+					<color theme="5" />
+				</right>
+				<top style="thin">
+					<color theme="5" />
+				</top>
+				<bottom style="thin">
+					<color theme="5" />
+				</bottom>
+			</border>
+		</dxf>
+		<dxf>
+			<border>
+				<left style="thin">
+					<color theme="4" />
+				</left>
+			</border>
+		</dxf>
+		<dxf>
+			<border>
+				<left style="thin">
+					<color theme="4" />
+				</left>
+			</border>
+		</dxf>
+		<dxf>
+			<border>
+				<top style="thin">
+					<color theme="4" />
+				</top>
+			</border>
+		</dxf>
+		<dxf>
+			<border>
+				<top style="thin">
+					<color theme="4" />
+				</top>
+			</border>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="1" />
+			</font>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="1" />
+			</font>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="1" />
+			</font>
+			<border>
+				<top style="double">
+					<color theme="4" />
+				</top>
+			</border>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="0" />
+			</font>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="4" />
+					<bgColor theme="4" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<font>
+				<color theme="1" />
+			</font>
+			<border>
+				<left style="thin">
+					<color theme="4" />
+				</left>
+				<right style="thin">
+					<color theme="4" />
+				</right>
+				<top style="thin">
+					<color theme="4" />
+				</top>
+				<bottom style="thin">
+					<color theme="4" />
+				</bottom>
+			</border>
+		</dxf>
+		<dxf>
+			<border>
+				<left style="thin">
+					<color theme="1" />
+				</left>
+			</border>
+		</dxf>
+		<dxf>
+			<border>
+				<left style="thin">
+					<color theme="1" />
+				</left>
+			</border>
+		</dxf>
+		<dxf>
+			<border>
+				<top style="thin">
+					<color theme="1" />
+				</top>
+			</border>
+		</dxf>
+		<dxf>
+			<border>
+				<top style="thin">
+					<color theme="1" />
+				</top>
+			</border>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="1" />
+			</font>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="1" />
+			</font>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="1" />
+			</font>
+			<border>
+				<top style="double">
+					<color theme="1" />
+				</top>
+			</border>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="0" />
+			</font>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="1" />
+					<bgColor theme="1" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<font>
+				<color theme="1" />
+			</font>
+			<border>
+				<left style="thin">
+					<color theme="1" />
+				</left>
+				<right style="thin">
+					<color theme="1" />
+				</right>
+				<top style="thin">
+					<color theme="1" />
+				</top>
+				<bottom style="thin">
+					<color theme="1" />
+				</bottom>
+			</border>
+		</dxf>
+		<dxf>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="9" tint="0.79998168889431442" />
+					<bgColor theme="9" tint="0.79998168889431442" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="9" tint="0.79998168889431442" />
+					<bgColor theme="9" tint="0.79998168889431442" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="9" tint="-0.249977111117893" />
+			</font>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="9" tint="-0.249977111117893" />
+			</font>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="9" tint="-0.249977111117893" />
+			</font>
+			<border>
+				<top style="thin">
+					<color theme="9" />
+				</top>
+			</border>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="9" tint="-0.249977111117893" />
+			</font>
+			<border>
+				<bottom style="thin">
+					<color theme="9" />
+				</bottom>
+			</border>
+		</dxf>
+		<dxf>
+			<font>
+				<color theme="9" tint="-0.249977111117893" />
+			</font>
+			<border>
+				<top style="thin">
+					<color theme="9" />
+				</top>
+				<bottom style="thin">
+					<color theme="9" />
+				</bottom>
+			</border>
+		</dxf>
+		<dxf>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="8" tint="0.79998168889431442" />
+					<bgColor theme="8" tint="0.79998168889431442" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="8" tint="0.79998168889431442" />
+					<bgColor theme="8" tint="0.79998168889431442" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="8" tint="-0.249977111117893" />
+			</font>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="8" tint="-0.249977111117893" />
+			</font>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="8" tint="-0.249977111117893" />
+			</font>
+			<border>
+				<top style="thin">
+					<color theme="8" />
+				</top>
+			</border>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="8" tint="-0.249977111117893" />
+			</font>
+			<border>
+				<bottom style="thin">
+					<color theme="8" />
+				</bottom>
+			</border>
+		</dxf>
+		<dxf>
+			<font>
+				<color theme="8" tint="-0.249977111117893" />
+			</font>
+			<border>
+				<top style="thin">
+					<color theme="8" />
+				</top>
+				<bottom style="thin">
+					<color theme="8" />
+				</bottom>
+			</border>
+		</dxf>
+		<dxf>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="7" tint="0.79998168889431442" />
+					<bgColor theme="7" tint="0.79998168889431442" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="7" tint="0.79998168889431442" />
+					<bgColor theme="7" tint="0.79998168889431442" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="7" tint="-0.249977111117893" />
+			</font>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="7" tint="-0.249977111117893" />
+			</font>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="7" tint="-0.249977111117893" />
+			</font>
+			<border>
+				<top style="thin">
+					<color theme="7" />
+				</top>
+			</border>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="7" tint="-0.249977111117893" />
+			</font>
+			<border>
+				<bottom style="thin">
+					<color theme="7" />
+				</bottom>
+			</border>
+		</dxf>
+		<dxf>
+			<font>
+				<color theme="7" tint="-0.249977111117893" />
+			</font>
+			<border>
+				<top style="thin">
+					<color theme="7" />
+				</top>
+				<bottom style="thin">
+					<color theme="7" />
+				</bottom>
+			</border>
+		</dxf>
+		<dxf>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="6" tint="0.79998168889431442" />
+					<bgColor theme="6" tint="0.79998168889431442" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="6" tint="0.79998168889431442" />
+					<bgColor theme="6" tint="0.79998168889431442" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="6" tint="-0.249977111117893" />
+			</font>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="6" tint="-0.249977111117893" />
+			</font>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="6" tint="-0.249977111117893" />
+			</font>
+			<border>
+				<top style="thin">
+					<color theme="6" />
+				</top>
+			</border>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="6" tint="-0.249977111117893" />
+			</font>
+			<border>
+				<bottom style="thin">
+					<color theme="6" />
+				</bottom>
+			</border>
+		</dxf>
+		<dxf>
+			<font>
+				<color theme="6" tint="-0.249977111117893" />
+			</font>
+			<border>
+				<top style="thin">
+					<color theme="6" />
+				</top>
+				<bottom style="thin">
+					<color theme="6" />
+				</bottom>
+			</border>
+		</dxf>
+		<dxf>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="5" tint="0.79998168889431442" />
+					<bgColor theme="5" tint="0.79998168889431442" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="5" tint="0.79998168889431442" />
+					<bgColor theme="5" tint="0.79998168889431442" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="5" tint="-0.249977111117893" />
+			</font>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="5" tint="-0.249977111117893" />
+			</font>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="5" tint="-0.249977111117893" />
+			</font>
+			<border>
+				<top style="thin">
+					<color theme="5" />
+				</top>
+			</border>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="5" tint="-0.249977111117893" />
+			</font>
+			<border>
+				<bottom style="thin">
+					<color theme="5" />
+				</bottom>
+			</border>
+		</dxf>
+		<dxf>
+			<font>
+				<color theme="5" tint="-0.249977111117893" />
+			</font>
+			<border>
+				<top style="thin">
+					<color theme="5" />
+				</top>
+				<bottom style="thin">
+					<color theme="5" />
+				</bottom>
+			</border>
+		</dxf>
+		<dxf>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="4" tint="0.79998168889431442" />
+					<bgColor theme="4" tint="0.79998168889431442" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="4" tint="0.79998168889431442" />
+					<bgColor theme="4" tint="0.79998168889431442" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="4" tint="-0.249977111117893" />
+			</font>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="4" tint="-0.249977111117893" />
+			</font>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="4" tint="-0.249977111117893" />
+			</font>
+			<border>
+				<top style="thin">
+					<color theme="4" />
+				</top>
+			</border>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="4" tint="-0.249977111117893" />
+			</font>
+			<border>
+				<bottom style="thin">
+					<color theme="4" />
+				</bottom>
+			</border>
+		</dxf>
+		<dxf>
+			<font>
+				<color theme="4" tint="-0.249977111117893" />
+			</font>
+			<border>
+				<top style="thin">
+					<color theme="4" />
+				</top>
+				<bottom style="thin">
+					<color theme="4" />
+				</bottom>
+			</border>
+		</dxf>
+		<dxf>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="0" tint="-0.14999847407452621" />
+					<bgColor theme="0" tint="-0.14999847407452621" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<fill>
+				<patternFill patternType="solid">
+					<fgColor theme="0" tint="-0.14999847407452621" />
+					<bgColor theme="0" tint="-0.14999847407452621" />
+				</patternFill>
+			</fill>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="1" />
+			</font>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="1" />
+			</font>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="1" />
+			</font>
+			<border>
+				<top style="thin">
+					<color theme="1" />
+				</top>
+			</border>
+		</dxf>
+		<dxf>
+			<font>
+				<b />
+				<color theme="1" />
+			</font>
+			<border>
+				<bottom style="thin">
+					<color theme="1" />
+				</bottom>
+			</border>
+		</dxf>
+		<dxf>
+			<font>
+				<color theme="1" />
+			</font>
+			<border>
+				<top style="thin">
+					<color theme="1" />
+				</top>
+				<bottom style="thin">
+					<color theme="1" />
+				</bottom>
+			</border>
+		</dxf>
+	</dxfs>
+	<tableStyles count="60" defaultTableStyle="TableStyleMedium9"
+		defaultPivotStyle="PivotStyleLight16">
+		<tableStyle name="TableStyleDark10copy" pivot="0" count="7">
+			<tableStyleElement type="wholeTable" dxfId="13" />
+			<tableStyleElement type="headerRow" dxfId="12" />
+			<tableStyleElement type="totalRow" dxfId="11" />
+			<tableStyleElement type="firstColumn" dxfId="10" />
+			<tableStyleElement type="lastColumn" dxfId="9" />
+			<tableStyleElement type="firstRowStripe" dxfId="8" />
+			<tableStyleElement type="firstColumnStripe" dxfId="7" />
+		</tableStyle>
+		<tableStyle name="TableStyleDark11copy" pivot="0" count="7">
+			<tableStyleElement type="wholeTable" dxfId="6" />
+			<tableStyleElement type="headerRow" dxfId="5" />
+			<tableStyleElement type="totalRow" dxfId="4" />
+			<tableStyleElement type="firstColumn" dxfId="3" />
+			<tableStyleElement type="lastColumn" dxfId="2" />
+			<tableStyleElement type="firstRowStripe" dxfId="1" />
+			<tableStyleElement type="firstColumnStripe" dxfId="0" />
+		</tableStyle>
+		<tableStyle name="TableStyleDark1copy" pivot="0" count="7">
+			<tableStyleElement type="wholeTable" dxfId="76" />
+			<tableStyleElement type="headerRow" dxfId="75" />
+			<tableStyleElement type="totalRow" dxfId="74" />
+			<tableStyleElement type="firstColumn" dxfId="73" />
+			<tableStyleElement type="lastColumn" dxfId="72" />
+			<tableStyleElement type="firstRowStripe" dxfId="71" />
+			<tableStyleElement type="firstColumnStripe" dxfId="70" />
+		</tableStyle>
+		<tableStyle name="TableStyleDark2copy" pivot="0" count="7">
+			<tableStyleElement type="wholeTable" dxfId="69" />
+			<tableStyleElement type="headerRow" dxfId="68" />
+			<tableStyleElement type="totalRow" dxfId="67" />
+			<tableStyleElement type="firstColumn" dxfId="66" />
+			<tableStyleElement type="lastColumn" dxfId="65" />
+			<tableStyleElement type="firstRowStripe" dxfId="64" />
+			<tableStyleElement type="firstColumnStripe" dxfId="63" />
+		</tableStyle>
+		<tableStyle name="TableStyleDark3copy" pivot="0" count="7">
+			<tableStyleElement type="wholeTable" dxfId="62" />
+			<tableStyleElement type="headerRow" dxfId="61" />
+			<tableStyleElement type="totalRow" dxfId="60" />
+			<tableStyleElement type="firstColumn" dxfId="59" />
+			<tableStyleElement type="lastColumn" dxfId="58" />
+			<tableStyleElement type="firstRowStripe" dxfId="57" />
+			<tableStyleElement type="firstColumnStripe" dxfId="56" />
+		</tableStyle>
+		<tableStyle name="TableStyleDark4copy" pivot="0" count="7">
+			<tableStyleElement type="wholeTable" dxfId="55" />
+			<tableStyleElement type="headerRow" dxfId="54" />
+			<tableStyleElement type="totalRow" dxfId="53" />
+			<tableStyleElement type="firstColumn" dxfId="52" />
+			<tableStyleElement type="lastColumn" dxfId="51" />
+			<tableStyleElement type="firstRowStripe" dxfId="50" />
+			<tableStyleElement type="firstColumnStripe" dxfId="49" />
+		</tableStyle>
+		<tableStyle name="TableStyleDark5copy" pivot="0" count="7">
+			<tableStyleElement type="wholeTable" dxfId="48" />
+			<tableStyleElement type="headerRow" dxfId="47" />
+			<tableStyleElement type="totalRow" dxfId="46" />
+			<tableStyleElement type="firstColumn" dxfId="45" />
+			<tableStyleElement type="lastColumn" dxfId="44" />
+			<tableStyleElement type="firstRowStripe" dxfId="43" />
+			<tableStyleElement type="firstColumnStripe" dxfId="42" />
+		</tableStyle>
+		<tableStyle name="TableStyleDark6copy" pivot="0" count="7">
+			<tableStyleElement type="wholeTable" dxfId="41" />
+			<tableStyleElement type="headerRow" dxfId="40" />
+			<tableStyleElement type="totalRow" dxfId="39" />
+			<tableStyleElement type="firstColumn" dxfId="38" />
+			<tableStyleElement type="lastColumn" dxfId="37" />
+			<tableStyleElement type="firstRowStripe" dxfId="36" />
+			<tableStyleElement type="firstColumnStripe" dxfId="35" />
+		</tableStyle>
+		<tableStyle name="TableStyleDark7copy" pivot="0" count="7">
+			<tableStyleElement type="wholeTable" dxfId="34" />
+			<tableStyleElement type="headerRow" dxfId="33" />
+			<tableStyleElement type="totalRow" dxfId="32" />
+			<tableStyleElement type="firstColumn" dxfId="31" />
+			<tableStyleElement type="lastColumn" dxfId="30" />
+			<tableStyleElement type="firstRowStripe" dxfId="29" />
+			<tableStyleElement type="firstColumnStripe" dxfId="28" />
+		</tableStyle>
+		<tableStyle name="TableStyleDark8copy" pivot="0" count="7">
+			<tableStyleElement type="wholeTable" dxfId="27" />
+			<tableStyleElement type="headerRow" dxfId="26" />
+			<tableStyleElement type="totalRow" dxfId="25" />
+			<tableStyleElement type="firstColumn" dxfId="24" />
+			<tableStyleElement type="lastColumn" dxfId="23" />
+			<tableStyleElement type="firstRowStripe" dxfId="22" />
+			<tableStyleElement type="firstColumnStripe" dxfId="21" />
+		</tableStyle>
+		<tableStyle name="TableStyleDark9copy" pivot="0" count="7">
+			<tableStyleElement type="wholeTable" dxfId="20" />
+			<tableStyleElement type="headerRow" dxfId="19" />
+			<tableStyleElement type="totalRow" dxfId="18" />
+			<tableStyleElement type="firstColumn" dxfId="17" />
+			<tableStyleElement type="lastColumn" dxfId="16" />
+			<tableStyleElement type="firstRowStripe" dxfId="15" />
+			<tableStyleElement type="firstColumnStripe" dxfId="14" />
+		</tableStyle>
+		<tableStyle name="TableStyleLight10copy" pivot="0" count="9">
+			<tableStyleElement type="wholeTable" dxfId="366" />
+			<tableStyleElement type="headerRow" dxfId="365" />
+			<tableStyleElement type="totalRow" dxfId="364" />
+			<tableStyleElement type="firstColumn" dxfId="363" />
+			<tableStyleElement type="lastColumn" dxfId="362" />
+			<tableStyleElement type="firstRowStripe" dxfId="361" />
+			<tableStyleElement type="secondRowStripe" dxfId="360" />
+			<tableStyleElement type="firstColumnStripe" dxfId="359" />
+			<tableStyleElement type="secondColumnStripe" dxfId="358" />
+		</tableStyle>
+		<tableStyle name="TableStyleLight11copy" pivot="0" count="9">
+			<tableStyleElement type="wholeTable" dxfId="357" />
+			<tableStyleElement type="headerRow" dxfId="356" />
+			<tableStyleElement type="totalRow" dxfId="355" />
+			<tableStyleElement type="firstColumn" dxfId="354" />
+			<tableStyleElement type="lastColumn" dxfId="353" />
+			<tableStyleElement type="firstRowStripe" dxfId="352" />
+			<tableStyleElement type="secondRowStripe" dxfId="351" />
+			<tableStyleElement type="firstColumnStripe" dxfId="350" />
+			<tableStyleElement type="secondColumnStripe" dxfId="349" />
+		</tableStyle>
+		<tableStyle name="TableStyleLight12copy" pivot="0" count="9">
+			<tableStyleElement type="wholeTable" dxfId="348" />
+			<tableStyleElement type="headerRow" dxfId="347" />
+			<tableStyleElement type="totalRow" dxfId="346" />
+			<tableStyleElement type="firstColumn" dxfId="345" />
+			<tableStyleElement type="lastColumn" dxfId="344" />
+			<tableStyleElement type="firstRowStripe" dxfId="343" />
+			<tableStyleElement type="secondRowStripe" dxfId="342" />
+			<tableStyleElement type="firstColumnStripe" dxfId="341" />
+			<tableStyleElement type="secondColumnStripe" dxfId="340" />
+		</tableStyle>
+		<tableStyle name="TableStyleLight13copy" pivot="0" count="9">
+			<tableStyleElement type="wholeTable" dxfId="339" />
+			<tableStyleElement type="headerRow" dxfId="338" />
+			<tableStyleElement type="totalRow" dxfId="337" />
+			<tableStyleElement type="firstColumn" dxfId="336" />
+			<tableStyleElement type="lastColumn" dxfId="335" />
+			<tableStyleElement type="firstRowStripe" dxfId="334" />
+			<tableStyleElement type="secondRowStripe" dxfId="333" />
+			<tableStyleElement type="firstColumnStripe" dxfId="332" />
+			<tableStyleElement type="secondColumnStripe" dxfId="331" />
+		</tableStyle>
+		<tableStyle name="TableStyleLight14copy" pivot="0" count="9">
+			<tableStyleElement type="wholeTable" dxfId="330" />
+			<tableStyleElement type="headerRow" dxfId="329" />
+			<tableStyleElement type="totalRow" dxfId="328" />
+			<tableStyleElement type="firstColumn" dxfId="327" />
+			<tableStyleElement type="lastColumn" dxfId="326" />
+			<tableStyleElement type="firstRowStripe" dxfId="325" />
+			<tableStyleElement type="secondRowStripe" dxfId="324" />
+			<tableStyleElement type="firstColumnStripe" dxfId="323" />
+			<tableStyleElement type="secondColumnStripe" dxfId="322" />
+		</tableStyle>
+		<tableStyle name="TableStyleLight15copy" pivot="0" count="7">
+			<tableStyleElement type="wholeTable" dxfId="321" />
+			<tableStyleElement type="headerRow" dxfId="320" />
+			<tableStyleElement type="totalRow" dxfId="319" />
+			<tableStyleElement type="firstColumn" dxfId="318" />
+			<tableStyleElement type="lastColumn" dxfId="317" />
+			<tableStyleElement type="firstRowStripe" dxfId="316" />
+			<tableStyleElement type="firstColumnStripe" dxfId="315" />
+		</tableStyle>
+		<tableStyle name="TableStyleLight16copy" pivot="0" count="7">
+			<tableStyleElement type="wholeTable" dxfId="314" />
+			<tableStyleElement type="headerRow" dxfId="313" />
+			<tableStyleElement type="totalRow" dxfId="312" />
+			<tableStyleElement type="firstColumn" dxfId="311" />
+			<tableStyleElement type="lastColumn" dxfId="310" />
+			<tableStyleElement type="firstRowStripe" dxfId="309" />
+			<tableStyleElement type="firstColumnStripe" dxfId="308" />
+		</tableStyle>
+		<tableStyle name="TableStyleLight17copy" pivot="0" count="7">
+			<tableStyleElement type="wholeTable" dxfId="307" />
+			<tableStyleElement type="headerRow" dxfId="306" />
+			<tableStyleElement type="totalRow" dxfId="305" />
+			<tableStyleElement type="firstColumn" dxfId="304" />
+			<tableStyleElement type="lastColumn" dxfId="303" />
+			<tableStyleElement type="firstRowStripe" dxfId="302" />
+			<tableStyleElement type="firstColumnStripe" dxfId="301" />
+		</tableStyle>
+		<tableStyle name="TableStyleLight18copy" pivot="0" count="7">
+			<tableStyleElement type="wholeTable" dxfId="300" />
+			<tableStyleElement type="headerRow" dxfId="299" />
+			<tableStyleElement type="totalRow" dxfId="298" />
+			<tableStyleElement type="firstColumn" dxfId="297" />
+			<tableStyleElement type="lastColumn" dxfId="296" />
+			<tableStyleElement type="firstRowStripe" dxfId="295" />
+			<tableStyleElement type="firstColumnStripe" dxfId="294" />
+		</tableStyle>
+		<tableStyle name="TableStyleLight19copy" pivot="0" count="7">
+			<tableStyleElement type="wholeTable" dxfId="293" />
+			<tableStyleElement type="headerRow" dxfId="292" />
+			<tableStyleElement type="totalRow" dxfId="291" />
+			<tableStyleElement type="firstColumn" dxfId="290" />
+			<tableStyleElement type="lastColumn" dxfId="289" />
+			<tableStyleElement type="firstRowStripe" dxfId="288" />
+			<tableStyleElement type="firstColumnStripe" dxfId="287" />
+		</tableStyle>
+		<tableStyle name="TableStyleLight1copy" pivot="0" count="7">
+			<tableStyleElement type="wholeTable" dxfId="433" />
+			<tableStyleElement type="headerRow" dxfId="432" />
+			<tableStyleElement type="totalRow" dxfId="431" />
+			<tableStyleElement type="firstColumn" dxfId="430" />
+			<tableStyleElement type="lastColumn" dxfId="429" />
+			<tableStyleElement type="firstRowStripe" dxfId="428" />
+			<tableStyleElement type="firstColumnStripe" dxfId="427" />
+		</tableStyle>
+		<tableStyle name="TableStyleLight20copy" pivot="0" count="7">
+			<tableStyleElement type="wholeTable" dxfId="286" />
+			<tableStyleElement type="headerRow" dxfId="285" />
+			<tableStyleElement type="totalRow" dxfId="284" />
+			<tableStyleElement type="firstColumn" dxfId="283" />
+			<tableStyleElement type="lastColumn" dxfId="282" />
+			<tableStyleElement type="firstRowStripe" dxfId="281" />
+			<tableStyleElement type="firstColumnStripe" dxfId="280" />
+		</tableStyle>
+		<tableStyle name="TableStyleLight21copy" pivot="0" count="7">
+			<tableStyleElement type="wholeTable" dxfId="279" />
+			<tableStyleElement type="headerRow" dxfId="278" />
+			<tableStyleElement type="totalRow" dxfId="277" />
+			<tableStyleElement type="firstColumn" dxfId="276" />
+			<tableStyleElement type="lastColumn" dxfId="275" />
+			<tableStyleElement type="firstRowStripe" dxfId="274" />
+			<tableStyleElement type="firstColumnStripe" dxfId="273" />
+		</tableStyle>
+		<tableStyle name="TableStyleLight2copy" pivot="0" count="7">
+			<tableStyleElement type="wholeTable" dxfId="426" />
+			<tableStyleElement type="headerRow" dxfId="425" />
+			<tableStyleElement type="totalRow" dxfId="424" />
+			<tableStyleElement type="firstColumn" dxfId="423" />
+			<tableStyleElement type="lastColumn" dxfId="422" />
+			<tableStyleElement type="firstRowStripe" dxfId="421" />
+			<tableStyleElement type="firstColumnStripe" dxfId="420" />
+		</tableStyle>
+		<tableStyle name="TableStyleLight3copy" pivot="0" count="7">
+			<tableStyleElement type="wholeTable" dxfId="419" />
+			<tableStyleElement type="headerRow" dxfId="418" />
+			<tableStyleElement type="totalRow" dxfId="417" />
+			<tableStyleElement type="firstColumn" dxfId="416" />
+			<tableStyleElement type="lastColumn" dxfId="415" />
+			<tableStyleElement type="firstRowStripe" dxfId="414" />
+			<tableStyleElement type="firstColumnStripe" dxfId="413" />
+		</tableStyle>
+		<tableStyle name="TableStyleLight4copy" pivot="0" count="7">
+			<tableStyleElement type="wholeTable" dxfId="412" />
+			<tableStyleElement type="headerRow" dxfId="411" />
+			<tableStyleElement type="totalRow" dxfId="410" />
+			<tableStyleElement type="firstColumn" dxfId="409" />
+			<tableStyleElement type="lastColumn" dxfId="408" />
+			<tableStyleElement type="firstRowStripe" dxfId="407" />
+			<tableStyleElement type="firstColumnStripe" dxfId="406" />
+		</tableStyle>
+		<tableStyle name="TableStyleLight5copy" pivot="0" count="7">
+			<tableStyleElement type="wholeTable" dxfId="405" />
+			<tableStyleElement type="headerRow" dxfId="404" />
+			<tableStyleElement type="totalRow" dxfId="403" />
+			<tableStyleElement type="firstColumn" dxfId="402" />
+			<tableStyleElement type="lastColumn" dxfId="401" />
+			<tableStyleElement type="firstRowStripe" dxfId="400" />
+			<tableStyleElement type="firstColumnStripe" dxfId="399" />
+		</tableStyle>
+		<tableStyle name="TableStyleLight6copy" pivot="0" count="7">
+			<tableStyleElement type="wholeTable" dxfId="398" />
+			<tableStyleElement type="headerRow" dxfId="397" />
+			<tableStyleElement type="totalRow" dxfId="396" />
+			<tableStyleElement type="firstColumn" dxfId="395" />
+			<tableStyleElement type="lastColumn" dxfId="394" />
+			<tableStyleElement type="firstRowStripe" dxfId="393" />
+			<tableStyleElement type="firstColumnStripe" dxfId="392" />
+		</tableStyle>
+		<tableStyle name="TableStyleLight7copy" pivot="0" count="7">
+			<tableStyleElement type="wholeTable" dxfId="391" />
+			<tableStyleElement type="headerRow" dxfId="390" />
+			<tableStyleElement type="totalRow" dxfId="389" />
+			<tableStyleElement type="firstColumn" dxfId="388" />
+			<tableStyleElement type="lastColumn" dxfId="387" />
+			<tableStyleElement type="firstRowStripe" dxfId="386" />
+			<tableStyleElement type="firstColumnStripe" dxfId="385" />
+		</tableStyle>
+		<tableStyle name="TableStyleLight8copy" pivot="0" count="9">
+			<tableStyleElement type="wholeTable" dxfId="384" />
+			<tableStyleElement type="headerRow" dxfId="383" />
+			<tableStyleElement type="totalRow" dxfId="382" />
+			<tableStyleElement type="firstColumn" dxfId="381" />
+			<tableStyleElement type="lastColumn" dxfId="380" />
+			<tableStyleElement type="firstRowStripe" dxfId="379" />
+			<tableStyleElement type="secondRowStripe" dxfId="378" />
+			<tableStyleElement type="firstColumnStripe" dxfId="377" />
+			<tableStyleElement type="secondColumnStripe" dxfId="376" />
+		</tableStyle>
+		<tableStyle name="TableStyleLight9copy" pivot="0" count="9">
+			<tableStyleElement type="wholeTable" dxfId="375" />
+			<tableStyleElement type="headerRow" dxfId="374" />
+			<tableStyleElement type="totalRow" dxfId="373" />
+			<tableStyleElement type="firstColumn" dxfId="372" />
+			<tableStyleElement type="lastColumn" dxfId="371" />
+			<tableStyleElement type="firstRowStripe" dxfId="370" />
+			<tableStyleElement type="secondRowStripe" dxfId="369" />
+			<tableStyleElement type="firstColumnStripe" dxfId="368" />
+			<tableStyleElement type="secondColumnStripe" dxfId="367" />
+		</tableStyle>
+		<tableStyle name="TableStyleMedium10copy" pivot="0" count="7">
+			<tableStyleElement type="wholeTable" dxfId="209" />
+			<tableStyleElement type="headerRow" dxfId="208" />
+			<tableStyleElement type="totalRow" dxfId="207" />
+			<tableStyleElement type="firstColumn" dxfId="206" />
+			<tableStyleElement type="lastColumn" dxfId="205" />
+			<tableStyleElement type="firstRowStripe" dxfId="204" />
+			<tableStyleElement type="firstColumnStripe" dxfId="203" />
+		</tableStyle>
+		<tableStyle name="TableStyleMedium11copy" pivot="0" count="7">
+			<tableStyleElement type="wholeTable" dxfId="202" />
+			<tableStyleElement type="headerRow" dxfId="201" />
+			<tableStyleElement type="totalRow" dxfId="200" />
+			<tableStyleElement type="firstColumn" dxfId="199" />
+			<tableStyleElement type="lastColumn" dxfId="198" />
+			<tableStyleElement type="firstRowStripe" dxfId="197" />
+			<tableStyleElement type="firstColumnStripe" dxfId="196" />
+		</tableStyle>
+		<tableStyle name="TableStyleMedium12copy" pivot="0" count="7">
+			<tableStyleElement type="wholeTable" dxfId="195" />
+			<tableStyleElement type="headerRow" dxfId="194" />
+			<tableStyleElement type="totalRow" dxfId="193" />
+			<tableStyleElement type="firstColumn" dxfId="192" />
+			<tableStyleElement type="lastColumn" dxfId="191" />
+			<tableStyleElement type="firstRowStripe" dxfId="190" />
+			<tableStyleElement type="firstColumnStripe" dxfId="189" />
+		</tableStyle>
+		<tableStyle name="TableStyleMedium13copy" pivot="0" count="7">
+			<tableStyleElement type="wholeTable" dxfId="188" />
+			<tableStyleElement type="headerRow" dxfId="187" />
+			<tableStyleElement type="totalRow" dxfId="186" />
+			<tableStyleElement type="firstColumn" dxfId="185" />
+			<tableStyleElement type="lastColumn" dxfId="184" />
+			<tableStyleElement type="firstRowStripe" dxfId="183" />
+			<tableStyleElement type="firstColumnStripe" dxfId="182" />
+		</tableStyle>
+		<tableStyle name="TableStyleMedium14copy" pivot="0" count="7">
+			<tableStyleElement type="wholeTable" dxfId="181" />
+			<tableStyleElement type="headerRow" dxfId="180" />
+			<tableStyleElement type="totalRow" dxfId="179" />
+			<tableStyleElement type="firstColumn" dxfId="178" />
+			<tableStyleElement type="lastColumn" dxfId="177" />
+			<tableStyleElement type="firstRowStripe" dxfId="176" />
+			<tableStyleElement type="firstColumnStripe" dxfId="175" />
+		</tableStyle>
+		<tableStyle name="TableStyleMedium15copy" pivot="0" count="7">
+			<tableStyleElement type="wholeTable" dxfId="174" />
+			<tableStyleElement type="headerRow" dxfId="173" />
+			<tableStyleElement type="totalRow" dxfId="172" />
+			<tableStyleElement type="firstColumn" dxfId="171" />
+			<tableStyleElement type="lastColumn" dxfId="170" />
+			<tableStyleElement type="firstRowStripe" dxfId="169" />
+			<tableStyleElement type="firstColumnStripe" dxfId="168" />
+		</tableStyle>
+		<tableStyle name="TableStyleMedium16copy" pivot="0" count="7">
+			<tableStyleElement type="wholeTable" dxfId="167" />
+			<tableStyleElement type="headerRow" dxfId="166" />
+			<tableStyleElement type="totalRow" dxfId="165" />
+			<tableStyleElement type="firstColumn" dxfId="164" />
+			<tableStyleElement type="lastColumn" dxfId="163" />
+			<tableStyleElement type="firstRowStripe" dxfId="162" />
+			<tableStyleElement type="firstColumnStripe" dxfId="161" />
+		</tableStyle>
+		<tableStyle name="TableStyleMedium17copy" pivot="0" count="7">
+			<tableStyleElement type="wholeTable" dxfId="160" />
+			<tableStyleElement type="headerRow" dxfId="159" />
+			<tableStyleElement type="totalRow" dxfId="158" />
+			<tableStyleElement type="firstColumn" dxfId="157" />
+			<tableStyleElement type="lastColumn" dxfId="156" />
+			<tableStyleElement type="firstRowStripe" dxfId="155" />
+			<tableStyleElement type="firstColumnStripe" dxfId="154" />
+		</tableStyle>
+		<tableStyle name="TableStyleMedium18copy" pivot="0" count="7">
+			<tableStyleElement type="wholeTable" dxfId="153" />
+			<tableStyleElement type="headerRow" dxfId="152" />
+			<tableStyleElement type="totalRow" dxfId="151" />
+			<tableStyleElement type="firstColumn" dxfId="150" />
+			<tableStyleElement type="lastColumn" dxfId="149" />
+			<tableStyleElement type="firstRowStripe" dxfId="148" />
+			<tableStyleElement type="firstColumnStripe" dxfId="147" />
+		</tableStyle>
+		<tableStyle name="TableStyleMedium19copy" pivot="0" count="7">
+			<tableStyleElement type="wholeTable" dxfId="146" />
+			<tableStyleElement type="headerRow" dxfId="145" />
+			<tableStyleElement type="totalRow" dxfId="144" />
+			<tableStyleElement type="firstColumn" dxfId="143" />
+			<tableStyleElement type="lastColumn" dxfId="142" />
+			<tableStyleElement type="firstRowStripe" dxfId="141" />
+			<tableStyleElement type="firstColumnStripe" dxfId="140" />
+		</tableStyle>
+		<tableStyle name="TableStyleMedium1copy" pivot="0" count="9">
+			<tableStyleElement type="wholeTable" dxfId="272" />
+			<tableStyleElement type="headerRow" dxfId="271" />
+			<tableStyleElement type="totalRow" dxfId="270" />
+			<tableStyleElement type="firstColumn" dxfId="269" />
+			<tableStyleElement type="lastColumn" dxfId="268" />
+			<tableStyleElement type="firstRowStripe" dxfId="267" />
+			<tableStyleElement type="firstColumnStripe" dxfId="266" />
+		</tableStyle>
+		<tableStyle name="TableStyleMedium20copy" pivot="0" count="7">
+			<tableStyleElement type="wholeTable" dxfId="139" />
+			<tableStyleElement type="headerRow" dxfId="138" />
+			<tableStyleElement type="totalRow" dxfId="137" />
+			<tableStyleElement type="firstColumn" dxfId="136" />
+			<tableStyleElement type="lastColumn" dxfId="135" />
+			<tableStyleElement type="firstRowStripe" dxfId="134" />
+			<tableStyleElement type="firstColumnStripe" dxfId="133" />
+		</tableStyle>
+		<tableStyle name="TableStyleMedium21copy" pivot="0" count="7">
+			<tableStyleElement type="wholeTable" dxfId="132" />
+			<tableStyleElement type="headerRow" dxfId="131" />
+			<tableStyleElement type="totalRow" dxfId="130" />
+			<tableStyleElement type="firstColumn" dxfId="129" />
+			<tableStyleElement type="lastColumn" dxfId="128" />
+			<tableStyleElement type="firstRowStripe" dxfId="127" />
+			<tableStyleElement type="firstColumnStripe" dxfId="126" />
+		</tableStyle>
+		<tableStyle name="TableStyleMedium22copy" pivot="0" count="7">
+			<tableStyleElement type="wholeTable" dxfId="125" />
+			<tableStyleElement type="headerRow" dxfId="124" />
+			<tableStyleElement type="totalRow" dxfId="123" />
+			<tableStyleElement type="firstColumn" dxfId="122" />
+			<tableStyleElement type="lastColumn" dxfId="121" />
+			<tableStyleElement type="firstRowStripe" dxfId="120" />
+			<tableStyleElement type="firstColumnStripe" dxfId="119" />
+		</tableStyle>
+		<tableStyle name="TableStyleMedium23copy" pivot="0" count="7">
+			<tableStyleElement type="wholeTable" dxfId="118" />
+			<tableStyleElement type="headerRow" dxfId="117" />
+			<tableStyleElement type="totalRow" dxfId="116" />
+			<tableStyleElement type="firstColumn" dxfId="115" />
+			<tableStyleElement type="lastColumn" dxfId="114" />
+			<tableStyleElement type="firstRowStripe" dxfId="113" />
+			<tableStyleElement type="firstColumnStripe" dxfId="112" />
+		</tableStyle>
+		<tableStyle name="TableStyleMedium24copy" pivot="0" count="7">
+			<tableStyleElement type="wholeTable" dxfId="111" />
+			<tableStyleElement type="headerRow" dxfId="110" />
+			<tableStyleElement type="totalRow" dxfId="109" />
+			<tableStyleElement type="firstColumn" dxfId="108" />
+			<tableStyleElement type="lastColumn" dxfId="107" />
+			<tableStyleElement type="firstRowStripe" dxfId="106" />
+			<tableStyleElement type="firstColumnStripe" dxfId="105" />
+		</tableStyle>
+		<tableStyle name="TableStyleMedium25copy" pivot="0" count="7">
+			<tableStyleElement type="wholeTable" dxfId="104" />
+			<tableStyleElement type="headerRow" dxfId="103" />
+			<tableStyleElement type="totalRow" dxfId="102" />
+			<tableStyleElement type="firstColumn" dxfId="101" />
+			<tableStyleElement type="lastColumn" dxfId="100" />
+			<tableStyleElement type="firstRowStripe" dxfId="99" />
+			<tableStyleElement type="firstColumnStripe" dxfId="98" />
+		</tableStyle>
+		<tableStyle name="TableStyleMedium26copy" pivot="0" count="7">
+			<tableStyleElement type="wholeTable" dxfId="97" />
+			<tableStyleElement type="headerRow" dxfId="96" />
+			<tableStyleElement type="totalRow" dxfId="95" />
+			<tableStyleElement type="firstColumn" dxfId="94" />
+			<tableStyleElement type="lastColumn" dxfId="93" />
+			<tableStyleElement type="firstRowStripe" dxfId="92" />
+			<tableStyleElement type="firstColumnStripe" dxfId="91" />
+		</tableStyle>
+		<tableStyle name="TableStyleMedium27copy" pivot="0" count="7">
+			<tableStyleElement type="wholeTable" dxfId="90" />
+			<tableStyleElement type="headerRow" dxfId="89" />
+			<tableStyleElement type="totalRow" dxfId="88" />
+			<tableStyleElement type="firstColumn" dxfId="87" />
+			<tableStyleElement type="lastColumn" dxfId="86" />
+			<tableStyleElement type="firstRowStripe" dxfId="85" />
+			<tableStyleElement type="firstColumnStripe" dxfId="84" />
+		</tableStyle>
+		<tableStyle name="TableStyleMedium28copy" pivot="0" count="7">
+			<tableStyleElement type="wholeTable" dxfId="83" />
+			<tableStyleElement type="headerRow" dxfId="82" />
+			<tableStyleElement type="totalRow" dxfId="81" />
+			<tableStyleElement type="firstColumn" dxfId="80" />
+			<tableStyleElement type="lastColumn" dxfId="79" />
+			<tableStyleElement type="firstRowStripe" dxfId="78" />
+			<tableStyleElement type="firstColumnStripe" dxfId="77" />
+		</tableStyle>
+		<tableStyle name="TableStyleMedium2copy" pivot="0" count="9">
+			<tableStyleElement type="wholeTable" dxfId="265" />
+			<tableStyleElement type="headerRow" dxfId="264" />
+			<tableStyleElement type="totalRow" dxfId="263" />
+			<tableStyleElement type="firstColumn" dxfId="262" />
+			<tableStyleElement type="lastColumn" dxfId="261" />
+			<tableStyleElement type="firstRowStripe" dxfId="260" />
+			<tableStyleElement type="firstColumnStripe" dxfId="259" />
+		</tableStyle>
+		<tableStyle name="TableStyleMedium3copy" pivot="0" count="9">
+			<tableStyleElement type="wholeTable" dxfId="258" />
+			<tableStyleElement type="headerRow" dxfId="257" />
+			<tableStyleElement type="totalRow" dxfId="256" />
+			<tableStyleElement type="firstColumn" dxfId="255" />
+			<tableStyleElement type="lastColumn" dxfId="254" />
+			<tableStyleElement type="firstRowStripe" dxfId="253" />
+			<tableStyleElement type="firstColumnStripe" dxfId="252" />
+		</tableStyle>
+		<tableStyle name="TableStyleMedium4copy" pivot="0" count="9">
+			<tableStyleElement type="wholeTable" dxfId="251" />
+			<tableStyleElement type="headerRow" dxfId="250" />
+			<tableStyleElement type="totalRow" dxfId="249" />
+			<tableStyleElement type="firstColumn" dxfId="248" />
+			<tableStyleElement type="lastColumn" dxfId="247" />
+			<tableStyleElement type="firstRowStripe" dxfId="246" />
+			<tableStyleElement type="firstColumnStripe" dxfId="245" />
+		</tableStyle>
+		<tableStyle name="TableStyleMedium5copy" pivot="0" count="9">
+			<tableStyleElement type="wholeTable" dxfId="244" />
+			<tableStyleElement type="headerRow" dxfId="243" />
+			<tableStyleElement type="totalRow" dxfId="242" />
+			<tableStyleElement type="firstColumn" dxfId="241" />
+			<tableStyleElement type="lastColumn" dxfId="240" />
+			<tableStyleElement type="firstRowStripe" dxfId="239" />
+			<tableStyleElement type="firstColumnStripe" dxfId="238" />
+		</tableStyle>
+		<tableStyle name="TableStyleMedium6copy" pivot="0" count="9">
+			<tableStyleElement type="wholeTable" dxfId="237" />
+			<tableStyleElement type="headerRow" dxfId="236" />
+			<tableStyleElement type="totalRow" dxfId="235" />
+			<tableStyleElement type="firstColumn" dxfId="234" />
+			<tableStyleElement type="lastColumn" dxfId="233" />
+			<tableStyleElement type="firstRowStripe" dxfId="232" />
+			<tableStyleElement type="firstColumnStripe" dxfId="231" />
+		</tableStyle>
+		<tableStyle name="TableStyleMedium7copy" pivot="0" count="9">
+			<tableStyleElement type="wholeTable" dxfId="230" />
+			<tableStyleElement type="headerRow" dxfId="229" />
+			<tableStyleElement type="totalRow" dxfId="228" />
+			<tableStyleElement type="firstColumn" dxfId="227" />
+			<tableStyleElement type="lastColumn" dxfId="226" />
+			<tableStyleElement type="firstRowStripe" dxfId="225" />
+			<tableStyleElement type="firstColumnStripe" dxfId="224" />
+		</tableStyle>
+		<tableStyle name="TableStyleMedium8copy" pivot="0" count="7">
+			<tableStyleElement type="wholeTable" dxfId="223" />
+			<tableStyleElement type="headerRow" dxfId="222" />
+			<tableStyleElement type="totalRow" dxfId="221" />
+			<tableStyleElement type="firstColumn" dxfId="220" />
+			<tableStyleElement type="lastColumn" dxfId="219" />
+			<tableStyleElement type="firstRowStripe" dxfId="218" />
+			<tableStyleElement type="firstColumnStripe" dxfId="217" />
+		</tableStyle>
+		<tableStyle name="TableStyleMedium9copy" pivot="0" count="7">
+			<tableStyleElement type="wholeTable" dxfId="216" />
+			<tableStyleElement type="headerRow" dxfId="215" />
+			<tableStyleElement type="totalRow" dxfId="214" />
+			<tableStyleElement type="firstColumn" dxfId="213" />
+			<tableStyleElement type="lastColumn" dxfId="212" />
+			<tableStyleElement type="firstRowStripe" dxfId="211" />
+			<tableStyleElement type="firstColumnStripe" dxfId="210" />
+		</tableStyle>
+	</tableStyles>
+</styleSheet>
