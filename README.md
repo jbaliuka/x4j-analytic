@@ -9,16 +9,17 @@ X4J Engine is designed to produce relatively large reports and to consume reason
 This implementation uses sequential processing and normally X4J should be able to produce report with a million rows in a couple of seconds using constant memory.
 Pivot Report feature helps to manage large amounts of data.
 
-## Excel support
+## Excel Support
 
 X4J primary input/output format is XLSX, Excel is used as design to edit templates. Engine has limited capabilities to export report to other formats too: pdf, csv ,html, xml.
 Engine is usually used to implement Pivot reports with Excel table as source data. X4J binds SQL query data to Excel tables and columns  by name without  special template language or tags.
 Excel XML Map is also supported  to import/export Table data as XML.
 
-## Template language
+## Template Language
 
-Advanced reports might use template language, scripting and placeholders but it is the optional feature. Template expressions  might be useful for simple  dynamic  headers or localized strings but
-we suggest not to  abuse programming concepts for reports, [language](https://github.com/jbaliuka/x4j-analytic/wiki/Template-Language) is very simple but it is better extend engine itself to add features or to solve specific problems.
+Advanced reports might use optional template language and scripting. It  might be useful for simple  dynamic  headers or localized strings but
+we suggest not to  abuse programming concepts for reports, [language](https://github.com/jbaliuka/x4j-analytic/wiki/Template-Language) 
+is very simple but it is better extend engine itself to add features or to solve specific problems.
 
 ## Samples
 
@@ -26,12 +27,12 @@ we suggest not to  abuse programming concepts for reports, [language](https://gi
 
 
 
-Normally we use two files for every report, queries and parameters declarations are stored as [XML](https://github.com/jbaliuka/x4j-analytic/wiki/Report-Definition-Schema)
+Normally we use two files for every report, query and parameter declarations are stored as [XML](https://github.com/jbaliuka/x4j-analytic/wiki/Report-Definition-Schema)
 Template is a regular Excel file in XLSX format with Table and Pivot Table and engine populates Table with query results. Excel Table name should match query name in XML file.
 Context variables might referenced  as ${myContextVariable}. Templates also support Velocity like  language with loops and flow control statements: #if,#for, ..., #end
 
-##  Building X4J from Source 
-[Maven](http://maven.apache.org/) is used to build X4J from source code 
+##  Building X4J from Source Code
+[Maven](http://maven.apache.org/) is used to build X4J 
  * git clone https://github.com/jbaliuka/x4j-analytic.git
  * mvn install 
 
