@@ -23,7 +23,9 @@ is very simple but it is better extend engine itself to add features or to solve
 
 ## Samples
 
-[View](https://github.com/jbaliuka/x4j-analytic/blob/master/samples/src/test/java/x4j/samples/X4JEngineTest.java) usage examples online or clone git repository
+[View](https://github.com/jbaliuka/x4j-analytic/blob/master/samples/src/test/java/x4j/samples/X4JEngineTest.java) code examples online or clone git repository.
+[View](https://github.com/jbaliuka/x4j-analytic/tree/master/samples/src/test/resources/samples) sample reports on reporsitory.
+
 
 
 
