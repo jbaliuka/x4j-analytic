@@ -18,12 +18,22 @@ X4J is usually used to implement Pivot reports with Excel table as source data. 
 Reports might use template language, scripting and placeholders but it is the optional feature. Template expressions  might be useful for simple  dynamic  headers,  localized strings but
 we suggest not to  abuse programming concepts for reports,  extend engine to add features or to solve specific problems.
 
+View samples online https://github.com/jbaliuka/x4j-analytic/blob/master/samples/src/test/java/x4j/samples/X4JEngineTest.java
 
 API might change in the future but backward compatibility will be preserved. It is planned to add more extension points instead of features.
-Source repository contains sample templates and code to initialize  report context, please clone git repo and see sample directory to get started, read API documentation.
-Veiw samples online https://github.com/jbaliuka/x4j-analytic/blob/master/samples/src/test/java/x4j/samples/X4JEngineTest.java
+Noramlly we use two files for every report, queries and parameters decalarations are stored as XML https://github.com/jbaliuka/x4j-analytic/wiki/Report-Definition-Schema
+Temaplate is a regular Excel file in XLSX format with Table and Pivot Table and egine pupulates Table with query results. Excel Table name should match query name in XML file.
+Context variables might referenced  as ${myContextVariable}. Temalates also support Velocity like  language with loops and flow control statements: #if,#for, ..., #end
 
+* Building X4J from Source *
 Maven is used to build X4J from source code http://maven.apache.org/
+# clone git repo: https://github.com/jbaliuka/x4j-analytic.git
+# build from source: mvn install 
+
+
+
+
+
 
 
 
