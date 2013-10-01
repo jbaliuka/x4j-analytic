@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+	jaxb:version="2.0" xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.exigen.com/reportMetadata" xmlns:tns="http://www.exigen.com/reportMetadata"
+	elementFormDefault="qualified">
+
+	<annotation>
+		<appinfo>
+			<jaxb:schemaBindings>
+				<jaxb:package name="com.exigen.ipb.operationalreports.model" />
+			</jaxb:schemaBindings>
+		</appinfo>
+	</annotation>
+
+
+	<simpleType name="parameterType">
+		<restriction base="string">
+			<enumeration value="STRING" />
+			<enumeration value="DATE" />
+			<enumeration value="TIME" />
+			<enumeration value="DATE_TIME" />
+			<enumeration value="TIMESTAMP" />
+			<enumeration value="INTEGER" />
+			<enumeration value="MONEY" />
+			<enumeration value="FLOAT" />
+			<enumeration value="BOOLEAN" />
+			<enumeration value="LOOKUP" />
+			<enumeration value="MULTILOOKUP" />
+		</restriction>
+	</simpleType>
+
+	<complexType name="Parameter">
+		<sequence>
+			<element name="description" type="string" minOccurs="1"
+				maxOccurs="1" />
+			<element name="name" type="string" minOccurs="1" maxOccurs="1" />
+			<element name="category" type="string" />
+			<element name="type" type="tns:parameterType" minOccurs="1"
+				maxOccurs="1" />
+			<element name="required" type="boolean" minOccurs="0"
+				maxOccurs="1" />
+			<element name="default" type="string" minOccurs="0"
+				maxOccurs="1" />
+			<element name="validator" type="string" minOccurs="0"
+				maxOccurs="unbounded" />
+		</sequence>
+	</complexType>
+
+	<complexType name="format">
+		<sequence>
+			<element name="name" type="string" minOccurs="1" maxOccurs="1" />
+			<element name="template" type="string" minOccurs="1"
+				maxOccurs="1" />
+		</sequence>
+	</complexType>
+	
+	<complexType name="templates">
+		<sequence>
+			<element name="format" type="tns:format" minOccurs="1"
+				maxOccurs="unbounded" />
+		</sequence>
+	</complexType>
+
+	<complexType name="Query">
+		<sequence>
+			<element name="name" type="string" minOccurs="1" maxOccurs="1" />
+			<element name="dataSource" type="string" minOccurs="0"
+				maxOccurs="1" />
+			<element name="sql" type="string" minOccurs="1" maxOccurs="1" />
+		</sequence>
+	</complexType>
+
+	<simpleType name="paramList">
+		<list itemType="string" />
+	</simpleType>
+
+	<complexType name="Script">
+		<sequence>
+			<element name="name" type="string" minOccurs="1" maxOccurs="1" />
+			<element name="parameters" type="tns:paramList" minOccurs="0"
+				maxOccurs="1" />
+			<element name="type" type="string" minOccurs="0" maxOccurs="1" />
+			<element name="text" type="string" minOccurs="1" maxOccurs="1" />
+		</sequence>
+	</complexType>
+
+
+	<complexType name="Attribute">
+		<sequence>
+			<element name="name" type="string" minOccurs="1" maxOccurs="1" />
+			<element name="value" type="string" minOccurs="1" maxOccurs="1" />
+		</sequence>
+	</complexType>
+
+	<element name="report-metadata">
+		<complexType>
+			<sequence>
+				<element name="parent" type="string" minOccurs="0"
+					maxOccurs="1" />
+				<element name="id" type="string" minOccurs="1" maxOccurs="1" />
+				<element name="name" type="string" minOccurs="1" maxOccurs="1" />
+				<element name="category" type="string" minOccurs="0"
+					maxOccurs="1" />
+				<element name="description" type="string" minOccurs="1"
+					maxOccurs="1" />
+				<element name="template" type="string" minOccurs="0"
+					maxOccurs="1" />
+				<element name="formats" type="string" minOccurs="0"
+					maxOccurs="1" />
+				<element name="delivery" type="string" minOccurs="0"
+					maxOccurs="1" />
+				<element name="folder" type="string" minOccurs="0"
+					maxOccurs="1" />
+				<element name="file" type="string" minOccurs="0"
+					maxOccurs="1" />
+				<element name="templates" type="tns:templates" minOccurs="0"
+					maxOccurs="1" />
+				<element name="cube" type="string" minOccurs="0" maxOccurs="1" />
+				<element name="parameter" type="tns:Parameter" minOccurs="0"
+					maxOccurs="unbounded" />
+				<element name="query" type="tns:Query" minOccurs="0"
+					maxOccurs="unbounded" />
+				<element name="script" type="tns:Script" minOccurs="0"
+					maxOccurs="unbounded" />
+				<element name="attribute" type="tns:Attribute" minOccurs="0"
+					maxOccurs="unbounded" />
+
+			</sequence>
+		</complexType>
+	</element>
+
+</schema>

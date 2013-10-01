@@ -1,3 +1,0 @@
-H1. XLSX Engine
-
-XLSX Engine is used by report publishing application to transform XLSX templates to other formats and to populate data. All classes from this package are not part of public API 

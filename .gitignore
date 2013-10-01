@@ -4,5 +4,8 @@ target/
 # Eclipse files
 bin/
 .settings/
-.classpath 
-.project 
+.classpath
+.project
+
+# Excel
+~*
