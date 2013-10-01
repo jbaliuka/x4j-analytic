@@ -72,8 +72,7 @@ public abstract class SheetParser {
     private final boolean showRuler = false;
     private final boolean removeSelection = false;
     private final boolean showRowColHeaders = true;
-    private final XLSXStylesTable styles;
-    
+  
     private ReportContext reportContext;
     private final Stack<SimpleRange> tableRanges = new Stack<SimpleRange>();
 	private final Stack<SimpleRange> openLoops = new Stack<SimpleRange>();
@@ -81,11 +80,10 @@ public abstract class SheetParser {
     private Collection<MergedRegion> mergedRegions = new ArrayList<MergedRegion>();
 
     public SheetParser() {
-        this(null, null);
+        this( null);
     }
 
-    public SheetParser(XLSXStylesTable styles, ReportContext reportContext) {
-        this.styles = styles;        
+    public SheetParser(ReportContext reportContext) {          
         this.reportContext = reportContext;
     }
 
@@ -351,19 +349,13 @@ public abstract class SheetParser {
         for (POIXMLDocumentPart p : sheet.getRelations()) {
             if (p.getPackageRelationship().getRelationshipType().equals(XSSFRelation.TABLE.getRelation())) {
                 Table table = (Table) p;
-                tables.add(table);
-                if (getStyles() != null) {
-                    String style = getStyles().getDefaultTableStyle();
-                    table.getCTTable().getTableStyleInfo().setName(style);
-                }
+                tables.add(table);                
 
             }
         }
     }
 
-    private XLSXStylesTable getStyles() {
-        return styles;
-    }
+   
 
     public Table isTable(int row, int col) {
 

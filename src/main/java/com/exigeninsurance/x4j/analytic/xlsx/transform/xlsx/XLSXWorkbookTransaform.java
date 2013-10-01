@@ -86,7 +86,7 @@ final public class XLSXWorkbookTransaform extends BaseTransform {
 
 					
 
-					XLSXProcessor processor = new XLSXProcessor(workBook,styles, out,sst);
+					XLSXProcessor processor = new XLSXProcessor(workBook,out,sst);
 					processor.setDataProvider(getDataProvider());
 					processor.setTemplateProvider(getTemplateProvider());					
 					processor.setFormatProvider(getFormatProvider());

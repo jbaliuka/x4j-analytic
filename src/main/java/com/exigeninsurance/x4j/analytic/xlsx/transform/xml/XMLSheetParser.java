@@ -27,8 +27,8 @@ import com.exigeninsurance.x4j.analytic.xlsx.transform.xlsx.XLXContext;
 
 	private final XSSFSheet sheet;
 
-	public XMLSheetParser(XSSFSheet sheet, XLSXStylesTable styles,ReportContext reportContext) {
-		super(styles, reportContext);
+	public XMLSheetParser(XSSFSheet sheet, ReportContext reportContext) {
+		super(reportContext);
 		this.sheet = sheet;
 	}
 

@@ -111,7 +111,7 @@ public class QueryProcessingTest extends TestCase {
             XLXContext context = new XLXContext(null, sheet, reportContext, stream);
             context.setDataProvider(dataProvider);
 
-            SheetParser parser = new XLSXSheetParser(null, reportContext);
+            SheetParser parser = new XLSXSheetParser(reportContext);
             Node root = parser.parse(sheet);
 
             try {

@@ -35,7 +35,7 @@ public class XLSXWorkbookToPdfTransform extends BaseTransform {
 						new FileOutputStream(saveTo));
 				try {
 
-					PdfProcessor processor = new PdfProcessor(workbook, styles, defaultStyles);
+					PdfProcessor processor = new PdfProcessor(workbook);
 					processor.setDataProvider(getDataProvider());
 					processor.setTemplateProvider(getTemplateProvider());
 					

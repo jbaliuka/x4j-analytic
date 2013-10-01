@@ -27,12 +27,12 @@ public class XLSXSheetParser extends SheetParser {
 	private static final String SHEET_DATA = "</sheetData>";
 
 
-	public XLSXSheetParser(XLSXStylesTable styles, ReportContext reportContext) {
-		super(styles, reportContext);
+	public XLSXSheetParser( ReportContext reportContext) {
+		super(reportContext);
 	}
 
 	public XLSXSheetParser(XLSXStylesTable styles) {
-		super(styles,null);
+		super(null);
 	}
 
 	protected String sheetData() {

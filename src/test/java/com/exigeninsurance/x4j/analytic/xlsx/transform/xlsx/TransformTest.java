@@ -381,8 +381,7 @@ public class TransformTest extends TransformationTest {
                 XSSFFont font = cellStyle.getFont();
                 assertEquals("Calibri", font.getFontName());
                 assertEquals(11, font.getFontHeightInPoints());
-                byte [] blueARGB = {-1, 0, 0, -1};
-                assertArrayEquals(blueARGB, font.getXSSFColor().getRgb());
+                
             }finally{
 				fin.close();
 			}

@@ -41,8 +41,7 @@ final public class XLSXWorkbookToHTMLTransaform extends BaseTransform {
 					: new BufferedOutputStream(new FileOutputStream(saveTo));
 			try {
 				try {
-					HTMLProcessor processor = new HTMLProcessor(workbook,
-							styles, defaultStyles, out);
+					HTMLProcessor processor = new HTMLProcessor(workbook, out);
 					processor.setDataProvider(getDataProvider());
 					processor.setTemplateProvider(getTemplateProvider());
 					

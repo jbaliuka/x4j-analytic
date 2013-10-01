@@ -10,7 +10,6 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 import java.io.IOException;
-import java.util.Locale;
 
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.ss.util.CellRangeAddress;
@@ -39,7 +38,7 @@ public class PdfLayoutTransformerTest {
     @Test
 	public void testBasicWrapping() throws InvalidFormatException, IOException {
 		ReportContext reportContext = new ReportContext(null);
-		SheetParser parser = new PdfSheetParser(null, reportContext);
+		SheetParser parser = new PdfSheetParser( reportContext);
 
 		XSSFWorkbook book = new XSSFWorkbook();		 
 		XSSFSheet sheet = book.createSheet();
@@ -87,7 +86,7 @@ public class PdfLayoutTransformerTest {
 	@Test
 	public void testSeparateMultipleMergedRegions() throws InvalidFormatException, IOException {
 		ReportContext reportContext = new ReportContext(null);
-		SheetParser parser = new PdfSheetParser(null, reportContext);
+		SheetParser parser = new PdfSheetParser(reportContext);
 
 		XSSFWorkbook book = new XSSFWorkbook();		 
 		XSSFSheet sheet = book.createSheet();
@@ -136,7 +135,7 @@ public class PdfLayoutTransformerTest {
 	@Test
 	public void testMultipleMergedRegionsStartingOnSameRow() throws InvalidFormatException, IOException {
 		ReportContext reportContext = new ReportContext(null);
-		SheetParser parser = new PdfSheetParser(null, reportContext);
+		SheetParser parser = new PdfSheetParser(reportContext);
 
 		XSSFWorkbook book = new XSSFWorkbook();		 
 		XSSFSheet sheet = book.createSheet();
@@ -179,7 +178,7 @@ public class PdfLayoutTransformerTest {
 	@Test
 	public void testMultipleOverlappingRegions() throws InvalidFormatException, IOException {
 		ReportContext reportContext = new ReportContext(null);
-		SheetParser parser = new PdfSheetParser(null, reportContext);
+		SheetParser parser = new PdfSheetParser(reportContext);
 
 		XSSFWorkbook book = new XSSFWorkbook();		 
 		XSSFSheet sheet = book.createSheet();
@@ -221,7 +220,7 @@ public class PdfLayoutTransformerTest {
 	@Test
 	public void testNestedChildren() throws InvalidFormatException, IOException {
 		ReportContext reportContext = new ReportContext(null);
-		SheetParser parser = new PdfSheetParser(null, reportContext);
+		SheetParser parser = new PdfSheetParser(reportContext);
 
 
 		XSSFWorkbook book = new XSSFWorkbook();		 

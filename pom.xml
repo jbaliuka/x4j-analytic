@@ -3,10 +3,38 @@
 
 
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>x4j-analytic</groupId>
+	<groupId>com.exigeninsurance.x4j.analytic</groupId>
 	<version>1.0</version>
 	<artifactId>x4j-analytic</artifactId>
-	<name>XLSX Transformations</name>
+	<name>XLSX Transformations</name>	
+    <description>
+    x4j-analytic is an open source XLSX format template engine API for Java programming language. 
+    X4J is used as the embedded library in Java applications to implement full blown reporting solutions.
+    </description>
+  
+  <url>https://github.com/jbaliuka/x4j-analytic</url>
+
+  <licenses>
+    <license>
+      <name>The Apache Software License, Version 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+
+  <scm>
+    <url>https://github.com/jbaliuka/x4j-analytic.git</url>
+     <connection>scm:git:https://github.com/jbaliuka/x4j-analytic.git</connection>
+  </scm>
+	
+ <developers>
+    <developer>
+      <id>jbaliuka</id>
+      <name>Juozas Baliuka</name>
+      <email>jbaliuka@gmail.com</email>
+    </developer>
+  </developers>	
+	
 	<dependencies>
 
 		<dependency>

@@ -37,12 +37,12 @@ public class PdfSheetParser extends SheetParser {
     private List<PdfContainer> repeatingItems = new ArrayList<PdfContainer>();
     private ComponentFactory componentFactory = new ComponentFactoryImpl();
 
-    public PdfSheetParser(XLSXStylesTable styles, ReportContext reportContext) {
-		super(styles, reportContext);
+    public PdfSheetParser(ReportContext reportContext) {
+		super(reportContext);
 	}
 
-	public PdfSheetParser(XLSXStylesTable styles) {
-		super(styles,null);
+	public PdfSheetParser() {
+		super(null);
 	}
 
 	public CellNode createCellNode(XSSFSheet xssfSheet, XSSFCell cell,

@@ -78,16 +78,16 @@ final class XLSXProcessor extends WorkbookProcessor {
 	private final XSSFWorkbook workBook;
 	private final ZipOutputStream out;
 	private final SST sst;
-	private final XLSXStylesTable styles;
 	
 	
-	public XLSXProcessor(XSSFWorkbook workBook, XLSXStylesTable styles,
+	
+	public XLSXProcessor(XSSFWorkbook workBook, 
 			ZipOutputStream out,
 			SST sst){
 		this.workBook = workBook;
 		this.out = out;
 		this.sst = sst;
-		this.styles = styles;
+	
 		
 	}
 
@@ -212,7 +212,7 @@ final class XLSXProcessor extends WorkbookProcessor {
 		savedParts.add(entryName);
 		out.putNextEntry(new ZipEntry(entryName));
 
-		SheetParser parser = new XLSXSheetParser(styles,reportContext);
+		SheetParser parser = new XLSXSheetParser(reportContext);
 		
         parser.setMacroParser(new MacroParser(sheet, new MacroNodeFactoryImpl(sheet)));
 		Node root = parser.parse(sheet);
@@ -225,7 +225,7 @@ final class XLSXProcessor extends WorkbookProcessor {
 				context.setDataProvider(getDataProvider());
 				context.setTemplateProvider(getTemplateProvider());
 				context.setFormatProvider(getFormatProvider());
-				context.setStyles(styles);
+				context.setStyles((XLSXStylesTable) workBook.getStylesSource());
 				context.setMergedCells(parser.getMergedCells());
 				context.setRepeatingRows(XSSFSheetHelper.getRepeatingRows(sheet.getWorkbook(), sheet.getWorkbook().getSheetIndex(sheet.getSheetName())));
 				translateSheetName(sheet, context);

@@ -75,7 +75,7 @@ public class XLXContext {
 	private String defaultTableStyle;
 	private TableStyle overridingTableStyle;
 
-	private XLSXStylesTable defaultStyles;
+	
 
 	private Map<String, MergedRegion> mergedCells = new HashMap<String, MergedRegion>();
 	private List<MergedRegion> newMergedCells = new ArrayList<MergedRegion>();
@@ -188,9 +188,7 @@ public class XLXContext {
 	}
 
 	public long createStyle(Object value, XLSXCellNode node) {
-		if(header){
-			return tableHeaderStyle;
-		}
+		
 
 		if (value instanceof Link) {
 			return linkStyle;
@@ -207,22 +205,17 @@ public class XLXContext {
 	}
 
 	public void setStyles(XLSXStylesTable styles) {
-        setLegacyStyles(styles);
+       
 		formatUtil = new FormatUtil(formatProvider, reportContext.getLocale());
 		xlsxStyleUtil = new XLSXStyleUtil(sheet, formatProvider, reportContext.getLocale(), getAlignmentFinder());
 	}
 
-    private void setLegacyStyles(XLSXStylesTable styles) {
-        if (styles != null) {
-            tableHeaderStyle = styles.getTableHeaderStyle();
-            linkStyle = styles.getHyperlinkStyle();
-        }
-    }
+    
 
     public void parseTableStyles(XSSFWorkbook workbook) throws Exception {
         parseDefaultStyles();
         parseTemplateStyles(workbook);
-        parseOverridingStyles();
+        
     }
 
     private void parseDefaultStyles() throws IOException {
@@ -253,24 +246,7 @@ public class XLXContext {
         defaultTableStyle = currentStyles.getDefaultTableStyle();
     }
 
-    private void parseOverridingStyles() throws IOException {
-        PdfStylesParser pdfStylesParser;
-        XLSXStylesTable styles = getDefaultStyles();
-        InputStream stylesStream = null;
-        try {
-            stylesStream = styles.getPackagePart().getInputStream();
-            pdfStylesParser = new PdfStylesParser(stylesStream);
-        }
-        finally {
-            if (stylesStream != null) {
-                stylesStream.close();
-            }
-        }
-
-        PdfStylesTable currentStyles = pdfStylesParser.produceStylesTable();
-        stylesTable.getTableStyles().putAll(currentStyles.getTableStyles());
-        overridingTableStyle = currentStyles.getTableStyles().get(currentStyles.getDefaultTableStyle());
-    }
+   
 
     public TableStyle findTableStyle(int tableId) {
 		String styleName = tableStylesMap.get(tableId);
@@ -356,13 +332,7 @@ public class XLXContext {
 		this.tableStart = tableStart;
 	}
 
-	public XLSXStylesTable getDefaultStyles() {
-		return defaultStyles;
-	}
-
-	public void setDefaultStyles(XLSXStylesTable defaultStyles) {
-		this.defaultStyles = defaultStyles;
-	}
+	
 
 	public String defaultDateFormat(Date value) {
 		return formatUtil.defaultDateFormat(value);

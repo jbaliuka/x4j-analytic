@@ -30,12 +30,9 @@ public class CsvProcessor extends WorkbookProcessor {
     
 	private final OutputStream out;
 	private final XLSXWorkbook workBook;
-	private final XLSXStylesTable styles;
-
-	public CsvProcessor(XLSXWorkbook workBook, XLSXStylesTable styles,
-			XLSXStylesTable defaultStyles, OutputStream out) {
-		this.out = out;
-		this.styles = styles;		
+	
+	public CsvProcessor(XLSXWorkbook workBook, OutputStream out) {
+		this.out = out;		
 		this.workBook = workBook;
 	}
 
@@ -54,14 +51,14 @@ public class CsvProcessor extends WorkbookProcessor {
 	throws  Exception {
 		XSSFSheet sheet = workBook.getSheetAt(index);
 
-		SheetParser parser = new CsvSheetParser(sheet,styles,reportContext);
+		SheetParser parser = new CsvSheetParser(sheet,reportContext);
 		
         parser.setMacroParser(new MacroParser(sheet, new MacroNodeFactoryImpl(sheet)));
 		Node root = parser.parse(sheet);
 
 		XLXContext context = new XLXContext(null,sheet,reportContext,out);
 		context.setFormatProvider(getFormatProvider());
-		context.setStyles(styles);
+		context.setStyles((XLSXStylesTable) workBook.getStylesSource());
 		context.setDataProvider(getDataProvider());
 		context.setTemplateProvider(getTemplateProvider());
 		trimChildren(root);

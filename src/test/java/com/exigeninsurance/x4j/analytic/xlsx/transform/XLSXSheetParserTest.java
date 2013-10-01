@@ -62,7 +62,7 @@ public class XLSXSheetParserTest {
         sheet = workbook.createSheet();        
         reportContext = new ReportContext(new ReportMetadata());
         parameters = reportContext.getParameters();
-        parser = new XLSXSheetParser(null, reportContext);
+        parser = new XLSXSheetParser( reportContext);
         parser.setMacroParser(new MacroParser(sheet, new MacroNodeFactoryImpl(sheet)));
     }
 
@@ -378,7 +378,7 @@ public class XLSXSheetParserTest {
 		try{
 
 			XSSFWorkbook workBook = new  XSSFWorkbook(is); 
-			SheetParser parser = new XLSXSheetParser(null, reportContext);
+			SheetParser parser = new XLSXSheetParser( reportContext);
 			XSSFSheet sheet = workBook.getSheetAt(0);
 			Assert.assertNotNull(sheet);
 			Node root = parser.parse(sheet);
@@ -403,7 +403,7 @@ public class XLSXSheetParserTest {
 		try{
 
 			XSSFWorkbook workBook = new  XSSFWorkbook(is); 
-			SheetParser parser = new XLSXSheetParser(null, reportContext);
+			SheetParser parser = new XLSXSheetParser( reportContext);
 			XSSFSheet sheet = workBook.getSheetAt(0);
 			Node root = parser.parse(sheet);
 			

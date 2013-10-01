@@ -14,7 +14,6 @@ import static org.junit.Assert.assertThat;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.Locale;
 
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFCell;
@@ -50,7 +49,7 @@ public class PdfSheetParserTest {
 	@Before
 	public void setUp() throws Exception {
 		reportContext = new ReportContext(null);
-		parser = new PdfSheetParser(null, reportContext);
+		parser = new PdfSheetParser(reportContext);
 		preprocessingFactory = new PreProcessingComponentFactory();
 	}
 

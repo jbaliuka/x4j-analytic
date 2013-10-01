@@ -26,13 +26,11 @@ public class XMLProcessor extends WorkbookProcessor{
 
 	
 	private final OutputStream out;
-	private final XLSXWorkbook workBook;
-	private final XLSXStylesTable styles;
+	private final XLSXWorkbook workBook;	
 
-	public XMLProcessor(XLSXWorkbook workBook, XLSXStylesTable styles,
-			XLSXStylesTable defaultStyles, OutputStream out) {
+	public XMLProcessor(XLSXWorkbook workBook, OutputStream out) {
 		this.out = out;
-		this.styles = styles;
+		
 		this.workBook = workBook;
 	}
 
@@ -51,7 +49,7 @@ public class XMLProcessor extends WorkbookProcessor{
 			int index) throws  Exception {
 		XSSFSheet sheet = workBook.getSheetAt(index);
 
-		SheetParser parser = new XMLSheetParser(sheet,styles,reportContext);
+		SheetParser parser = new XMLSheetParser(sheet,reportContext);
 		
         parser.setMacroParser(new MacroParser(sheet, new MacroNodeFactoryImpl(sheet)));
 		Node root = tableNode(parser.parse(sheet));
@@ -59,7 +57,7 @@ public class XMLProcessor extends WorkbookProcessor{
 		if(root != null){
 			XLXContext context = new XLXContext(null,sheet,reportContext,out);
 			context.setFormatProvider(getFormatProvider());
-			context.setStyles(styles);
+			context.setStyles((XLSXStylesTable) workBook.getStylesSource());
 			context.setDataProvider(getDataProvider());
 			context.setTemplateProvider(getTemplateProvider());
 			root.process(context);

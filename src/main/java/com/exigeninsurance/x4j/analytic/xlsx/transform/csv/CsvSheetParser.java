@@ -24,8 +24,8 @@ public class CsvSheetParser extends SheetParser {
 	
 	private final XSSFSheet sheet;
 	
-	public CsvSheetParser(XSSFSheet sheet, XLSXStylesTable styles, ReportContext reportContext) {
-		super(styles, reportContext);
+	public CsvSheetParser(XSSFSheet sheet,  ReportContext reportContext) {
+		super( reportContext);
 		this.sheet = sheet;
 	}
 

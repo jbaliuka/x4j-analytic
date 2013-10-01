@@ -3,29 +3,23 @@
 
 
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>x4j-analytic</groupId>
+	<groupId>com.exigeninsurance.x4j.analytic</groupId>
 	<version>1.0</version>
 	<artifactId>x4j-analytic-samples</artifactId>
 	<name>XLSX Transformations</name>
+	
 	<dependencies>
-
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>4.10</version>
 			<scope>test</scope>
 		</dependency>
-
-	<dependency>
-	<groupId>x4j-analytic</groupId>
-	<version>1.0</version>
-	<artifactId>x4j-analytic</artifactId>
-
+		<dependency>
+			<groupId>com.exigeninsurance.x4j.analytic</groupId>
+			<version>1.0</version>
+			<artifactId>x4j-analytic</artifactId>
 		</dependency>
-
-
-
-		
 	</dependencies>
 
 
@@ -33,7 +27,7 @@
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>				
+				<artifactId>maven-compiler-plugin</artifactId>
 				<configuration>
 					<source>1.6</source>
 					<target>1.6</target>

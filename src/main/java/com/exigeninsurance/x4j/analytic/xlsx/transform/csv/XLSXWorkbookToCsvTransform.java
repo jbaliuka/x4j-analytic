@@ -45,8 +45,7 @@ public class XLSXWorkbookToCsvTransform extends BaseTransform {
 				new FileOutputStream(saveTo));
 		try {
 			try {
-				CsvProcessor processor = new CsvProcessor(workbook, styles,
-						defaultStyles, out);
+				CsvProcessor processor = new CsvProcessor(workbook, out);
 				processor.setDataProvider(getDataProvider());
 				processor.setTemplateProvider(getTemplateProvider());				
 				processor.setFormatProvider(getFormatProvider());

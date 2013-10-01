@@ -38,16 +38,13 @@ import com.exigeninsurance.x4j.analytic.xlsx.utils.PictureParser;
 public class PdfProcessor extends WorkbookProcessor {
 
 	private final XLSXWorkbook workBook;
-	private final XLSXStylesTable styles;
-	private final XLSXStylesTable defaultStyles;
+		
 	private PdfContext context;
     private List<Integer> sheetBreaks = new ArrayList<Integer>();
     private ReportContext reportContext;
 
-    public PdfProcessor(XLSXWorkbook workBook, XLSXStylesTable styles,
-			XLSXStylesTable defaultStyles) {
-		this.styles = styles;
-		this.defaultStyles = defaultStyles;
+    public PdfProcessor(XLSXWorkbook workBook) {
+		
 		this.workBook = workBook;
 	}
 
@@ -81,7 +78,7 @@ public class PdfProcessor extends WorkbookProcessor {
     }
 
     private void parseSheetAndProcess(XSSFSheet sheet, ComponentFactory componentFactory, MacroNodeFactory macroNodeFactory) throws Exception {
-        PdfSheetParser parser = new PdfSheetParser(styles, reportContext);
+        PdfSheetParser parser = new PdfSheetParser( reportContext);
         
         parser.setMacroParser(new MacroParser(sheet, macroNodeFactory));
         parser.setComponentFactory(componentFactory);
@@ -111,12 +108,12 @@ public class PdfProcessor extends WorkbookProcessor {
 	private void createContext(XSSFSheet sheet) throws Exception {
 		context = new PdfContext(null,sheet, reportContext);
 		context.prepareForRendering(sheet);
-		context.setDefaultStyles(defaultStyles);
+		
 		context.setDataProvider(getDataProvider());
 		context.setTemplateProvider(getTemplateProvider());
 		context.setFormatProvider(getFormatProvider());
 		context.parseTableStyles(workBook);
-		context.setStyles(styles);
+		context.setStyles((XLSXStylesTable) workBook.getStylesSource());
 		context.setHeaderMap(extractHeaders(workBook));
 		context.setFooterMap(extractFooters(workBook));
 		context.setColumnWidths(workBook);

@@ -19,7 +19,6 @@ import com.exigeninsurance.x4j.analytic.xlsx.core.node.TableNode;
 import com.exigeninsurance.x4j.analytic.xlsx.core.node.TextNode;
 import com.exigeninsurance.x4j.analytic.xlsx.transform.Picture;
 import com.exigeninsurance.x4j.analytic.xlsx.transform.SheetParser;
-import com.exigeninsurance.x4j.analytic.xlsx.transform.xlsx.XLSXStylesTable;
 import com.exigeninsurance.x4j.analytic.xlsx.transform.xlsx.XLXContext;
 import com.exigeninsurance.x4j.analytic.xlsx.utils.WrappingUtil;
 
@@ -28,8 +27,8 @@ class HTMLSheetParser extends SheetParser {
 
 	private final XSSFSheet sheet;
 
-	public HTMLSheetParser(XSSFSheet sheet, XLSXStylesTable styles,ReportContext reportContext) {
-		super(styles, reportContext);
+	public HTMLSheetParser(XSSFSheet sheet, ReportContext reportContext) {
+		super(reportContext);
 		this.sheet = sheet;
 	}
 

@@ -50,8 +50,7 @@ public class XLSXWorkbookToXMLTransform extends BaseTransform {
 				new FileOutputStream(saveTo));
 		try {
 			try {
-				XMLProcessor processor = new XMLProcessor(workbook, styles,
-						defaultStyles, out);
+				XMLProcessor processor = new XMLProcessor(workbook, out);
 				processor.setDataProvider(getDataProvider());
 				processor.setTemplateProvider(getTemplateProvider());				
 				processor.setFormatProvider(getFormatProvider());

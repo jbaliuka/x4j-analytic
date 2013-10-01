@@ -40,13 +40,11 @@ public class HTMLProcessor extends WorkbookProcessor {
 	private final OutputStream out;
 	private final XLSXWorkbook workBook;
 	private final XLSXStylesTable styles;
-	private final XLSXStylesTable defaultStyles;
+	
 
-	public HTMLProcessor(XLSXWorkbook workBook, XLSXStylesTable styles,
-			XLSXStylesTable defaultStyles, OutputStream out) {
+	public HTMLProcessor(XLSXWorkbook workBook,  OutputStream out) {
 		this.out = out;
-		this.styles = styles;
-		this.defaultStyles = defaultStyles;
+		this.styles = (XLSXStylesTable) workBook.getStylesSource();	
 		this.workBook = workBook;
 	}
 
@@ -79,13 +77,13 @@ public class HTMLProcessor extends WorkbookProcessor {
             ReportContext reportContext, int index) throws  Exception {
 		XSSFSheet sheet = workBook.getSheetAt(index);
 
-		SheetParser parser = new HTMLSheetParser(sheet,styles,reportContext);
+		SheetParser parser = new HTMLSheetParser(sheet,reportContext);
 		
         parser.setMacroParser(new MacroParser(sheet, new MacroNodeFactoryImpl(sheet)));
 		Node root = parser.parse(sheet);
 
 		XLXContext context = new XLXContext(null,sheet,reportContext,out);
-		context.setDefaultStyles(defaultStyles);
+		
 		context.setDataProvider(getDataProvider());
 		context.setTemplateProvider(getTemplateProvider());
 		context.setFormatProvider(getFormatProvider());
