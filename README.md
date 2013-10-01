@@ -12,10 +12,13 @@ Pivot Report feature helps to manage large amounts of data.
 ## Excel support
 
 X4J primary input/output format is XLSX, Excel is used as design to edit templates. Engine has limited capabilities to export report to other formats too: pdf, csv ,html, xml.
+Engine is usually used to implement Pivot reports with Excel table as source data. X4J binds SQL query data to Excel tables and columns  by name without  special template language or tags.
+Excel XML Map is also supported  to import/export Table data as XML.
 
-X4J is usually used to implement Pivot reports with Excel table as source data. X4J binds SQL query data to Excel tables and columns  by name without  special template language or tags.
-Reports might use template language, scripting and placeholders but it is the optional feature. Template expressions  might be useful for simple  dynamic  headers,  localized strings but
-we suggest not to  abuse programming concepts for reports,  extend engine itself to add features or to solve specific problems.
+## Template language
+
+Advanced reports might use template language, scripting and placeholders but it is the optional feature. Template expressions  might be useful for simple  dynamic  headers or localized strings but
+we suggest not to  abuse programming concepts for reports, [language](https://github.com/jbaliuka/x4j-analytic/wiki/Template-Language) is very simple but it is better extend engine itself to add features or to solve specific problems.
 
 ## Samples
 
@@ -28,9 +31,9 @@ Template is a regular Excel file in XLSX format with Table and Pivot Table and e
 Context variables might referenced  as ${myContextVariable}. Templates also support Velocity like  language with loops and flow control statements: #if,#for, ..., #end
 
 ##  Building X4J from Source 
-Maven is used to build X4J from source code http://maven.apache.org/
- * clone git repo: https://github.com/jbaliuka/x4j-analytic.git
- * build from source: mvn install 
+[Maven](http://maven.apache.org/) is used to build X4J from source code 
+ * git clone https://github.com/jbaliuka/x4j-analytic.git
+ * mvn install 
 
 
 

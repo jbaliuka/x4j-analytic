@@ -5,7 +5,7 @@
 
 	<id>MockData.xml</id>
 	<name>Mock Data</name>
-	<category>Samples</category>	
+	
 	<template>samples/MockData.xlsx</template>
 	
 	

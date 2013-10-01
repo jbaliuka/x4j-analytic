@@ -4,8 +4,7 @@
 	xsi:schemaLocation="http://www.example.org/reportMetadata reportMetadata.xsd">
 
 	<id>PivotReport.xml</id>
-	<name>Pivot Report</name>
-	<category>Samples</category>	
+	<name>Pivot Report</name>		
 	<template>samples/PivotReport.xlsx</template>
 	
 	
