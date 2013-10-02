@@ -13,8 +13,6 @@ import static org.mockito.Mockito.when;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.exigeninsurance.x4j.analytic.xlsx.transform.pdf.components.row.VerticalContainerWidthEstimator;
-
 public class VerticalContainerWidthEstimatorTest extends EstimatorTestFixture {
 
     @Before

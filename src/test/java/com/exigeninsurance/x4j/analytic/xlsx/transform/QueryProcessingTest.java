@@ -14,8 +14,6 @@ import java.io.ByteArrayOutputStream;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Locale;
 
 import junit.framework.TestCase;
 
@@ -32,7 +30,6 @@ import com.exigeninsurance.x4j.analytic.util.CursorManager;
 import com.exigeninsurance.x4j.analytic.util.MockReportDataProvider;
 import com.exigeninsurance.x4j.analytic.util.MockResultSet;
 import com.exigeninsurance.x4j.analytic.xlsx.core.node.Node;
-import com.exigeninsurance.x4j.analytic.xlsx.transform.SheetParser;
 import com.exigeninsurance.x4j.analytic.xlsx.transform.xlsx.XLSXSheetParser;
 import com.exigeninsurance.x4j.analytic.xlsx.transform.xlsx.XLXContext;
 

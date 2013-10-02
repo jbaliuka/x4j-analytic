@@ -11,9 +11,6 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 import static org.mockito.MockitoAnnotations.initMocks;
 
-import java.util.HashMap;
-import java.util.Locale;
-
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
@@ -27,7 +24,6 @@ import com.exigeninsurance.x4j.analytic.xlsx.transform.pdf.PdfCellNode;
 import com.exigeninsurance.x4j.analytic.xlsx.transform.pdf.PdfContext;
 import com.exigeninsurance.x4j.analytic.xlsx.transform.pdf.components.Constant;
 import com.exigeninsurance.x4j.analytic.xlsx.transform.pdf.components.Processor;
-import com.exigeninsurance.x4j.analytic.xlsx.transform.pdf.components.cell.MeasuringProcessor;
 
 public class MeasuringProcessorTest {
 

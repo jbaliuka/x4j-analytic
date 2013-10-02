@@ -10,7 +10,6 @@ import static org.junit.Assert.assertEquals;
 
 import java.util.HashMap;
 import java.util.List;
-import java.util.Locale;
 import java.util.Map;
 
 import org.apache.poi.xssf.usermodel.XSSFSheet;
@@ -20,8 +19,6 @@ import org.junit.Test;
 
 import com.exigeninsurance.x4j.analytic.api.ReportContext;
 import com.exigeninsurance.x4j.analytic.xlsx.transform.pdf.RenderingContext;
-import com.exigeninsurance.x4j.analytic.xlsx.transform.pdf.header.HeaderFooterSection;
-import com.exigeninsurance.x4j.analytic.xlsx.transform.pdf.header.PdfHeaderFooter;
 import com.exigeninsurance.x4j.analytic.xlsx.transform.pdf.header.rule.HeaderFooterApplicabilityRule;
 import com.exigeninsurance.x4j.analytic.xlsx.transform.xlsx.XLXContext;
 

@@ -39,7 +39,6 @@ import com.exigeninsurance.x4j.analytic.xlsx.core.node.Node;
 import com.exigeninsurance.x4j.analytic.xlsx.core.node.TableNode;
 import com.exigeninsurance.x4j.analytic.xlsx.core.node.TextNode;
 import com.exigeninsurance.x4j.analytic.xlsx.transform.pdf.geometry.SimpleRange;
-import com.exigeninsurance.x4j.analytic.xlsx.transform.xlsx.XLSXStylesTable;
 import com.exigeninsurance.x4j.analytic.xlsx.transform.xlsx.XLXContext;
 import com.exigeninsurance.x4j.analytic.xlsx.utils.CellExpressionParser;
 import com.exigeninsurance.x4j.analytic.xlsx.utils.MacroParser;

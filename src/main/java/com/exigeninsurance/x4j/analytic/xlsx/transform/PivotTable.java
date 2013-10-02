@@ -35,6 +35,7 @@ public class PivotTable extends POIXMLDocumentPart {
 
 	public void setCtPivotTable(CTPivotTableDefinition ctPivotTable) {
 		this.ctPivotTable = ctPivotTable;
+		
 	}
 
 	public CTPivotTableDefinition getCtPivotTable() {

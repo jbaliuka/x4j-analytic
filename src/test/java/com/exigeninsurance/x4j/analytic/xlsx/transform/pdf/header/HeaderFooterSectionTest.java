@@ -16,7 +16,6 @@ import org.junit.Test;
 import com.exigeninsurance.x4j.analytic.xlsx.transform.pdf.PdfContainer;
 import com.exigeninsurance.x4j.analytic.xlsx.transform.pdf.PdfContext;
 import com.exigeninsurance.x4j.analytic.xlsx.transform.pdf.RenderingContext;
-import com.exigeninsurance.x4j.analytic.xlsx.transform.pdf.header.HeaderFooterSection;
 import com.exigeninsurance.x4j.analytic.xlsx.transform.pdf.header.instruction.Instruction;
 import com.exigeninsurance.x4j.analytic.xlsx.transform.pdf.header.instruction.SimpleTextInstruction;
 

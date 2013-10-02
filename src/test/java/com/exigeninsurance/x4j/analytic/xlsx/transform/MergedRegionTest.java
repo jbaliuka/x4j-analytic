@@ -10,8 +10,6 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-import com.exigeninsurance.x4j.analytic.xlsx.transform.MergedRegion;
-
 public class MergedRegionTest {
 	
 	@Test

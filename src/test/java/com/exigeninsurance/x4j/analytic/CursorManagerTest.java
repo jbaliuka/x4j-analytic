@@ -1,11 +1,12 @@
 package com.exigeninsurance.x4j.analytic;
 
+import static com.exigeninsurance.x4j.analytic.util.MockResultSet.cols;
+import static com.exigeninsurance.x4j.analytic.util.MockResultSet.data;
+import static com.exigeninsurance.x4j.analytic.util.MockResultSet.row;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.instanceOf;
 
 import java.sql.ResultSet;
-import java.util.HashMap;
-import java.util.Locale;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -19,7 +20,6 @@ import com.exigeninsurance.x4j.analytic.util.CursorManager;
 import com.exigeninsurance.x4j.analytic.util.FileCursor;
 import com.exigeninsurance.x4j.analytic.util.MockReportDataProvider;
 import com.exigeninsurance.x4j.analytic.util.MockResultSet;
-import static com.exigeninsurance.x4j.analytic.util.MockResultSet.*;
 
 public class CursorManagerTest {
 

@@ -27,7 +27,6 @@ import com.exigeninsurance.x4j.analytic.xlsx.transform.pdf.components.TableStyle
 import com.exigeninsurance.x4j.analytic.xlsx.transform.pdf.components.cell.MergedCellRenderer;
 import com.exigeninsurance.x4j.analytic.xlsx.transform.pdf.geometry.Range;
 import com.exigeninsurance.x4j.analytic.xlsx.transform.pdf.geometry.SimpleRange;
-import com.exigeninsurance.x4j.analytic.xlsx.transform.xlsx.XLSXStylesTable;
 import com.exigeninsurance.x4j.analytic.xlsx.utils.XSSFSheetHelper;
 
 

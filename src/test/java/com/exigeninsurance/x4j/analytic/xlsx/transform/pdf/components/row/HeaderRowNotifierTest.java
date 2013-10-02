@@ -17,7 +17,6 @@ import org.mockito.Mock;
 
 import com.exigeninsurance.x4j.analytic.xlsx.transform.pdf.PdfContainer;
 import com.exigeninsurance.x4j.analytic.xlsx.transform.pdf.PdfContext;
-import com.exigeninsurance.x4j.analytic.xlsx.transform.pdf.components.row.HeaderRowNotifier;
 
 public class HeaderRowNotifierTest {
 

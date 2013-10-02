@@ -4,9 +4,9 @@ import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 
-import com.exigeninsurance.x4j.analytic.util.IOUtils;
-
 import junit.framework.TestCase;
+
+import com.exigeninsurance.x4j.analytic.util.IOUtils;
 
 public class IOUtilsTest extends TestCase {
 

@@ -30,7 +30,6 @@ import com.exigeninsurance.x4j.analytic.xlsx.transform.MergedRegion;
 import com.exigeninsurance.x4j.analytic.xlsx.transform.pdf.PdfContainer;
 import com.exigeninsurance.x4j.analytic.xlsx.transform.pdf.RenderingParameter;
 import com.exigeninsurance.x4j.analytic.xlsx.transform.pdf.components.Renderer;
-import com.exigeninsurance.x4j.analytic.xlsx.transform.pdf.components.cell.MergedCellRenderer;
 import com.exigeninsurance.x4j.analytic.xlsx.transform.pdf.geometry.Range;
 import com.exigeninsurance.x4j.analytic.xlsx.transform.pdf.geometry.Rectangle;
 

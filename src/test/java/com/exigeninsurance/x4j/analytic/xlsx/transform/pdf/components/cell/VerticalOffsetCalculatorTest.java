@@ -15,8 +15,6 @@ import static org.hamcrest.Matchers.equalTo;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.exigeninsurance.x4j.analytic.xlsx.transform.pdf.components.cell.VerticalOffsetCalculator;
-
 public class VerticalOffsetCalculatorTest {
 
     private VerticalOffsetCalculator calculator;

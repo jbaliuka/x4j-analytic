@@ -20,7 +20,6 @@ import com.exigeninsurance.x4j.analytic.xlsx.transform.pdf.RenderingContext;
 import com.exigeninsurance.x4j.analytic.xlsx.transform.pdf.RenderingParameters;
 import com.exigeninsurance.x4j.analytic.xlsx.transform.pdf.components.Constant;
 import com.exigeninsurance.x4j.analytic.xlsx.transform.pdf.components.Estimator;
-import com.exigeninsurance.x4j.analytic.xlsx.transform.pdf.components.cell.Margins;
 
 public class MarginsTest {
 

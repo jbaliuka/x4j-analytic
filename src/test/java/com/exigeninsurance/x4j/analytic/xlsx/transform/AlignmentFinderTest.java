@@ -12,9 +12,7 @@ import static org.junit.Assert.assertThat;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Locale;
 
 import org.apache.poi.xssf.usermodel.XSSFCellStyle;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
@@ -25,7 +23,6 @@ import com.exigeninsurance.x4j.analytic.api.ReportContext;
 import com.exigeninsurance.x4j.analytic.model.Attribute;
 import com.exigeninsurance.x4j.analytic.model.Money;
 import com.exigeninsurance.x4j.analytic.model.ReportMetadata;
-import com.exigeninsurance.x4j.analytic.xlsx.transform.AlignmentFinder;
 import com.exigeninsurance.x4j.analytic.xlsx.transform.pdf.components.Alignment;
 
 public class AlignmentFinderTest {

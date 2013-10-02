@@ -1,5 +1,9 @@
 package com.exigeninsurance.x4j.analytic;
 
+import static com.exigeninsurance.x4j.analytic.util.MockResultSet.cols;
+import static com.exigeninsurance.x4j.analytic.util.MockResultSet.create;
+import static com.exigeninsurance.x4j.analytic.util.MockResultSet.data;
+import static com.exigeninsurance.x4j.analytic.util.MockResultSet.row;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 import static org.junit.Assert.assertFalse;
@@ -18,7 +22,6 @@ import org.mockito.Mock;
 
 import com.exigeninsurance.x4j.analytic.util.Cursor;
 import com.exigeninsurance.x4j.analytic.util.MockResultSet;
-import static com.exigeninsurance.x4j.analytic.util.MockResultSet.*;
 import com.exigeninsurance.x4j.analytic.util.PersistingCursor;
 
 public class PersistingCursorTest {

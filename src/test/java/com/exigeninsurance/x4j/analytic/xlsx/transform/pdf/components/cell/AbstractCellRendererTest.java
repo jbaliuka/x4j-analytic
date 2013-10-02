@@ -47,7 +47,6 @@ import com.exigeninsurance.x4j.analytic.xlsx.transform.pdf.PdfContext;
 import com.exigeninsurance.x4j.analytic.xlsx.transform.pdf.RenderingContext;
 import com.exigeninsurance.x4j.analytic.xlsx.transform.pdf.RenderingParameter;
 import com.exigeninsurance.x4j.analytic.xlsx.transform.pdf.RenderingParameters;
-import com.exigeninsurance.x4j.analytic.xlsx.transform.pdf.components.cell.AbstractCellRenderer;
 import com.exigeninsurance.x4j.analytic.xlsx.transform.pdf.geometry.Point;
 import com.exigeninsurance.x4j.analytic.xlsx.transform.pdf.geometry.Rectangle;
 

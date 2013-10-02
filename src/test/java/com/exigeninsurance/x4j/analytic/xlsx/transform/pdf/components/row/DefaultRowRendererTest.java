@@ -20,7 +20,6 @@ import com.exigeninsurance.x4j.analytic.xlsx.transform.pdf.PdfRenderer;
 import com.exigeninsurance.x4j.analytic.xlsx.transform.pdf.RenderingContext;
 import com.exigeninsurance.x4j.analytic.xlsx.transform.pdf.RenderingParameters;
 import com.exigeninsurance.x4j.analytic.xlsx.transform.pdf.components.Renderer;
-import com.exigeninsurance.x4j.analytic.xlsx.transform.pdf.components.row.DefaultRowRenderer;
 
 public class DefaultRowRendererTest {
 

@@ -26,7 +26,6 @@ import org.mockito.stubbing.Answer;
 
 import com.exigeninsurance.x4j.analytic.xlsx.transform.pdf.RenderingParameter;
 import com.exigeninsurance.x4j.analytic.xlsx.transform.pdf.components.Renderer;
-import com.exigeninsurance.x4j.analytic.xlsx.transform.pdf.components.cell.WrappingCellRenderer;
 
 public class WrappingCellRendererTest extends CellRendererTestFixture {
 

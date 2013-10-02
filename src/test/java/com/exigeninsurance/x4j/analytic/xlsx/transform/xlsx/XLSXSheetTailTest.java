@@ -25,8 +25,6 @@ import org.openxmlformats.schemas.spreadsheetml.x2006.main.CTPageSetup;
 import org.openxmlformats.schemas.spreadsheetml.x2006.main.STOrientation;
 
 import com.exigeninsurance.x4j.analytic.xlsx.core.node.Node;
-import com.exigeninsurance.x4j.analytic.xlsx.transform.xlsx.XLSXSheetTail;
-import com.exigeninsurance.x4j.analytic.xlsx.transform.xlsx.XLXContext;
 
 public class XLSXSheetTailTest {
 

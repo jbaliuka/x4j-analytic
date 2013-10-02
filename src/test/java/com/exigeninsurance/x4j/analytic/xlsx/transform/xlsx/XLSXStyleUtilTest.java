@@ -34,8 +34,6 @@ import com.exigeninsurance.x4j.analytic.model.Money;
 import com.exigeninsurance.x4j.analytic.xlsx.core.expression.SimpleExpression;
 import com.exigeninsurance.x4j.analytic.xlsx.core.localization.FormatProvider;
 import com.exigeninsurance.x4j.analytic.xlsx.transform.AlignmentFinder;
-import com.exigeninsurance.x4j.analytic.xlsx.transform.xlsx.XLSXCellNode;
-import com.exigeninsurance.x4j.analytic.xlsx.transform.xlsx.XLSXStyleUtil;
 
 public class XLSXStyleUtilTest {
 

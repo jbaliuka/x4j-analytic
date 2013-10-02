@@ -1,11 +1,13 @@
 package com.exigeninsurance.x4j.analytic.api;
 import java.sql.CallableStatement;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Types;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -71,10 +73,27 @@ public class DefaultReportDataProvider implements ReportDataProvider {
 			ReportDataCallback callback, Connection conn)
 					throws SQLException, Exception {
 
-		CallableStatement call = conn.prepareCall(query.getSql());
+		String jdbcSql = paramPattern.matcher( query.getSql()).replaceAll("?");
+		CallableStatement call = conn.prepareCall( jdbcSql );
 		try {
 
-			setParameters(context,query, call);
+			Matcher matcher = paramPattern.matcher(query.getSql());
+			List<String> params = new ArrayList<String>();
+
+			while(matcher.find()){
+				params.add(matcher.group(1));
+				
+			}
+
+	        int i = 0;
+			for( String name : params){
+				Object value = context.getParameters().get(name);
+				if(value != null){
+					call.setObject(++i,value );
+				}else {
+					call.setNull(++i, Types.OTHER);
+				}
+			}
 			ResultSet rs = call.executeQuery();
 			try {
 				callback.process(rs);
@@ -122,48 +141,7 @@ public class DefaultReportDataProvider implements ReportDataProvider {
 		return (DataSource) init.lookup(query.getDataSource() == null ? dataSourceName : query.getDataSource());
 	}
 
-	/**
-	 * Searches parameter in SQL query, parameter name should match regular expression :\w+,
-	 * Custom implementation  might use JDBC parameters ? 
-	 * 
-	 * @param query is any string but normally it should be the SQL query
-	 * @return
-	 */
+	
 
-	protected Collection<String> getParameterNames(String query){
-
-		Collection<String> results = new ArrayList<String>();		
-		Matcher matcher = paramPattern.matcher(query);
-
-		while(matcher.find()){
-			results.add(matcher.group(1));
-		}
-
-		return results;
-
-	}
-
-	/**
-	 * 
-	 * Default implementation uses named parameters and it performs no type conversion,
-	 * It might be useful to override this method to workaround driver specific issues
-	 * 
-	 * @param context
-	 * @param query
-	 * @param call
-	 * @throws SQLException
-	 */
-
-	protected void setParameters(ReportContext context,Query query, CallableStatement call)
-			throws SQLException {
-
-		for( String name : getParameterNames(query.getSql())){
-			Object value = context.getParameters().get(name);
-			if(value != null){
-				call.setObject(name,value );
-			}else {
-				call.setNull(name, Types.OTHER);
-			}
-		}
-	}
+	
 }

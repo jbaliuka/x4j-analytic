@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report-metadata xmlns="http://www.exigen.com/reportMetadata"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.example.org/reportMetadata reportMetadata.xsd">
+
+	<id>h2Datasource.xml</id>
+	<name>SQL query sample</name>
+	
+	<template>samples/h2Datasource.xlsx</template>
+	
+	
+	<query>
+		<name>Table1</name>
+		<sql>
+		   SELECT PRODUCT, POLICY, STATE, PREMIUM FROM POLICY_SUMMARY WHERE PREMIUM > :top_premium
+  		</sql>
+	</query>
+
+</report-metadata>

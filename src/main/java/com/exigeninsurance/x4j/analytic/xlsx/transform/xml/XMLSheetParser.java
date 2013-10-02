@@ -19,7 +19,6 @@ import com.exigeninsurance.x4j.analytic.xlsx.core.node.Node;
 import com.exigeninsurance.x4j.analytic.xlsx.core.node.TableNode;
 import com.exigeninsurance.x4j.analytic.xlsx.transform.Picture;
 import com.exigeninsurance.x4j.analytic.xlsx.transform.SheetParser;
-import com.exigeninsurance.x4j.analytic.xlsx.transform.xlsx.XLSXStylesTable;
 import com.exigeninsurance.x4j.analytic.xlsx.transform.xlsx.XLXContext;
 
 

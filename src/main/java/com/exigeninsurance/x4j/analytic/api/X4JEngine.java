@@ -6,7 +6,6 @@ import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Map;
 
-
 import com.exigeninsurance.x4j.analytic.model.ReportMetadata;
 import com.exigeninsurance.x4j.analytic.util.CursorManager;
 import com.exigeninsurance.x4j.analytic.util.ReportUtil;

@@ -11,9 +11,6 @@ import static org.hamcrest.Matchers.equalTo;
 import static org.mockito.Mockito.when;
 import static org.mockito.MockitoAnnotations.initMocks;
 
-import java.util.HashMap;
-import java.util.Locale;
-
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.junit.Before;
@@ -28,7 +25,6 @@ import com.exigeninsurance.x4j.analytic.xlsx.transform.pdf.RenderingContext;
 import com.exigeninsurance.x4j.analytic.xlsx.transform.pdf.RenderingParameters;
 import com.exigeninsurance.x4j.analytic.xlsx.transform.pdf.components.Constant;
 import com.exigeninsurance.x4j.analytic.xlsx.transform.pdf.components.Estimator;
-import com.exigeninsurance.x4j.analytic.xlsx.transform.pdf.components.cell.ExpandedColumn;
 
 public class ExpandedColumnTest {
 

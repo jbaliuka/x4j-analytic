@@ -16,8 +16,6 @@ import junit.framework.TestCase;
 
 import org.junit.Assert;
 
-import com.exigeninsurance.x4j.analytic.xlsx.transform.UTF8OutputStream;
-
 public class UTF8OutputStreamTest extends TestCase {
 
 	public void testWriteChar() throws IOException {

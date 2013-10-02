@@ -28,7 +28,6 @@ import com.exigeninsurance.x4j.analytic.model.Query;
 import com.exigeninsurance.x4j.analytic.util.MockReportDataProvider;
 import com.exigeninsurance.x4j.analytic.util.MockResultSet;
 import com.exigeninsurance.x4j.analytic.xlsx.transform.xlsx.TransformTest;
-import com.exigeninsurance.x4j.analytic.xlsx.transform.xml.XLSXWorkbookToXMLTransform;
 
 public class XMLSheetParserTest extends TransformTest {
 
