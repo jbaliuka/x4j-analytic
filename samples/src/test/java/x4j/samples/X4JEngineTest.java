@@ -60,7 +60,8 @@ public class X4JEngineTest {
 	/**
 	 * This sample demonstrates mock data source, MockData.xlsx contains Excel table with name Table1.
 	 * Table should be populated from query element with the same name. 
-	 * Normally query string contains SQL but it might be any script or URL to call WebService 
+	 * Normally query string contains SQL but it might be any script or URL to call WebService,
+	 * Mock Data provider might be useful for unit tests 
 	 * 
 	 * This sample produces report in XLSX and PDF formats
 	 */
@@ -69,8 +70,6 @@ public class X4JEngineTest {
 
 		mockData("pdf");	
 		mockData("xlsx");
-
-
 
 	}
 
@@ -122,6 +121,10 @@ public class X4JEngineTest {
 		engine.transaform(context,saveTo);
 	}
 
+	/**
+	 * This example use h2 DB connection for data access 
+	 * @throws Exception
+	 */
 	@Test
 	public void h2DataSource() throws Exception{
 
@@ -130,7 +133,7 @@ public class X4JEngineTest {
 		try{
 			puplateDB(connection);
 			engine.setDataProvider( new DefaultReportDataProvider(connection) );
-			
+
 			ReportContext context = engine.createContext("samples/h2Datasource.xml");
 			context.getParameters().put("top_premium", 0);
 
@@ -141,11 +144,7 @@ public class X4JEngineTest {
 			connection.close();
 		}
 
-
-
 	}
-
-
 
 
 
@@ -154,12 +153,12 @@ public class X4JEngineTest {
 		Statement statement = connection.createStatement();
 		try {
 			statement.execute(
-					"CREATE TABLE POLICY_SUMMARY(  "+
-							"PRODUCT VARCHAR(255), "+
-							"POLICY CHAR(7) ,      "+
-							"STATE CHAR(2) ,       "+
-							"PREMIUM DECIMAL(9,2)  "+
-							")"
+					" CREATE TABLE POLICY_SUMMARY(        " +
+							"       PRODUCT VARCHAR(255), " +
+							"       POLICY CHAR(7) ,      " +
+							"       STATE CHAR(2) ,       " +
+							"       PREMIUM DECIMAL(9,2)  " +
+							"    )                        "
 					);	
 		}finally{
 			statement.close();

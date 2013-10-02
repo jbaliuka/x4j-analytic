@@ -6,7 +6,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Types;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -73,8 +72,8 @@ public class DefaultReportDataProvider implements ReportDataProvider {
 			ReportDataCallback callback, Connection conn)
 					throws SQLException, Exception {
 
-		String jdbcSql = paramPattern.matcher( query.getSql()).replaceAll("?");
-		CallableStatement call = conn.prepareCall( jdbcSql );
+		String jdbcSql = paramPattern.matcher(query.getSql()).replaceAll("?");
+		PreparedStatement statement = conn.prepareStatement( jdbcSql );
 		try {
 
 			Matcher matcher = paramPattern.matcher(query.getSql());
@@ -89,12 +88,12 @@ public class DefaultReportDataProvider implements ReportDataProvider {
 			for( String name : params){
 				Object value = context.getParameters().get(name);
 				if(value != null){
-					call.setObject(++i,value );
+					statement.setObject(++i, value);
 				}else {
-					call.setNull(++i, Types.OTHER);
+					statement.setNull(++i, Types.OTHER);
 				}
 			}
-			ResultSet rs = call.executeQuery();
+			ResultSet rs = statement.executeQuery();
 			try {
 				callback.process(rs);
 			}finally {
@@ -102,7 +101,7 @@ public class DefaultReportDataProvider implements ReportDataProvider {
 			}
 
 		}finally{
-			call.close();
+			statement.close();
 		}
 	}
 
