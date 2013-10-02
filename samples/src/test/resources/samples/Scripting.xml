@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report-metadata xmlns="http://www.exigen.com/reportMetadata"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.example.org/reportMetadata reportMetadata.xsd">
+
+    <name>Scripting Example</name>	
+	<template>samples/Scripting.xlsx</template>
+	
+
+</report-metadata>

@@ -1,7 +1,7 @@
 /*
  * Copyright 2008-2013 Exigen Insurance Solutions, Inc. All Rights Reserved.
  *
-*/
+ */
 
 
 package com.exigeninsurance.x4j.analytic.xlsx.transform.xlsx;
@@ -72,25 +72,22 @@ public class XLXContext {
 	private FormatProvider formatProvider;
 	private final Map <Integer, String> tableStylesMap = new HashMap<Integer, String>();
 	private PdfStylesTable stylesTable;
-	private String defaultTableStyle;
-	private TableStyle overridingTableStyle;
-
 	
 
 	private Map<String, MergedRegion> mergedCells = new HashMap<String, MergedRegion>();
 	private List<MergedRegion> newMergedCells = new ArrayList<MergedRegion>();
-    private List<Table> tables = new ArrayList<Table>();
+	private List<Table> tables = new ArrayList<Table>();
 	private FormatUtil formatUtil;
 	private XLSXStyleUtil xlsxStyleUtil;
 	private AlignmentFinder alignmentFinder;
 
-    public XLXContext(SST sst,
+	public XLXContext(SST sst,
 			XSSFSheet sheet,
 			ReportContext reportContext, 
 			OutputStream out) {
 		this.out = new UTF8OutputStream(new BufferedOutputStream(out));
 		this.reportContext = reportContext;
-        setSst(sst);
+		setSst(sst);
 		this.sheet = sheet;
 	}
 
@@ -125,7 +122,7 @@ public class XLXContext {
 	public void write(long s) throws IOException {
 		write(Long.toString(s));
 	}
-	
+
 	public void write(byte s) throws IOException {
 		out.write(s);
 	}
@@ -134,24 +131,24 @@ public class XLXContext {
 		currentRow++;	
 	}
 
-    public void nextRow(int row) {
-        if (isStartOfRepeatingRowRange(row)) {
-            setRepeatingRows(row);
-        }
-        nextRow();
-    }
+	public void nextRow(int row) {
+		if (isStartOfRepeatingRowRange(row)) {
+			setRepeatingRows(row);
+		}
+		nextRow();
+	}
 
-    private boolean isStartOfRepeatingRowRange(int row) {
-        return repeatingRows.length != 0 && repeatingRows[0] == row;
-    }
+	private boolean isStartOfRepeatingRowRange(int row) {
+		return repeatingRows.length != 0 && repeatingRows[0] == row;
+	}
 
-    private void setRepeatingRows(int row) {
-        int diff = currentRow - row;
-        int sheetIndex = sheet.getWorkbook().getSheetIndex(sheet.getSheetName());
-        sheet.getWorkbook().setRepeatingRowsAndColumns(sheetIndex, -1, -1, repeatingRows[0] + diff, repeatingRows[repeatingRows.length - 1] + diff);
-    }
+	private void setRepeatingRows(int row) {
+		int diff = currentRow - row;
+		int sheetIndex = sheet.getWorkbook().getSheetIndex(sheet.getSheetName());
+		sheet.getWorkbook().setRepeatingRowsAndColumns(sheetIndex, -1, -1, repeatingRows[0] + diff, repeatingRows[repeatingRows.length - 1] + diff);
+	}
 
-    public void flush() throws IOException{
+	public void flush() throws IOException{
 		out.flush();
 	}
 
@@ -188,7 +185,7 @@ public class XLXContext {
 	}
 
 	public long createStyle(Object value, XLSXCellNode node) {
-		
+
 
 		if (value instanceof Link) {
 			return linkStyle;
@@ -205,88 +202,86 @@ public class XLXContext {
 	}
 
 	public void setStyles(XLSXStylesTable styles) {
-       
+
 		formatUtil = new FormatUtil(formatProvider, reportContext.getLocale());
 		xlsxStyleUtil = new XLSXStyleUtil(sheet, formatProvider, reportContext.getLocale(), getAlignmentFinder());
 	}
 
-    
 
-    public void parseTableStyles(XSSFWorkbook workbook) throws Exception {
-        parseDefaultStyles();
-        parseTemplateStyles(workbook);
-        
-    }
 
-    private void parseDefaultStyles() throws IOException {
-        InputStream stream = getClass().getResourceAsStream(STYLES_XML);
-        try {
-            PdfStylesParser pdfStylesParser = new PdfStylesParser(stream);
-            stylesTable = pdfStylesParser.produceStylesTable();
-        } finally {
-            stream.close();
-        }
-    }
+	public void parseTableStyles(XSSFWorkbook workbook) throws Exception {
+		parseDefaultStyles();
+		parseTemplateStyles(workbook);
 
-    private void parseTemplateStyles(XSSFWorkbook workbook) throws IOException {
-        PdfStylesParser pdfStylesParser;
-        PackagePart part = workbook.getStylesSource().getPackagePart();
-        InputStream stream = null;
-        try {
-            stream = part.getInputStream();
-            pdfStylesParser = new PdfStylesParser(stream);
-        }
-        finally {
-            if (stream != null) {
-                stream.close();
-            }
-        }
-        PdfStylesTable currentStyles = pdfStylesParser.produceStylesTable();
-        stylesTable.getTableStyles().putAll(currentStyles.getTableStyles());
-        defaultTableStyle = currentStyles.getDefaultTableStyle();
-    }
+	}
 
-   
+	private void parseDefaultStyles() throws IOException {
+		InputStream stream = getClass().getResourceAsStream(STYLES_XML);
+		try {
+			PdfStylesParser pdfStylesParser = new PdfStylesParser(stream);
+			stylesTable = pdfStylesParser.produceStylesTable();
+		} finally {
+			stream.close();
+		}
+	}
 
-    public TableStyle findTableStyle(int tableId) {
+	private void parseTemplateStyles(XSSFWorkbook workbook) throws IOException {
+		PdfStylesParser pdfStylesParser;
+		PackagePart part = workbook.getStylesSource().getPackagePart();
+		InputStream stream = null;
+		try {
+			stream = part.getInputStream();
+			pdfStylesParser = new PdfStylesParser(stream);
+		}
+		finally {
+			if (stream != null) {
+				stream.close();
+			}
+		}
+		PdfStylesTable currentStyles = pdfStylesParser.produceStylesTable();
+		stylesTable.getTableStyles().putAll(currentStyles.getTableStyles());
+		
+	}
+
+
+
+	public TableStyle findTableStyle(int tableId) {
 		String styleName = tableStylesMap.get(tableId);
 
 		if (styleName == null) {
 			return null;
 		}
 
-		if (styleName.equals(defaultTableStyle)) {
-			return overridingTableStyle;
+
+		
+		if (stylesTable.getTableStyles().containsKey(styleName)) {
+			return stylesTable.getTableStyles().get(styleName);
+		}
+		
+		styleName += PdfStylesParser.DUPLICATE_SUFFIX;
+		
+		if (stylesTable.getTableStyles().containsKey(styleName)) {
+			return stylesTable.getTableStyles().get(styleName);
 		}
 		else {
-			// look through user created styles
-			if (stylesTable.getTableStyles().containsKey(styleName)) {
-				return stylesTable.getTableStyles().get(styleName);
-			}
-			// look through included styles
-			styleName += PdfStylesParser.DUPLICATE_SUFFIX;
-			if (stylesTable.getTableStyles().containsKey(styleName)) {
-				return stylesTable.getTableStyles().get(styleName);
-			}
-			else {
-				return null;
-			}
+			return null;
 		}
+
 	}
 
-    public PdfStyle findStyle(TableStyle tableStyle, CellNode cell) {
-    	if (stylesTable != null) {
-    		int cellRow = cell.getCell().getRowIndex();
-    		if (cellRow == tableStart) {
-    			return tableStyle.getHeaderRowStyle();
-    		}
-    		else {
-    			return tableStyle.getWholeTableStyle();
-    		}
-    	}
+	public PdfStyle findStyle(TableStyle tableStyle, CellNode cell) {
+		if (stylesTable != null) {
+			int cellRow = cell.getCell().getRowIndex();
+			if (cellRow == tableStart) {
+				return tableStyle.getHeaderRowStyle();
+			}
+			else {
+				return tableStyle.getWholeTableStyle();
+			}
+		}
 
 		return null;
-    }
+	}
 
 	public void setTableStartHeader() {
 		header = true;
@@ -295,7 +290,7 @@ public class XLXContext {
 	public void endTableHeader() {
 		header = false;
 	}
-	
+
 	public UTF8OutputStream getOut() {
 		return out;
 	}
@@ -332,7 +327,7 @@ public class XLXContext {
 		this.tableStart = tableStart;
 	}
 
-	
+
 
 	public String defaultDateFormat(Date value) {
 		return formatUtil.defaultDateFormat(value);
@@ -341,15 +336,15 @@ public class XLXContext {
 	public String formatMoney(Money money) {
 		return formatUtil.formatMoney(money);
 	}
-	
+
 	public void setFormatProvider(FormatProvider formatProvider) {
 		this.formatProvider = formatProvider;
 	}
-	
+
 	public String dateTimeFormat(Date value) {
 		return formatUtil.dateTimeFormat(value);
 	}
-	
+
 	public Map<String, MergedRegion> getMergedCells() {
 		return mergedCells;
 	}
@@ -357,23 +352,23 @@ public class XLXContext {
 	public void setMergedCells(Map<String, MergedRegion> mergedCells) {
 		this.mergedCells = mergedCells;
 	}
-	
+
 	public boolean isCellMerged(String ref) {
 		return mergedCells.containsKey(ref);
 	}
-	
+
 	public MergedRegion getMergedRegion(XSSFCell cell) {
-        String ref = cell.getReference();
-        if (isCellMerged(ref)) {
-            return mergedCells.get(ref);
-        }
-        Collection<MergedRegion> regions = mergedCells.values();
-        for (MergedRegion region : regions) {
-            if (region.isInRegion(cell.getRowIndex(), cell.getColumnIndex())) {
-                return region;
-            }
-        }
-        return null;
+		String ref = cell.getReference();
+		if (isCellMerged(ref)) {
+			return mergedCells.get(ref);
+		}
+		Collection<MergedRegion> regions = mergedCells.values();
+		for (MergedRegion region : regions) {
+			if (region.isInRegion(cell.getRowIndex(), cell.getColumnIndex())) {
+				return region;
+			}
+		}
+		return null;
 	}
 
 	public List<MergedRegion> getNewMergedCells() {
@@ -382,20 +377,20 @@ public class XLXContext {
 
 	// Do not remove, it's unused in the code, but can be invoked from templates directly
 	public void addPageBreak() throws Exception {
-		
+
 	}
 
-    public void setRepeatingRows(int[] repeatingRows) {
-        this.repeatingRows = repeatingRows;
-    }
+	public void setRepeatingRows(int[] repeatingRows) {
+		this.repeatingRows = repeatingRows;
+	}
 
-    public List<Table> getTables() {
-        return tables;
-    }
+	public List<Table> getTables() {
+		return tables;
+	}
 
-    public void processTable(Table table) {
-        tables.add(table);
-    }
+	public void processTable(Table table) {
+		tables.add(table);
+	}
 
 	public void reportCellWidth(XSSFCell cell,String value) {
 		for (String s : value.split(WrappingUtil.EXCEL_BREAK)) {

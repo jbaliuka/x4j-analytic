@@ -3,18 +3,10 @@ package com.exigeninsurance.x4j.analytic.api;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
-import java.sql.CallableStatement;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Map.Entry;
 
-import javax.naming.InitialContext;
-import javax.sql.DataSource;
 
-import com.exigeninsurance.x4j.analytic.model.Query;
 import com.exigeninsurance.x4j.analytic.model.ReportMetadata;
 import com.exigeninsurance.x4j.analytic.util.CursorManager;
 import com.exigeninsurance.x4j.analytic.util.ReportUtil;
@@ -63,51 +55,7 @@ import com.exigeninsurance.x4j.analytic.xlsx.transform.xml.XLSXWorkbookToXMLTran
  */
 public final class X4JEngine {
 
-
-	private class DefaultReportDataProvider implements ReportDataProvider {
-		@Override
-		public void execute(Query query, ReportContext context,
-				ReportDataCallback callback) throws SQLException {
-
-			if(query.getDataSource() == null && dataSourceName == null){
-				throw new ReportException("no data source name is provided");
-			}
-
-			try {
-				InitialContext init = new InitialContext();
-				try {
-					DataSource ds = (DataSource) init.lookup(query.getDataSource() == null ? dataSourceName : query.getDataSource());
-					Connection conn = ds.getConnection();
-					try {
-						CallableStatement call = conn.prepareCall(query.getSql());
-						try {
-							for( Entry<String, Object> e : context.getParameters().entrySet()){
-								call.setObject(e.getKey(), e.getValue());
-							}
-							ResultSet rs = call.executeQuery();
-							try {
-								callback.process(rs);
-							}finally {
-								rs.close();
-							}
-
-						}finally{
-							call.close();
-						}
-
-					}finally{
-						conn.close();
-					}
-
-				}finally{
-					init.close();
-				}
-			} catch (Exception e) {
-				throw new ReportException(e);
-			}
-
-		}
-	}
+	 
 
 	private class DefaultTemplateResolver implements TemplateResolver {
 		@Override
@@ -146,8 +94,8 @@ public final class X4JEngine {
 	private Map<String,Transform> transformations = new HashMap<String, Transform>();
 	private TemplateResolver resolver = new DefaultTemplateResolver();
 	private MetadataUnmarshaler  unmarshaler = new DefaultMetadataUnmarshaler(); 
-	private ReportDataProvider dataProvider = new DefaultReportDataProvider();
-	private String dataSourceName;
+	private ReportDataProvider dataProvider ;
+	String dataSourceName;
 
 	{
 		transformations.put("xlsx", new XLSXWorkbookTransaform());
@@ -206,7 +154,7 @@ public final class X4JEngine {
 			}
 
 			t.setTemplateProvider(resolver);
-			t.setDataProvider(dataProvider);
+			t.setDataProvider(dataProvider == null ?  new DefaultReportDataProvider(dataSourceName) : dataProvider );
 
 			InputStream template = resolver.openTemplate(context.getMetadata().getTemplate());
 			try {

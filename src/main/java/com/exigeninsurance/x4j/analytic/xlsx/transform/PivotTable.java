@@ -44,7 +44,7 @@ public class PivotTable extends POIXMLDocumentPart {
 	public void readFrom(InputStream is) throws IOException {
 		try {
 			PivotTableDefinitionDocument doc = PivotTableDefinitionDocument.Factory.parse(is);
-			ctPivotTable = doc.getPivotTableDefinition();
+			setCtPivotTable(doc.getPivotTableDefinition());
 		} catch (XmlException e) {
 			throw new IOException(e);
 		}

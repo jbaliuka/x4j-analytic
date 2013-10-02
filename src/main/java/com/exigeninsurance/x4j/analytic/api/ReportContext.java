@@ -19,6 +19,8 @@ import com.exigeninsurance.x4j.analytic.util.CursorManager;
 public class ReportContext {
 
 	
+	private static final String OUTPUT_FORMAT = "outputFormat";
+	private static final String REPORT_METADATA = "reportMetadata";
 	private ReportMetadata metadata;
 	private Locale locale = Locale.getDefault();
 	private CursorManager cursorManager;
@@ -28,6 +30,8 @@ public class ReportContext {
 	public ReportContext(ReportMetadata metadata) {
 		super();
 		this.metadata = metadata;
+		parameters.put(REPORT_METADATA, metadata);
+		parameters.put(OUTPUT_FORMAT, outputFormat);
 	}
 
 	public ReportMetadata getMetadata() {

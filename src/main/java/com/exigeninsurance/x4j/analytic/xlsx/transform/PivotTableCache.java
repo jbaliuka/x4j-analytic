@@ -36,7 +36,7 @@ public class PivotTableCache extends POIXMLDocumentPart {
 	public void readFrom(InputStream is) throws IOException {
 		try {
 			PivotCacheDefinitionDocument doc = PivotCacheDefinitionDocument.Factory.parse(is);
-			ctPivotTable = doc.getPivotCacheDefinition();
+			setCtPivotTable( doc.getPivotCacheDefinition() );
 		} catch (XmlException e) {
 			throw new IOException(e);
 		}
@@ -65,6 +65,9 @@ public class PivotTableCache extends POIXMLDocumentPart {
 
 	public void setCtPivotTable(CTPivotCacheDefinition ctPivotTable) {
 		this.ctPivotTable = ctPivotTable;
+		this.ctPivotTable.setSaveData(false);
+		this.ctPivotTable.setRefreshOnLoad(true);
+		this.ctPivotTable.unsetId();
 	}
 
 	public CTPivotCacheDefinition getCtPivotTable() {

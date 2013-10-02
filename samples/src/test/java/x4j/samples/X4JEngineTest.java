@@ -45,16 +45,28 @@ public class X4JEngineTest {
 	 * This sample demonstrates mock data source, MockData.xlsx contains Excel table with name Table1.
 	 * Table should be populated from query element with the same name. 
 	 * Normally query string contains SQL but it might be any script or URL to call WebService 
+	 * 
+	 * This sample produces report in XLSX and PDF formats
 	 */
 	@Test
 	public void mockData() {
 		
+		mockData("pdf");	
+		mockData("xlsx");
+			
+		
+		
+	}
+	
+	private void mockData(String format) {
 		
 		X4JEngine engine = new X4JEngine();
 		setupMockDataSource(engine);
 		
 		ReportContext context = engine.createContext("samples/MockData.xml");
-		File  saveTo = new File("target/MockData.xlsx");		
+		context.setOutputFormat(format);
+		
+		File  saveTo = new File("target/MockData." + format);		
 		
 		engine.transaform(context,saveTo);
 		
@@ -77,6 +89,21 @@ public class X4JEngineTest {
 		
 		engine.transaform(context,saveTo);
 		
+	}
+	
+	/**
+	 * Scripting.xlsx template contains ${reportMetadata.name} expression, it should evaluate to report name defined Scripting.xml file 
+	 * 
+	 */
+	@Test
+	public void scripting(){
+		
+		X4JEngine engine = new X4JEngine();	
+		
+		ReportContext context = engine.createContext("samples/Scripting.xml");
+		File  saveTo = new File("target/Scripting.xlsx");		
+		
+		engine.transaform(context,saveTo);
 	}
 	
 	
