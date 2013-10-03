@@ -12,6 +12,7 @@ import java.io.ObjectOutputStream;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import com.exigeninsurance.x4j.analytic.api.Cursor;
 import com.exigeninsurance.x4j.analytic.api.ReportException;
 
 
@@ -19,13 +20,13 @@ public class PersistingCursor implements Cursor {
 	private File file;
 	private FileOutputStream fileOut;
 	private ObjectOutputStream objectOut;
-	private ResultSet rs;
+	private Cursor rs;
 	private final CursorMetadata metadata;
 
-	public PersistingCursor(File file, ResultSet rs) {
+	public PersistingCursor(File file, Cursor rs) {
 		this.file = file;
 		this.rs = rs;
-		metadata = createMetadata(rs);
+		metadata = rs.getMetadata();
 		initStreams();
 		writeMetadata();
 	}
@@ -69,11 +70,9 @@ public class PersistingCursor implements Cursor {
 
 
 	private boolean hasNext() {
-		try {
+		
 			return rs.next();
-		} catch (SQLException e) {
-			throw new ReportException(e);
-		}
+		
 	}
 
 	private void writeRow() {
@@ -95,11 +94,9 @@ public class PersistingCursor implements Cursor {
 
 	@Override
 	public Object getObject(int i) {
-		try {
+		
 			return rs.getObject(i);
-		} catch (SQLException e) {
-			throw new ReportException(e);
-		}
+		
 	}
 
 	@Override

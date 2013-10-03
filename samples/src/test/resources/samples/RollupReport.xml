@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report-metadata xmlns="http://www.exigen.com/reportMetadata"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.example.org/reportMetadata reportMetadata.xsd">
+
+	<id>RollupReport.xml</id>
+	<name>For loop with rollup</name>	
+	<template>samples/RollupReport.xlsx</template>
+	
+	
+	<query>
+		<name>Table1</name>
+		<sql>
+		   SELECT 
+		   	PRODUCT, 
+		   	POLICY, 
+		   	STATE, 
+		   	PREMIUM 
+		   FROM POLICY_SUMMARY
+		   ORDER BY PRODUCT,STATE 
+  		</sql>
+	</query>
+
+</report-metadata>

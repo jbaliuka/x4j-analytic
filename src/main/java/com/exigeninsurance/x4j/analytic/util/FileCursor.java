@@ -12,6 +12,7 @@ import java.io.ObjectInputStream;
 
 import org.slf4j.Logger;
 
+import com.exigeninsurance.x4j.analytic.api.Cursor;
 import com.exigeninsurance.x4j.analytic.api.ReportException;
 
 

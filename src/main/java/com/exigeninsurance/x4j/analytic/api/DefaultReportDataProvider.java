@@ -15,6 +15,7 @@ import javax.naming.NamingException;
 import javax.sql.DataSource;
 
 import com.exigeninsurance.x4j.analytic.model.Query;
+import com.exigeninsurance.x4j.analytic.util.ResultSetWrapper;
 
 
 /**
@@ -95,7 +96,7 @@ public class DefaultReportDataProvider implements ReportDataProvider {
 			}
 			ResultSet rs = statement.executeQuery();
 			try {
-				callback.process(rs);
+				callback.process(new ResultSetWrapper(rs));
 			}finally {
 				rs.close();
 			}

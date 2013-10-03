@@ -17,6 +17,7 @@ import java.util.Map;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.exigeninsurance.x4j.analytic.api.Cursor;
 import com.exigeninsurance.x4j.analytic.api.ReportContext;
 import com.exigeninsurance.x4j.analytic.api.ReportDataCallback;
 import com.exigeninsurance.x4j.analytic.api.ReportDataProvider;
@@ -80,7 +81,7 @@ public class CursorManager {
     private void writeRsToFile(Query query,ReportContext data, final File file) throws SQLException {
 		dataProvider.execute(query,data, new ReportDataCallback() {
 
-			public void process(ResultSet rs) throws Exception {
+			public void process(Cursor rs) throws Exception {
 				Cursor cursor = new PersistingCursor(file, rs);
 				try {
 					while (cursor.next()) {}

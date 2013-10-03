@@ -8,7 +8,10 @@ package com.exigeninsurance.x4j.analytic.util;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
+import java.sql.Timestamp;
+import java.util.Date;
 
+import com.exigeninsurance.x4j.analytic.api.Cursor;
 import com.exigeninsurance.x4j.analytic.api.ReportException;
 
 
@@ -17,7 +20,7 @@ public class ResultSetWrapper implements Cursor {
     private ResultSet rs;
     private ResultSetMetaData metadata;
 
-    private ResultSetWrapper(ResultSet rs) {
+    public ResultSetWrapper(ResultSet rs) {
         this.rs = rs;
         try {
 			this.metadata = rs.getMetaData();
@@ -62,13 +65,21 @@ public class ResultSetWrapper implements Cursor {
         try {        	
             Object obj = rs.getObject(i);
             String name = metadata.getColumnTypeName(i);            
-            return CursorMetadata.convert(obj, name) ;
+            return convert(obj, name) ;
         } catch (SQLException e) {
             throw new ReportException(e);
         }
     }
 
-    @Override
+    private Object convert(Object object, String name) {
+    	if("DATE".equals(name) && object instanceof Timestamp){
+			return new Date(((Date)object).getTime());
+		}else {
+			return object;
+		}
+	}
+
+	@Override
     public void reset() {
         throw new UnsupportedOperationException("ResultSetWrapper is not scrollable");
     }

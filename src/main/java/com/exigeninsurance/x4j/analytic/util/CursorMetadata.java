@@ -16,8 +16,8 @@ import java.io.Serializable;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
-import java.sql.Timestamp;
-import java.util.Date;
+
+import com.exigeninsurance.x4j.analytic.api.Cursor;
 
 
 
@@ -72,21 +72,19 @@ public class CursorMetadata implements Serializable {
 			in.close();
 		}
 
-
-
 	}
 
-	public void writeRow(DataOutput objectOut, ResultSet rs) throws IOException, SQLException {
+	public void writeRow(DataOutput objectOut, Cursor rs) throws IOException, SQLException {
 
 		ByteArrayOutputStream out = new ByteArrayOutputStream();
 		try{
 			ObjectOutputStream oout = new ObjectOutputStream(out);	
 			try{
-				ResultSetMetaData metadata = rs.getMetaData();
-				for(int i = 0 ; i < columns.length; i++ ){
-					String name = metadata.getColumnTypeName(i + 1);
-					oout.writeObject( convert(rs.getObject(i + 1),name) );
+				
+				for(int i = 0 ; i < columns.length; i++ ){					
+					oout.writeObject( rs.getObject(i + 1));
 				}
+				
 				oout.flush();
 				byte[] bytes = out.toByteArray();
 				objectOut.writeInt(bytes.length);
@@ -99,10 +97,5 @@ public class CursorMetadata implements Serializable {
 		}
 
 	}
-	public static Object convert(Object object, String name) {
-		if("DATE".equals(name) && object instanceof Timestamp){
-			return new Date(((Date)object).getTime());
-		}
-		return object;
-	}
+	
 }

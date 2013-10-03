@@ -46,7 +46,7 @@ public class MockReportDataProvider implements ReportDataProvider{
 		}
 		
 		try {
-			callback.process(rs);
+			callback.process(new ResultSetWrapper(rs));
 		} catch (Exception e) {
 			throw new SQLException(e);
 		} finally {

@@ -11,11 +11,11 @@ import java.sql.ResultSet;
 import org.junit.Before;
 import org.junit.Test;
 
+import com.exigeninsurance.x4j.analytic.api.Cursor;
 import com.exigeninsurance.x4j.analytic.api.ReportContext;
 import com.exigeninsurance.x4j.analytic.api.ReportDataProvider;
 import com.exigeninsurance.x4j.analytic.model.Query;
 import com.exigeninsurance.x4j.analytic.model.ReportMetadata;
-import com.exigeninsurance.x4j.analytic.util.Cursor;
 import com.exigeninsurance.x4j.analytic.util.CursorManager;
 import com.exigeninsurance.x4j.analytic.util.FileCursor;
 import com.exigeninsurance.x4j.analytic.util.MockReportDataProvider;

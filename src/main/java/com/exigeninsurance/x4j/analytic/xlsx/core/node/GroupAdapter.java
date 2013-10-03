@@ -15,7 +15,7 @@ import java.util.Stack;
 import org.apache.commons.collections.map.CaseInsensitiveMap;
 import org.apache.commons.lang.ObjectUtils;
 
-import com.exigeninsurance.x4j.analytic.util.Cursor;
+import com.exigeninsurance.x4j.analytic.api.Cursor;
 import com.exigeninsurance.x4j.analytic.util.CursorMetadata;
 import com.exigeninsurance.x4j.analytic.util.ResultSetWrapper;
 import com.exigeninsurance.x4j.analytic.xlsx.core.groups.Group;

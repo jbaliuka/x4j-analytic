@@ -20,8 +20,8 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.junit.Before;
 import org.junit.Test;
 
+import com.exigeninsurance.x4j.analytic.api.Cursor;
 import com.exigeninsurance.x4j.analytic.api.ReportContext;
-import com.exigeninsurance.x4j.analytic.util.Cursor;
 import com.exigeninsurance.x4j.analytic.util.MockResultSet;
 import com.exigeninsurance.x4j.analytic.util.ResultSetWrapper;
 import com.exigeninsurance.x4j.analytic.xlsx.core.expression.SimpleExpression;

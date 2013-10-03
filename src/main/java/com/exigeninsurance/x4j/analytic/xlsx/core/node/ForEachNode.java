@@ -8,9 +8,9 @@ package com.exigeninsurance.x4j.analytic.xlsx.core.node;
 
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 
+import com.exigeninsurance.x4j.analytic.api.Cursor;
 import com.exigeninsurance.x4j.analytic.api.ReportException;
 import com.exigeninsurance.x4j.analytic.model.Query;
-import com.exigeninsurance.x4j.analytic.util.Cursor;
 import com.exigeninsurance.x4j.analytic.xlsx.core.expression.XLSXExpression;
 import com.exigeninsurance.x4j.analytic.xlsx.core.groups.FrozenState;
 import com.exigeninsurance.x4j.analytic.xlsx.core.groups.GroupState;

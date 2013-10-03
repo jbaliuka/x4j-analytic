@@ -20,9 +20,10 @@ import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mock;
 
-import com.exigeninsurance.x4j.analytic.util.Cursor;
+import com.exigeninsurance.x4j.analytic.api.Cursor;
 import com.exigeninsurance.x4j.analytic.util.MockResultSet;
 import com.exigeninsurance.x4j.analytic.util.PersistingCursor;
+import com.exigeninsurance.x4j.analytic.util.ResultSetWrapper;
 
 public class PersistingCursorTest {
 
@@ -50,7 +51,7 @@ public class PersistingCursorTest {
     public void nextOnOneRowCursor_shouldReturnTrue() {
         File file = new File("file");
         try {
-            Cursor cursor = new PersistingCursor(file, oneRowRs);
+            Cursor cursor = new PersistingCursor(file, new ResultSetWrapper(oneRowRs));
             try {
                 assertTrue(cursor.next());
             } finally {
@@ -65,7 +66,7 @@ public class PersistingCursorTest {
     public void verifyMetadataReturnsCorrectColumnCount() {
         File file = new File("file");
         try {
-            Cursor cursor = new PersistingCursor(file, oneRowRs);
+            Cursor cursor = new PersistingCursor(file, new ResultSetWrapper(oneRowRs));
             try {
                 assertThat(cursor.getMetadata().getColumnCount(), equalTo(2));
             } finally {
@@ -80,7 +81,7 @@ public class PersistingCursorTest {
     public void verifyMetadataReturnsCorrectColumnNames() {
         File file = new File("file");
         try {
-            Cursor cursor = new PersistingCursor(file, oneRowRs);
+            Cursor cursor = new PersistingCursor(file, new ResultSetWrapper(oneRowRs));
             try {
                 assertThat(cursor.getMetadata().getColumnName(1), equalTo("A"));
                 assertThat(cursor.getMetadata().getColumnName(2), equalTo("B"));
@@ -96,7 +97,7 @@ public class PersistingCursorTest {
     public void nextOnEmptyResultSet_shouldReturnFalse() {
         File file = new File("file");
         try {
-            Cursor cursor = new PersistingCursor(file, emptyRs);
+            Cursor cursor = new PersistingCursor(file, new ResultSetWrapper(emptyRs));
             try {
                 assertFalse(cursor.next());
             } finally {
@@ -111,7 +112,7 @@ public class PersistingCursorTest {
     public void nextAfterLastRow_shouldReturnFalse() {
         File file = new File("file");
         try {
-            Cursor cursor = new PersistingCursor(file, oneRowRs);
+            Cursor cursor = new PersistingCursor(file, new ResultSetWrapper(oneRowRs));
             try {
                 iterateThrough(cursor);
                 assertFalse(cursor.next());
@@ -127,7 +128,7 @@ public class PersistingCursorTest {
     public void verifyGetObjectReturnsCorrectValues() {
         File file = new File("file");
         try {
-            Cursor cursor = new PersistingCursor(file, oneRowRs);
+            Cursor cursor = new PersistingCursor(file, new ResultSetWrapper(oneRowRs));
             try {
                 cursor.next();
                 assertThat(cursor.getObject(1), equalTo(row[0]));

@@ -5,7 +5,7 @@
 
 package com.exigeninsurance.x4j.analytic.api;
 
-import java.sql.ResultSet;
+
 /**
  * Data processor interface for application specific logic implementation
  * @author jbaliuka
@@ -15,10 +15,10 @@ import java.sql.ResultSet;
 public interface ReportDataCallback {
 
 	/**
-	 * Safe processing, data provider closes resources
+	 * Call back for safe processing, data provider closes resources
 	 * @param rs
 	 * @throws Exception
 	 */
-	void process(ResultSet rs) throws Exception;
+	void process(Cursor rs) throws Exception;
 
 }

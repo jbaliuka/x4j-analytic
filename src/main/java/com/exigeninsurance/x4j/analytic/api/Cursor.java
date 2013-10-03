@@ -3,10 +3,17 @@
  *
 */
 
-package com.exigeninsurance.x4j.analytic.util;
+package com.exigeninsurance.x4j.analytic.api;
+
+import com.exigeninsurance.x4j.analytic.util.CursorMetadata;
 
 
-
+/**
+ *  Simplified JDBC ResultSet
+ *  
+ * @author jbaliuka
+ *
+ */
 
 public interface Cursor {
 

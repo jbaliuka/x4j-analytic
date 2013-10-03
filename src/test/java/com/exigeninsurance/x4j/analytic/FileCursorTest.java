@@ -16,10 +16,11 @@ import org.apache.poi.util.Internal;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.exigeninsurance.x4j.analytic.util.Cursor;
+import com.exigeninsurance.x4j.analytic.api.Cursor;
 import com.exigeninsurance.x4j.analytic.util.CursorMetadata;
 import com.exigeninsurance.x4j.analytic.util.FileCursor;
 import com.exigeninsurance.x4j.analytic.util.MockResultSet;
+import com.exigeninsurance.x4j.analytic.util.ResultSetWrapper;
 
 @Internal
 public class FileCursorTest {
@@ -53,9 +54,9 @@ public class FileCursorTest {
             try {
                 objectOut.writeObject(metadata); 
                 rs.next();
-                metadata.writeRow(objectOut, rs);
+                metadata.writeRow(objectOut, new ResultSetWrapper(rs));
                 rs.next();
-                metadata.writeRow(objectOut, rs);
+                metadata.writeRow(objectOut, new ResultSetWrapper(rs));
             } finally {
                 objectOut.close();
             }

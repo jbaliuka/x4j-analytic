@@ -9,6 +9,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.NumberFormat;
 
 import org.h2.jdbcx.JdbcDataSource;
 import org.junit.Test;
@@ -22,26 +23,20 @@ import com.exigeninsurance.x4j.analytic.util.MockResultSet;
 
 /**
  * It is X4JEngine sample implemented as JUnit test.
- * Code demonstrates typical X4J Analytic usage to implement light weight reporting solution 
+ * Code demonstrates typical X4J Analytic usage to implement light weight reporting solution.
+ *  
+ *  Samples save output to  samples/target directory
+ *   
  * @author jbaliuka
  *
  */
 
 public class X4JEngineTest {
 
-
-	private String[] cols = cols("PRODUCT","POLICY", "STATE","PREMIUM");
-	private Object[][] data = data(
-			row("Auto", "AU25636","CA",200),
-			row("Home", "HO25636","CA",200),
-			row("Auto", "AU12345","NY",195),
-			row("Home", "HO23145","NY",186),
-			row("Auto", "AU74125","CA",193)
-
-			);
+	
 
 	/**
-	 * HelloWorld.xlsx template contains ${message} expression, it should evaluate to Hello World ! in output file
+	 * HelloWorld.xlsx template contains ${message} expression, it should evaluate to <i>Hello World !</i> in output file
 	 * 
 	 */
 	@Test
@@ -58,10 +53,10 @@ public class X4JEngineTest {
 	}
 
 	/**
-	 * This sample demonstrates mock data source, MockData.xlsx contains Excel table with name Table1.
+	 * MockData sample demonstrates mock data source for unit testing, MockData.xlsx file contains Excel table (table name is Table1) .
 	 * Table should be populated from query element with the same name. 
 	 * Normally query string contains SQL but it might be any script or URL to call WebService,
-	 * Mock Data provider might be useful for unit tests 
+	 * 
 	 * 
 	 * This sample produces report in XLSX and PDF formats
 	 */
@@ -73,7 +68,7 @@ public class X4JEngineTest {
 
 	}
 
-	private void mockData(String format) {
+	public void mockData(String format) {
 
 		X4JEngine engine = new X4JEngine();
 		setupMockDataSource(engine);
@@ -89,7 +84,7 @@ public class X4JEngineTest {
 
 
 	/**
-	 * This sample demonstrates pivot report, it uses same mock data but one of sheets contains pivot.
+	 * PivotReport sample demonstrates pivot report, it uses same mock data but one of sheets contains pivot.
 	 * Pivot should refresh data from Excel table and refresh should be configured in Pivot Options dialog 
 	 */
 	@Test
@@ -122,8 +117,8 @@ public class X4JEngineTest {
 	}
 
 	/**
-	 * This example use h2 DB connection for data access 
-	 * @throws Exception
+	 * h2DataSource example use h2 DB connection for data access 
+	 *
 	 */
 	@Test
 	public void h2DataSource() throws Exception{
@@ -140,6 +135,34 @@ public class X4JEngineTest {
 			File  saveTo = new File("target/h2Datasource.xlsx");		
 			engine.transaform(context,saveTo);
 
+			drop(connection);
+		}finally{
+			connection.close();
+		}
+
+	}
+	
+	/**
+	 * RollupReport example demonstrates advanced #for loop and currency formatting
+	 *
+	 */
+	@Test
+	public void rollupReport() throws Exception{
+
+		X4JEngine engine = new X4JEngine();
+		Connection connection = getConnection();
+		try{
+			puplateDB(connection);
+			engine.setDataProvider( new DefaultReportDataProvider(connection) );
+
+			ReportContext context = engine.createContext("samples/RollupReport.xml");
+			context.setOutputFormat("pdf");
+			context.getParameters().put("formatter", NumberFormat.getCurrencyInstance());
+
+			File  saveTo = new File("target/RollupReport.pdf");		
+			engine.transaform(context,saveTo);
+
+			drop(connection);
 		}finally{
 			connection.close();
 		}
@@ -147,6 +170,17 @@ public class X4JEngineTest {
 	}
 
 
+
+	private void drop(Connection connection) throws SQLException {
+		Statement statement = connection.createStatement();
+		try {
+			statement.execute(" DROP TABLE POLICY_SUMMARY");	
+		}finally{
+			statement.close();
+		}
+
+
+	}
 
 	private void puplateDB(Connection connection) throws SQLException {
 
@@ -193,18 +227,54 @@ public class X4JEngineTest {
 	}
 
 
-	public Connection getConnection() throws Exception{
-
-		JdbcDataSource ds = new JdbcDataSource();
-		ds.setURL("jdbc:h2:mem:db");
-		ds.setUser("sa");
-		ds.setPassword("sa");
+	private Connection getConnection() throws Exception{
 
 		return ds.getConnection();
 
 	}
 
+	private JdbcDataSource ds = new JdbcDataSource();
+	{
+		ds.setURL("jdbc:h2:mem:db");
+		ds.setUser("sa");
+		ds.setPassword("sa");
+	}
 
+	private String[] cols = cols("PRODUCT","POLICY", "STATE","PREMIUM");
+	private Object[][] data = data(
+			row("Auto", "AU25636","CA",200),
+			row("Home", "HO25636","CA",200),
+			row("Auto", "AU12345","NY",195),
+			row("Home", "HO23145","NY",186),
+			row("Auto", "AU74125","CA",193),
+			row("Auto", "AU74135","NM",198),
+			row("Auto", "AU72135","NC",198),
+			row("Auto", "AU72135","NC",198),			
+			row("Auto", "AU25636","CA",200),
+			row("Home", "HO29636","CA",200),
+			row("Auto", "AU12745","NY",195),
+			row("Home", "HO03145","NY",186),
+			row("Auto", "AU70125","CA",193),
+			row("Auto", "AU70135","NM",198),
+			row("Auto", "AU70135","NC",198),
+			row("Auto", "AU70135","NC",198),			
+			row("Auto", "AU25630","CA",200),
+			row("Home", "HO25630","CA",200),
+			row("Auto", "AU12340","NY",195),
+			row("Home", "HO23140","NY",186),
+			row("Auto", "AU74120","CA",193),
+			row("Auto", "AU74350","NM",198),
+			row("Auto", "AU72350","NC",198),
+			row("Auto", "AU72350","NC",198),			
+			row("Auto", "AU25360","CA",200),
+			row("Home", "HO29360","CA",200),
+			row("Auto", "AU12450","NY",195),
+			row("Home", "HO03450","NY",186),
+			row("Auto", "AU70250","CA",193),
+			row("Auto", "AU70350","NM",198),
+			row("Auto", "AU70350","NC",198),
+			row("Auto", "AU70350","NC",198)
+			);
 
 }
 
