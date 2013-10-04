@@ -3,6 +3,10 @@ x4j-analytic
 x4j-analytic is an open source XLSX format template engine API for Java programming language. 
 X4J is used as the embedded library in Java applications to implement full blown reporting solutions.
 
+## License
+
+This projected is licensed under the terms of the [Apache v2 license](http://www.apache.org/licenses/LICENSE-2.0.html)
+
 ## Performance
 
 X4J Engine is designed to produce relatively large reports and to consume reasonable amount of memory on reporting servers, WEB applications, batch reports.
@@ -24,7 +28,7 @@ is very simple but it is better extend engine itself to add features or to solve
 ## Samples
 
 [View](https://github.com/jbaliuka/x4j-analytic/blob/master/samples/src/test/java/x4j/samples/X4JEngineTest.java) code examples online or clone git repository.
-[View](https://github.com/jbaliuka/x4j-analytic/tree/master/samples/src/test/resources/samples) sample reports on reporsitory.
+[View](https://github.com/jbaliuka/x4j-analytic/tree/master/samples/src/test/resources/samples) sample reports on repository.
 
 
 
