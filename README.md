@@ -46,10 +46,12 @@ Context variables might referenced  as ${myContextVariable}. Templates also supp
 There are other similar Excel template engines (JETT, JXLS) and both are be fine for regular reports. 
 X4J was developed to workaround memory issues for huge reports. Both JETT and JXLS are more sophisticated and have more scripting capabilities but it needs to process templates in memory
 and large reports might exceed  memory limits or to screw GC with millions of POI objects. Automatic table binding is also a nice X4J feature, 
-it makes templates more maintainable because we can avoid tags and scripting for simple tables and to replace sophisticated grouping with Pivot. 
+it makes templates more maintainable because we can avoid tags and scripting for simple tables and to replace sophisticated grouping with Pivot.
+[docx4j](http://www.docx4java.org/trac/docx4j) might be used to develop light weight template engine too, it uses JAXB instead of XMLBeans and it should consume less memory. 
 
  * [JETT](http://jett.sourceforge.net/index.html)  (Java Excel Template Translator) is a Java 5.0 API that allows speedy creation of Excel spreadsheet reports using Excel spreadsheet templates.
- * [JXLS](http://jxls.sourceforge.net)  is a small and easy-to-use Java library for writing Excel files using XLS templates and reading data from Excel into Java objects using XML configuration. 
+ * [JXLS](http://jxls.sourceforge.net)  is a small and easy-to-use Java library for writing Excel files using XLS templates and reading data from Excel into Java objects using XML configuration.
+ * [docx4j](http://www.docx4java.org/trac/docx4j) is a Java library for creating and manipulating Microsoft Open XML (Word docx, Powerpoint pptx, and Excel xlsx) files.  
 
 
 
