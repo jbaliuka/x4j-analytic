@@ -33,10 +33,11 @@ import com.exigeninsurance.x4j.analytic.util.MockResultSet;
 
 public class X4JEngineTest {
 
-	
+
 
 	/**
-	 * HelloWorld.xlsx template contains ${message} expression, it should evaluate to <i>Hello World !</i> in output file
+	 * HelloWorld.xlsx template contains ${message} expression, 
+	 * it should evaluate to <i>Hello World !</i> in output file
 	 * 
 	 */
 	@Test
@@ -53,7 +54,8 @@ public class X4JEngineTest {
 	}
 
 	/**
-	 * MockData sample demonstrates mock data source for unit testing, MockData.xlsx file contains Excel table (table name is Table1) .
+	 * MockData sample demonstrates mock data source for unit testing, 
+	 * MockData.xlsx file contains Excel table (table name is Table1).
 	 * Table should be populated from query element with the same name. 
 	 * Normally query string contains SQL but it might be any script or URL to call WebService,
 	 * 
@@ -84,8 +86,9 @@ public class X4JEngineTest {
 
 
 	/**
-	 * PivotReport sample demonstrates pivot report, it uses same mock data but one of sheets contains pivot.
-	 * Pivot should refresh data from Excel table and refresh should be configured in Pivot Options dialog 
+	 * PivotReport sample demonstrates pivot report, 
+	 * it uses same mock data but one of sheets contains pivot.
+	 * Pivot should refresh data from Excel table 
 	 */
 	@Test
 	public void pivotReport() {
@@ -102,7 +105,8 @@ public class X4JEngineTest {
 	}
 
 	/**
-	 * Scripting.xlsx template contains ${reportMetadata.name} expression, it should evaluate to report name defined Scripting.xml file 
+	 * Scripting.xlsx template contains ${reportMetadata.name} expression, 
+	 * it should evaluate to report name defined Scripting.xml file 
 	 * 
 	 */
 	@Test
@@ -141,7 +145,7 @@ public class X4JEngineTest {
 		}
 
 	}
-	
+
 	/**
 	 * RollupReport example demonstrates advanced #for loop and currency formatting
 	 *
@@ -198,7 +202,9 @@ public class X4JEngineTest {
 			statement.close();
 		}
 
-		PreparedStatement pstatement = 	connection.prepareStatement("INSERT INTO POLICY_SUMMARY VALUES (?,?,?,?)");
+		PreparedStatement pstatement = 	connection.prepareStatement(
+				"INSERT INTO POLICY_SUMMARY VALUES (?,?,?,?)"
+				);
 		try {
 			for(Object[] nextRow : data ){
 				int i = 0;
@@ -216,11 +222,8 @@ public class X4JEngineTest {
 	}
 
 	private void setupMockDataSource(X4JEngine engine){
-
-
-
-		final ResultSet rs = MockResultSet.create(cols,data);
-
+		
+		ResultSet rs = MockResultSet.create(cols,data);
 		ReportDataProvider dataProvider = new MockReportDataProvider(rs);
 		engine.setDataProvider(dataProvider);
 
@@ -240,7 +243,8 @@ public class X4JEngineTest {
 		ds.setPassword("sa");
 	}
 
-	private String[] cols = cols("PRODUCT","POLICY", "STATE","PREMIUM");
+	private String[] cols = 
+			cols("PRODUCT","POLICY", "STATE","PREMIUM");
 	private Object[][] data = data(
 			row("Auto", "AU25636","CA",200),
 			row("Home", "HO25636","CA",200),

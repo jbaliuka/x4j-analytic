@@ -9,7 +9,6 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import com.exigeninsurance.x4j.analytic.api.Cursor;
@@ -31,13 +30,7 @@ public class PersistingCursor implements Cursor {
 		writeMetadata();
 	}
 
-	private CursorMetadata createMetadata(ResultSet rs) {
-		try {
-			return CursorMetadata.createFromResultSet(rs);
-		} catch (SQLException e) {
-			throw new ReportException(e);
-		}
-	}
+	
 
 	private void initStreams() {
 		try {

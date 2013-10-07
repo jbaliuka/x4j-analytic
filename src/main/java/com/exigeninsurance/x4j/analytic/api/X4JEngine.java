@@ -54,7 +54,7 @@ import com.exigeninsurance.x4j.analytic.xlsx.transform.xml.XLSXWorkbookToXMLTran
  */
 public final class X4JEngine {
 
-	 
+
 
 	private class DefaultTemplateResolver implements TemplateResolver {
 		@Override
@@ -91,10 +91,12 @@ public final class X4JEngine {
 	}
 
 	private Map<String,Transform> transformations = new HashMap<String, Transform>();
+
+
 	private TemplateResolver resolver = new DefaultTemplateResolver();
 	private MetadataUnmarshaler  unmarshaler = new DefaultMetadataUnmarshaler(); 
 	private ReportDataProvider dataProvider ;
-	String dataSourceName;
+	private String dataSourceName;
 
 	{
 		transformations.put("xlsx", new XLSXWorkbookTransaform());
@@ -105,7 +107,7 @@ public final class X4JEngine {
 
 	}
 
-	
+
 
 	/**
 	 * Factory method resolves report definition file to create initial context.
@@ -133,8 +135,8 @@ public final class X4JEngine {
 		}
 
 	}
-	
-	
+
+
 
 	/**
 	 *  Facade method to invoke Transform implementation
@@ -149,7 +151,11 @@ public final class X4JEngine {
 			Transform t = transformations.get(context.getOutputFormat());
 
 			if ( t == null){
-				throw new ReportException("unable to find transformation for output fomat " + context.getOutputFormat());
+				throw new ReportException("unable to find transformation for output format " + 
+						context.getOutputFormat() + 
+						" available formats:" + 
+						transformations.keySet()			
+						);
 			}
 
 			t.setTemplateProvider(resolver);
@@ -210,7 +216,15 @@ public final class X4JEngine {
 		this.unmarshaler = unmarshaler;
 	}
 
+	public Map<String, Transform> getTransformations() {
+		return transformations;
+	}
 
+
+
+	public void setTransformations(Map<String, Transform> transformations) {
+		this.transformations = transformations;
+	}
 
 
 

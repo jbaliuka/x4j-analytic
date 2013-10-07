@@ -31,8 +31,6 @@ is very simple but it is better extend engine itself to add features or to solve
 [View](https://github.com/jbaliuka/x4j-analytic/tree/master/samples/src/test/resources/samples) sample reports on repository.
 
 
-
-
 Normally we use two files for every report, query and parameter declarations are stored as [XML](https://github.com/jbaliuka/x4j-analytic/wiki/Report-Definition-Schema)
 Template is a regular Excel file in XLSX format with Table and Pivot Table and engine populates Table with query results. Excel Table name should match query name in XML file.
 Context variables might referenced  as ${myContextVariable}. Templates also support Velocity like  language with loops and flow control statements: #if,#for, ..., #end
@@ -43,7 +41,15 @@ Context variables might referenced  as ${myContextVariable}. Templates also supp
  * mvn install 
 
 
+## Similar Projects
 
+There are other similar Excel template engines (JETT, JXLS) and both are be fine for regular reports. 
+X4J was developed to workaround memory issues for huge reports. Both JETT and JXLS are more sophisticated and have more scripting capabilities but it needs to process templates in memory
+and large reports might exceed  memory limits or to screw GC with millions of POI objects. Automatic table binding is also a nice X4J feature, 
+it makes templates more maintainable because we can avoid tags and scripting for simple tables and to replace sophisticated grouping with Pivot. 
+
+ * [JETT](http://jett.sourceforge.net/index.html)  (Java Excel Template Translator) is a Java 5.0 API that allows speedy creation of Excel spreadsheet reports using Excel spreadsheet templates.
+ * [JXLS](http://jxls.sourceforge.net)  is a small and easy-to-use Java library for writing Excel files using XLS templates and reading data from Excel into Java objects using XML configuration. 
 
 
 

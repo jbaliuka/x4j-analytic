@@ -1,7 +1,7 @@
 /*
  * Copyright 2008-2013 Exigen Insurance Solutions, Inc. All Rights Reserved.
  *
-*/
+ */
 
 
 package com.exigeninsurance.x4j.analytic.xlsx.transform;
@@ -28,7 +28,7 @@ public class PivotTableCache extends POIXMLDocumentPart {
 	}
 
 	public PivotTableCache(PackagePart part, PackageRelationship rel)
-	throws IOException {
+			throws IOException {
 		super(part, rel);
 		readFrom(part.getInputStream());
 	}
@@ -67,7 +67,9 @@ public class PivotTableCache extends POIXMLDocumentPart {
 		this.ctPivotTable = ctPivotTable;
 		this.ctPivotTable.setSaveData(false);
 		this.ctPivotTable.setRefreshOnLoad(true);
-		this.ctPivotTable.unsetId();
+		if(this.ctPivotTable.isSetId()){
+			this.ctPivotTable.unsetId();
+		}
 	}
 
 	public CTPivotCacheDefinition getCtPivotTable() {

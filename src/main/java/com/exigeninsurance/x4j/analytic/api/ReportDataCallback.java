@@ -16,7 +16,7 @@ public interface ReportDataCallback {
 
 	/**
 	 * Call back for safe processing, data provider closes resources
-	 * @param rs
+	 * @param rs result set wrapper
 	 * @throws Exception
 	 */
 	void process(Cursor rs) throws Exception;
