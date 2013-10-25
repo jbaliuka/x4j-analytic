@@ -5,7 +5,9 @@
 
 package com.exigeninsurance.x4j.analytic.api;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
@@ -26,6 +28,9 @@ public class ReportContext {
 	private CursorManager cursorManager;
 	private Map<String, Object> parameters = new HashMap<String, Object>();
 	private String outputFormat = "xlsx";
+	private String tableStyleName;
+	private String pivotStyleName;
+	private List<String> styles = new ArrayList<String>();
 
 	public ReportContext(ReportMetadata metadata) {
 		super();
@@ -67,6 +72,7 @@ public class ReportContext {
 	}
 
 
+	
 
 	public String getOutputFormat() {
 		return outputFormat;
@@ -76,6 +82,30 @@ public class ReportContext {
 
 	public void setOutputFormat(String outputFormat) {
 		this.outputFormat = outputFormat;
+	}
+
+	public String getTableStyleName() {
+		return tableStyleName;
+	}
+
+	public void setTableStyleName(String tableStyleName) {
+		this.tableStyleName = tableStyleName;
+	}
+
+	public String getPivotStyleName() {
+		return pivotStyleName;
+	}
+
+	public void setPivotStyleName(String pivotStyleName) {
+		this.pivotStyleName = pivotStyleName;
+	}
+
+	public List<String> getStyles() {
+		return styles;
+	}
+
+	public void setStyles(List<String> styles) {
+		this.styles = styles;
 	}
 
 	

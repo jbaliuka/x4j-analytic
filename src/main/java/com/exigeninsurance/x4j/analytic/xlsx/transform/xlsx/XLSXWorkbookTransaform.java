@@ -47,7 +47,7 @@ final public class XLSXWorkbookTransaform extends BaseTransform {
 			"<sst xmlns=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\" "+
 			"count=\"@count@\" uniqueCount=\"@uniqueCount@\">\n  ";
 
-	public void doProcess(ReportContext reportContext, File saveTo) throws Exception{
+	public void doProcess(XLSXWorkbook workbook,ReportContext reportContext, File saveTo) throws Exception{
 
 		List<String> savedParts = new ArrayList<String>();
 		process(reportContext, saveTo, savedParts, workbook);

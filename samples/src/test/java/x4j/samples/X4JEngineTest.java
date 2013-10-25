@@ -103,6 +103,31 @@ public class X4JEngineTest {
 		engine.transaform(context,saveTo);
 
 	}
+	
+	
+	/**
+	 * Demonstrates style override without changes in template
+	 * 
+	 */
+	@Test
+	public void overrideStyles() {
+
+
+		X4JEngine engine = new X4JEngine();
+		engine.getStyles().add("samples/customStyles.xlsx");
+		
+		setupMockDataSource(engine);
+
+		ReportContext context = engine.createContext("samples/PivotReport.xml");
+		
+		context.setTableStyleName("customTableStyle");
+		context.setPivotStyleName("customPivotStyle");
+		
+		File  saveTo = new File("target/OverrideStyles.xlsx");		
+
+		engine.transaform(context,saveTo);
+
+	}
 
 	/**
 	 * Scripting.xlsx template contains ${reportMetadata.name} expression, 

@@ -19,6 +19,7 @@ import org.slf4j.LoggerFactory;
 import com.exigeninsurance.x4j.analytic.api.ReportContext;
 import com.exigeninsurance.x4j.analytic.util.IOUtils;
 import com.exigeninsurance.x4j.analytic.xlsx.transform.BaseTransform;
+import com.exigeninsurance.x4j.analytic.xlsx.transform.xlsx.XLSXWorkbook;
 
 
 final public class XLSXWorkbookToHTMLTransaform extends BaseTransform {
@@ -35,7 +36,7 @@ final public class XLSXWorkbookToHTMLTransaform extends BaseTransform {
 	 }
 
 
-	public void doProcess(ReportContext reportContext, File saveTo) throws Exception {
+	public void doProcess(XLSXWorkbook workbook, ReportContext reportContext, File saveTo) throws Exception {
 
 			OutputStream out = saveTo == null ? output
 					: new BufferedOutputStream(new FileOutputStream(saveTo));

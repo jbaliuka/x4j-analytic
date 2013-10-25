@@ -8,6 +8,9 @@ package com.exigeninsurance.x4j.analytic.xlsx.transform.xlsx;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 import org.apache.poi.openxml4j.opc.PackagePart;
 import org.apache.poi.openxml4j.opc.PackageRelationship;
@@ -188,20 +191,28 @@ final public class XLSXStylesTable extends StylesTable {
 		CTTableStyles tableStyles = styles.getCTStylesheet().getTableStyles();
 		CTTableStyles thisTableStyles = getCTStylesheet().getTableStyles();
 		thisTableStyles.setDefaultTableStyle(tableStyles.getDefaultTableStyle());
-		thisTableStyles.setDefaultPivotStyle(tableStyles.getDefaultPivotStyle());		
+		thisTableStyles.setDefaultPivotStyle(tableStyles.getDefaultPivotStyle());
 
-		int index = (int) (thisTableStyles.getCount());
+		List<CTTableStyle> newStyles = new ArrayList<CTTableStyle>();
+		newStyles.addAll(Arrays.asList(thisTableStyles.getTableStyleArray()));
 
-		thisTableStyles.setCount(thisTableStyles.getCount() + tableStyles.getCount() );
-		CTTableStyle[] union = new CTTableStyle[(int) thisTableStyles.getCount()];
-		System.arraycopy(thisTableStyles.getTableStyleArray(), 0, union, 0, index);
 
-		for ( CTTableStyle item : tableStyles.getTableStyleArray() ){			
-			union[index] = copyTableElements(styles, item);
-			index++;
+		for ( CTTableStyle item : tableStyles.getTableStyleArray() ){
+			boolean exits = false;
+			for(CTTableStyle next: newStyles){
+				if(next.getName().equals(item.getName())){
+					exits = true;
+					break;
+				}
+			}
+			if(!exits){
+				newStyles.add( copyTableElements(styles, item));
+			}
+
 		}
 
-		thisTableStyles.setTableStyleArray(union);
+		thisTableStyles.setCount(newStyles.size());
+		thisTableStyles.setTableStyleArray(newStyles.toArray( new CTTableStyle[newStyles.size()]));
 	}
 
 	private CTTableStyle copyTableElements(XLSXStylesTable styles, CTTableStyle item) {

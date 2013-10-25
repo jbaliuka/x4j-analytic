@@ -3,7 +3,9 @@ package com.exigeninsurance.x4j.analytic.api;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import com.exigeninsurance.x4j.analytic.model.ReportMetadata;
@@ -91,12 +93,12 @@ public final class X4JEngine {
 	}
 
 	private Map<String,Transform> transformations = new HashMap<String, Transform>();
-
-
 	private TemplateResolver resolver = new DefaultTemplateResolver();
 	private MetadataUnmarshaler  unmarshaler = new DefaultMetadataUnmarshaler(); 
 	private ReportDataProvider dataProvider ;
 	private String dataSourceName;
+	private List<String> styles = new ArrayList<String>();
+	
 
 	{
 		transformations.put("xlsx", new XLSXWorkbookTransaform());
@@ -160,6 +162,8 @@ public final class X4JEngine {
 
 			t.setTemplateProvider(resolver);
 			t.setDataProvider(dataProvider == null ?  new DefaultReportDataProvider(dataSourceName) : dataProvider );
+			context.getStyles().addAll(styles);
+			
 
 			InputStream template = resolver.openTemplate(context.getMetadata().getTemplate());
 			try {
@@ -224,6 +228,22 @@ public final class X4JEngine {
 
 	public void setTransformations(Map<String, Transform> transformations) {
 		this.transformations = transformations;
+	}
+
+
+
+	public List<String> getStyles() {
+		return styles;
+	}
+
+   
+	/**
+	 * List of template names to import style
+	 * @param styles
+	 */
+
+	public void setStyles(List<String> styles) {
+		this.styles = styles;
 	}
 
 

@@ -77,6 +77,11 @@ public class TableNode extends Node{
 
 	@Override
 	public void process(XLXContext context) throws Exception {
+		String style = context.getReportContext().getTableStyleName();
+		if(style != null){
+			table.getCTTable().getTableStyleInfo().setName(style);
+		}
+		
 		for(CTTableColumn c : table.getCTTable().getTableColumns().getTableColumnArray()){
 			Object name = CellExpressionParser.parseExpression(c.getName()).evaluate(context);
 			if(name != null){

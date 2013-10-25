@@ -13,6 +13,8 @@ import java.io.OutputStream;
 import org.apache.poi.POIXMLDocumentPart;
 import org.apache.poi.openxml4j.opc.PackagePart;
 import org.apache.poi.openxml4j.opc.PackageRelationship;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.util.CellReference;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.xmlbeans.XmlException;
 import org.openxmlformats.schemas.spreadsheetml.x2006.main.CTPivotTableDefinition;
@@ -70,5 +72,10 @@ public class PivotTable extends POIXMLDocumentPart {
 		}finally{
 			out.close();
 		}
+	}
+
+	public CellReference getStartCellReference() {
+		
+		return new CellReference(ctPivotTable.getLocation().getRef().split(":")[0]);
 	}
 }

@@ -20,6 +20,7 @@ import org.slf4j.LoggerFactory;
 import com.exigeninsurance.x4j.analytic.api.ReportContext;
 import com.exigeninsurance.x4j.analytic.util.IOUtils;
 import com.exigeninsurance.x4j.analytic.xlsx.transform.BaseTransform;
+import com.exigeninsurance.x4j.analytic.xlsx.transform.xlsx.XLSXWorkbook;
 
 /**
  * @author jbaliuka
@@ -44,7 +45,7 @@ public class XLSXWorkbookToXMLTransform extends BaseTransform {
 		return IOUtils.createTempFile("xml");
 	}
 
-	protected void doProcess(ReportContext reportContext, File saveTo)
+	protected void doProcess(XLSXWorkbook workbook, ReportContext reportContext, File saveTo)
 			throws Exception {
 		OutputStream out = saveTo == null ? output : new BufferedOutputStream(
 				new FileOutputStream(saveTo));

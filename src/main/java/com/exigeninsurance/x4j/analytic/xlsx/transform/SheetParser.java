@@ -14,11 +14,13 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Stack;
+import java.util.Vector;
 
 import org.apache.poi.POIXMLDocumentPart;
 import org.apache.poi.POIXMLRelation;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.util.CellReference;
 import org.apache.poi.xssf.model.Table;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFPictureData;
@@ -36,9 +38,11 @@ import com.exigeninsurance.x4j.analytic.xlsx.core.node.CellNode;
 import com.exigeninsurance.x4j.analytic.xlsx.core.node.EmptyNode;
 import com.exigeninsurance.x4j.analytic.xlsx.core.node.ForEachNode;
 import com.exigeninsurance.x4j.analytic.xlsx.core.node.Node;
+import com.exigeninsurance.x4j.analytic.xlsx.core.node.PivotRefNode;
 import com.exigeninsurance.x4j.analytic.xlsx.core.node.TableNode;
 import com.exigeninsurance.x4j.analytic.xlsx.core.node.TextNode;
 import com.exigeninsurance.x4j.analytic.xlsx.transform.pdf.geometry.SimpleRange;
+import com.exigeninsurance.x4j.analytic.xlsx.transform.xlsx.XLSXFactory;
 import com.exigeninsurance.x4j.analytic.xlsx.transform.xlsx.XLXContext;
 import com.exigeninsurance.x4j.analytic.xlsx.utils.CellExpressionParser;
 import com.exigeninsurance.x4j.analytic.xlsx.utils.MacroParser;
@@ -66,6 +70,7 @@ public abstract class SheetParser {
 
     private MacroParser macroParser;
     private final List<Table> tables = new ArrayList<Table>();
+    private List<PivotTable> pivotTables = new ArrayList<PivotTable>();
     private List<Picture> pictures = new ArrayList<Picture>();
     private final boolean showGridLines = false;
     private final boolean showRuler = false;
@@ -77,6 +82,8 @@ public abstract class SheetParser {
 	private final Stack<SimpleRange> openLoops = new Stack<SimpleRange>();
     private Map<String, MergedRegion> mergedCellMap;
     private Collection<MergedRegion> mergedRegions = new ArrayList<MergedRegion>();
+
+	
 
     public SheetParser() {
         this( null);
@@ -115,6 +122,7 @@ public abstract class SheetParser {
 
         this.sheet = preprocess(sheet);
         collectTables();
+        collectPivots();
         collectMergedCells();
         collectPictures(sheet.getWorkbook().getAllPictures());
 
@@ -259,6 +267,12 @@ public abstract class SheetParser {
                     if (table != null) {
                         parseTable(top, table, row);
                         return;
+                    }else {
+                    	PivotTable pivot =  isPivotTable(cell.getRowIndex(), cell.getColumnIndex());
+                    	if(pivot != null){
+                    		top.getChildren().add(new PivotRefNode(sheet, pivot));
+                    	}
+                    	
                     }
                 }
             }
@@ -353,15 +367,36 @@ public abstract class SheetParser {
             }
         }
     }
+    
+    private void collectPivots() {
+        for (POIXMLDocumentPart p : sheet.getRelations()) {
+            if (p.getPackageRelationship().getRelationshipType().equals(XLSXFactory.PIVOT.getRelation())) {
+                PivotTable table = (PivotTable) p;
+                pivotTables.add(table);                
+
+            }
+        }
+    }
 
    
 
     public Table isTable(int row, int col) {
 
         for (Table table : tables) {
-            if (table.getStartCellReference().getRow() == row &&
-                    table.getStartCellReference().getCol() == col
-                    ) {
+            CellReference ref = table.getStartCellReference();
+			if (ref.getRow() == row && ref.getCol() == col) {
+                return table;
+            }
+        }
+
+        return null;
+    }
+    
+    public PivotTable isPivotTable(int row, int col) {
+
+        for (PivotTable table : pivotTables) {
+            CellReference ref = table.getStartCellReference();
+			if (ref.getRow() == row && ref.getCol() == col  ) {
                 return table;
             }
         }

@@ -15,6 +15,7 @@ import java.io.OutputStream;
 import com.exigeninsurance.x4j.analytic.api.ReportContext;
 import com.exigeninsurance.x4j.analytic.util.IOUtils;
 import com.exigeninsurance.x4j.analytic.xlsx.transform.BaseTransform;
+import com.exigeninsurance.x4j.analytic.xlsx.transform.xlsx.XLSXWorkbook;
 
 
 public class XLSXWorkbookToPdfTransform extends BaseTransform {
@@ -29,7 +30,7 @@ public class XLSXWorkbookToPdfTransform extends BaseTransform {
 		this.output = output;
 	}
 
-	public void doProcess(ReportContext reportContext, File saveTo) 
+	public void doProcess(XLSXWorkbook workbook, ReportContext reportContext, File saveTo) 
 			throws Exception {
 				OutputStream out = saveTo == null ? output : new BufferedOutputStream(
 						new FileOutputStream(saveTo));
