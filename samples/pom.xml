@@ -4,7 +4,7 @@
 
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.exigeninsurance.x4j.analytic</groupId>
-	<version>1.0</version>
+	<version>1.0.1</version>
 	<artifactId>x4j-analytic-samples</artifactId>
 	<name>XLSX Transformations</name>
 
@@ -23,7 +23,7 @@
 		</dependency>
 		<dependency>
 			<groupId>com.exigeninsurance.x4j.analytic</groupId>
-			<version>1.0</version>
+			<version>${project.version}</version>
 			<artifactId>x4j-analytic</artifactId>
 			<scope>test</scope>
 		</dependency>
