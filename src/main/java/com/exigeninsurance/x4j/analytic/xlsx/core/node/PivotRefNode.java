@@ -27,9 +27,14 @@ public class PivotRefNode extends Node {
 		
 		int row = context.getCurrentRow();
 		String ref[] = pivot.getCtPivotTable().getLocation().getRef().split(":");
-		CellReference cref = new CellReference(ref[0]);
-		CellReference update = new CellReference(row,cref.getCol());		
-		pivot.getCtPivotTable().getLocation().setRef(update.formatAsString() + ":" + ref[1]);
+		CellReference top = new CellReference(ref[0]);
+		CellReference newTop = new CellReference(row,top.getCol());	
+		
+		CellReference bottom = new CellReference(ref[1]);
+		CellReference newBottom = new CellReference(bottom.getRow() - top.getRow() + row ,bottom.getCol());	
+		
+		
+		pivot.getCtPivotTable().getLocation().setRef(newTop.formatAsString() + ":" + newBottom.formatAsString());
 		
 	}
 
