@@ -67,7 +67,8 @@ public class WrappingUtil {
             builder.append(formula.substring(end, start + 1));
             end = formula.indexOf("'", start + 1);
             String field = formula.substring(start + 1, end);
-            String evaluatedField = CellExpressionParser.parseExpression(field).evaluate(context).toString();
+            Object value = CellExpressionParser.parseExpression(field).evaluate(context);
+            String evaluatedField = value == null ? field : value.toString();
             builder.append(wrapTableColumnName(evaluatedField));
             start = formula.indexOf("'", end + 1);
         }

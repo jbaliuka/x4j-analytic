@@ -382,8 +382,8 @@ public class XLSXSheetParserTest {
 			Assert.assertNotNull(root);
 			List <Table> tables = parser.getTables();
             Assert.assertEquals(2, tables.size());
-            Assert.assertNotNull(parser.isTable(0, 0));
-            Assert.assertNotNull(parser.isTable(5, 1));
+            Assert.assertNotNull(parser.isTable(0));
+            Assert.assertNotNull(parser.isTable(5));
 			
 		}finally{
 			is.close();
