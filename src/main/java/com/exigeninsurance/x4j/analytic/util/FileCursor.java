@@ -8,7 +8,10 @@ package com.exigeninsurance.x4j.analytic.util;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.ObjectInputStream;
+import java.util.zip.GZIPInputStream;
+import java.util.zip.GZIPOutputStream;
 
 import org.slf4j.Logger;
 
@@ -21,14 +24,18 @@ public class FileCursor implements Cursor {
 	private static final Logger logger = org.slf4j.LoggerFactory.getLogger(FileCursor.class);
 
 	private CursorMetadata metadata;
-	private FileInputStream fileIn;
+	private InputStream fileIn;
 	private ObjectInputStream objectIn;
 	private File file;
 
 	private Object[] currentRow;
 
-	public FileCursor(File file) {
+	private int rowCount;
+	private int currentRowNumber = 0;
+
+	public FileCursor(File file, int rowCount) {
 		this.file = file;
+		this.rowCount = rowCount;
 		init();
 	}
 
@@ -44,7 +51,7 @@ public class FileCursor implements Cursor {
 	}
 
 	private void initStreams() throws IOException {
-		fileIn = new FileInputStream(file);
+		fileIn = new GZIPInputStream(new FileInputStream(file));
 		objectIn = new ObjectInputStream(fileIn);
 	}
 
@@ -62,6 +69,7 @@ public class FileCursor implements Cursor {
 				fileIn.close();
 			}
 			fileIn = null;
+			currentRowNumber = 0;
 		} catch (IOException e) {
 			logger.warn("unable to close stream",e);
 		}
@@ -70,7 +78,7 @@ public class FileCursor implements Cursor {
 	@Override
 	public boolean next()  {
 		try {		
-			boolean hasNext = objectIn.available() > 0;
+			boolean hasNext = currentRowNumber < rowCount;
 			if (hasNext) {
 				try {
 					readRow();
@@ -87,6 +95,7 @@ public class FileCursor implements Cursor {
 	private void readRow() throws IOException, ClassNotFoundException {
 		
 			currentRow = metadata.readRow(objectIn);
+			currentRowNumber ++;
 		
 	}
 

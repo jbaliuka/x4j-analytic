@@ -39,6 +39,7 @@ import com.exigeninsurance.x4j.analytic.api.ReportContext;
 import com.exigeninsurance.x4j.analytic.model.Link;
 import com.exigeninsurance.x4j.analytic.model.Query;
 import com.exigeninsurance.x4j.analytic.model.ReportMetadata;
+import com.exigeninsurance.x4j.analytic.util.CursorManager;
 import com.exigeninsurance.x4j.analytic.util.MockReportDataProvider;
 import com.exigeninsurance.x4j.analytic.util.MockResultSet;
 import com.exigeninsurance.x4j.analytic.util.ResultSetWrapper;
@@ -87,8 +88,9 @@ public class TransformTest extends TransformationTest {
 
 
 	private void testTables(BaseTransform transform, ResultSet rs) throws Exception {
-		transform.setDataProvider(new MockReportDataProvider(rs));
+		
 
+		transform.setDataProvider(new MockReportDataProvider(rs));
 		InputStream in = getClass().getResourceAsStream("/testTables.xlsx");
 		assertNotNull(in);
 
@@ -105,14 +107,19 @@ public class TransformTest extends TransformationTest {
 			list.add(q2);
 			
 			metadata.setQuery(list);
-
-			HashMap<String, Object> parameters = new HashMap<String, Object>();
-			ReportContext reportContext = new ReportContext(metadata);
-
-			File saveTo = new File("transform1.xlsx");
-			transform.process(reportContext, in, saveTo);
 			
-			assertTrue(saveTo.delete());
+			ReportContext reportContext = new ReportContext(metadata);
+			CursorManager cursorManager = new CursorManager(reportContext, transform.getDataProvider());
+			reportContext.setCursorManager(cursorManager);
+			
+			File saveTo = new File("transform1.xlsx");
+			try{
+				transform.process(reportContext, in, saveTo);
+			}finally{
+				//cursorManager.releaseManagedResources();
+			}
+			
+			//assertTrue(saveTo.delete());
 
 		}finally{
 			in.close();

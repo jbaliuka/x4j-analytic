@@ -4,7 +4,7 @@
 
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.exigeninsurance.x4j.analytic</groupId>
-	<version>1.0.3</version>
+	<version>1.0.4</version>
 	<artifactId>x4j-analytic</artifactId>
 	<name>XLSX Transformations</name>	
     <description>

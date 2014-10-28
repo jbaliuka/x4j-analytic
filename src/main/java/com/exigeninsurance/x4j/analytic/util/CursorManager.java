@@ -25,13 +25,20 @@ import com.exigeninsurance.x4j.analytic.model.Query;
 
 
 public class CursorManager {
+	
+	
+	private static class ManagedFile{
+		
+		int rowCount;
+		File file;
+	}
 
 	private static final Logger log = LoggerFactory.getLogger(CursorManager.class);
 
 	private ReportContext reportContext;
 	private ReportDataProvider dataProvider;
 
-	private Map<Query, File> managedFiles = new HashMap<Query, File>();
+	private Map<Query, ManagedFile> managedFiles = new HashMap<Query, ManagedFile>();
 	private List<Cursor> managedCursors = new ArrayList<Cursor>();
 
 	public CursorManager(ReportContext reportContext, ReportDataProvider dataProvider) {
@@ -45,51 +52,63 @@ public class CursorManager {
 				cursor.close();
 			}
 		}
-		for (File file : managedFiles.values()) {			
+		for (ManagedFile file : managedFiles.values()) {			
 			delete(file);
 		}
 	}
 
 	public Cursor createCursor(Query query) {
 		query.setMetadata(reportContext.getMetadata());
-        return managedFiles.containsKey(query) ? new FileCursor(managedFiles.get(query)) : createManagedCursor(query);
+		ManagedFile file = managedFiles.get(query);
+        return managedFiles.containsKey(query) ? new FileCursor(file.file,file.rowCount) : createManagedCursor(query);
 	}
 
     private Cursor createManagedCursor(Query query) {
        
-        final File file = createFile();
+        int rowCount = 0;
+    	final File file = createFile();
         try {
-            writeRsToFile(query,reportContext, file);
+        	rowCount = writeRsToFile(query,reportContext, file);
         } catch (Exception e) {
-        	delete(file);
+        	file.delete();
             throw new ReportException(e);
         }
 
-        managedFiles.put(query, file);
-        FileCursor cursor = new FileCursor(file);
+        ManagedFile managedFile = new ManagedFile();
+        managedFile.file = file;
+        managedFile.rowCount = rowCount;
+        managedFiles.put(query, managedFile);
+        FileCursor cursor = new FileCursor(file,rowCount);
         managedCursors.add(cursor);
         return cursor;
     }
 
-	private void delete(final File file) {
-		if (!file.delete()) {
-			log.warn("Failed to delete file {}", file.getAbsolutePath());
+	private void delete(final ManagedFile file) {
+		if (!file.file.delete()) {
+			log.warn("Failed to delete file {}", file.file.getAbsolutePath());
 		}
 	}
 
-    private void writeRsToFile(Query query,ReportContext data, final File file) throws SQLException {
+    private int writeRsToFile(Query query,ReportContext data, final File file) throws SQLException {
+    	
+    	final int rowCount[] = {0};
+    	
 		dataProvider.execute(query,data, new ReportDataCallback() {
 
 			public void process(Cursor rs) throws Exception {
 				Cursor cursor = new PersistingCursor(file, rs);
 				try {
-					while (cursor.next()) {}
+					while (cursor.next()) {
+						rowCount[0] = rowCount[0] + 1;
+					}
 				}
 				finally {
 					cursor.close();
 				}
 			}
 		});
+		
+		return rowCount[0];
 	}
 
 	private File createFile() {

@@ -9,8 +9,10 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
+import java.io.OutputStream;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.zip.GZIPOutputStream;
 
 import org.apache.poi.util.Internal;
 import org.junit.Before;
@@ -47,7 +49,7 @@ public class FileCursorTest {
     }
 
     private void writeObjectsToFile(File file) throws IOException, SQLException {
-        FileOutputStream fileOut = new FileOutputStream(file);
+        OutputStream fileOut = new GZIPOutputStream( new FileOutputStream(file) );
         try {
             ObjectOutputStream objectOut = new ObjectOutputStream(fileOut);
             rs = MockResultSet.create(MockResultSet.cols("A","B"),MockResultSet.data( MockResultSet.row(row) ));
@@ -70,7 +72,7 @@ public class FileCursorTest {
         File file = new File("whatever");
         try {
             writeObjectsToFile(file);
-            Cursor cursor = new FileCursor(file);
+            Cursor cursor = new FileCursor(file,2);
             try {
                 CursorMetadata actual = cursor.getMetadata();
                 assertThat(actual.getColumnCount(), equalTo(2));
@@ -89,7 +91,7 @@ public class FileCursorTest {
         File file = new File("whatever");
         try {
             writeObjectsToFile(file);
-            Cursor cursor = new FileCursor(file);
+            Cursor cursor = new FileCursor(file,2);
             try {
                 assertTrue(cursor.next());
             } finally {
@@ -105,7 +107,7 @@ public class FileCursorTest {
         File file = new File("whatever");
         try {
             writeObjectsToFile(file);
-            Cursor cursor = new FileCursor(file);
+            Cursor cursor = new FileCursor(file,2);
             try {
                 cursor.next();
                 assertEquals("1", cursor.getObject(1));
@@ -123,7 +125,7 @@ public class FileCursorTest {
         File file = new File("whatever");
         try {
             writeObjectsToFile(file);
-            Cursor cursor = new FileCursor(file);
+            Cursor cursor = new FileCursor(file,2);
             try {
                 iterateThrough(cursor);
                 cursor.reset();
