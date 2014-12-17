@@ -62,9 +62,8 @@ public class FormatUtil {
 	public String formatMoney(Money money) {
 		NumberFormat nf = NumberFormat.getInstance(locale);
 		if (nf instanceof DecimalFormat) {
-			String pattern = getDecimalCurrencyFormat(money.getCurrencyCd());
-			String localizedPattern = localizePattern(pattern);
-			((DecimalFormat) nf).applyLocalizedPattern(localizedPattern);
+			String pattern = getDecimalCurrencyFormat(money.getCurrencyCd());	
+			((DecimalFormat) nf).applyPattern(pattern);
 		}
 		return nf.format(money.getValue().doubleValue());
 	}
@@ -73,12 +72,5 @@ public class FormatUtil {
 		return formatProvider.getDecimalCurrencyFormat(currencyCd, locale.getCountry());
 	}
 
-	private String localizePattern(String pattern) {
-		DecimalFormatSymbols symbols = new DecimalFormatSymbols(locale);
-		pattern = pattern.replace("#", Character.toString(symbols.getDigit()));
-		pattern = pattern.replace("0", Character.toString(symbols.getZeroDigit()));
-		pattern = pattern.replace(",", Character.toString(symbols.getGroupingSeparator()));
-		pattern = pattern.replace(".", Character.toString(symbols.getDecimalSeparator()));
-		return pattern;
-	}
+	
 }
