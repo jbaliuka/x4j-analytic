@@ -4,7 +4,7 @@
 
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.exigeninsurance.x4j.analytic</groupId>
-	<version>1.0.5</version>
+	<version>1.0.6</version>
 	<artifactId>x4j-analytic</artifactId>
 	<name>XLSX Transformations</name>	
     <description>
@@ -71,6 +71,12 @@
 			<groupId>org.apache.poi</groupId>
 			<artifactId>poi-ooxml</artifactId>
 			<version>3.6</version>
+ 			<exclusions>
+				<exclusion>
+					<artifactId>poi-ooxml-schemas</artifactId>
+					<groupId>org.apache.poi</groupId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 
 		<dependency>
