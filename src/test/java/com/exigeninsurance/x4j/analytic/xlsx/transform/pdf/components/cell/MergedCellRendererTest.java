@@ -53,14 +53,14 @@ public class MergedCellRendererTest extends CellRendererTestFixture {
     @Test
     public void testRendering() throws IOException {
         render("text");
-        verify(context).drawText("text", 0, 15);
+        verify(context).drawText("text", null, 0, 15);
     }
 
     @Test
     public void ifCellisNotMerged_nothingIsDone() throws IOException {
         when(node.isMerged(context)).thenReturn(false);
         render();
-        verify(context, never()).drawText(anyString(), anyFloat(), anyFloat());
+        verify(context, never()).drawText(anyString(),any(Color.class), anyFloat(), anyFloat());
         verify(context, never()).fill(any(Rectangle.class), any(Color.class));
     }
 

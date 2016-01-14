@@ -24,7 +24,9 @@ public class PdfHeader extends PdfHeaderFooter {
 	public void draw(RenderingContext context) throws Exception {
 		PdfContext pdfContext = context.getPdfContext();
 		for (DrawablePdfElement section : getSections()) {
-			pdfContext.movePointerTo(pdfContext.getLeftHorizontalMargin(), pdfContext.getPageHeigth());
+			float x = pdfContext.getLeftHorizontalMargin();
+			float y = pdfContext.getPageHeigth() - pdfContext.getHeaderMargin();
+			pdfContext.movePointerTo(x,y);
 			section.draw(context);
 		}
 	}

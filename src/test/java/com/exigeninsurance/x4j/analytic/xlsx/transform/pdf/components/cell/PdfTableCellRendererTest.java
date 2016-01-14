@@ -14,6 +14,7 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
+import java.awt.Color;
 import java.io.IOException;
 
 import org.apache.poi.ss.usermodel.CellStyle;
@@ -62,7 +63,7 @@ public class PdfTableCellRendererTest {
 		when(cellNode.estimateWidth(renderingContext)).thenReturn(90f);
 		tableCellRenderer.render(renderingContext);
 		verify(context).setTextOptions(10, TIMES_ROMAN, Font.U_NONE);
-        verify(context).drawText(anyString(), eq(0f), eq(0f));
+        verify(context).drawText(anyString(),any(Color.class), eq(0f), eq(0f));
     }
 
 	protected Answer<String> MethodArgument(final int argument) {

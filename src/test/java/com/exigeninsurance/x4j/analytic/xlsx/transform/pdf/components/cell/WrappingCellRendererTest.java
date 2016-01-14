@@ -8,16 +8,19 @@ package com.exigeninsurance.x4j.analytic.xlsx.transform.pdf.components.cell;
 
 import static org.mockito.Matchers.anyFloat;
 import static org.mockito.Matchers.anyString;
+import static org.mockito.Matchers.any;
 import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
+import java.awt.Color;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+
 
 import org.junit.Before;
 import org.junit.Test;
@@ -58,20 +61,20 @@ public class WrappingCellRendererTest extends CellRendererTestFixture {
 	@Test
     public void renderEmptyString() throws IOException {
 		render();
-		verify(context, never()).drawText(anyString(), anyFloat(), anyFloat());
+		verify(context, never()).drawText(anyString(),any(Color.class), anyFloat(), anyFloat());
     }
 
     @Test
     public void renderOneRow() throws IOException {
 		render(ONE_ROW);
-		verify(context).drawText(ONE_ROW, 10f, 0);
+		verify(context).drawText(ONE_ROW,null, 10f, 0);
     }
 
 	@Test
     public void renderTwoRows() throws IOException  {
 		render(TWO_ROWS);
-		verify(context).drawText("second", 10f, 0);
-        verify(context).drawText("first", 10f, 15f);
+		verify(context).drawText("second",null, 10f, 0);
+        verify(context).drawText("first",null,10f, 15f);
     }
 
     @Override

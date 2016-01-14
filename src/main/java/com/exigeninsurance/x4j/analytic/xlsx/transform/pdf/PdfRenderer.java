@@ -121,7 +121,7 @@ public class PdfRenderer {
 	
 	private void prepareNewPage() throws Exception {
 		createPage();
-		y = pageHeight - topVerticalMargin - headerMargin;
+		y = pageHeight - topVerticalMargin ;
 		x = leftHorizontalMargin;
 	}
 	
@@ -214,8 +214,8 @@ public class PdfRenderer {
 		items.add(new PdfDrawingInstruction(element, params));
 	}
 	
-	public void drawText(String text, float x, float y) throws IOException {
-		setDrawingColor(DEFAULT_TEXT_COLOR);
+	public void drawText(String text,Color color, float x, float y) throws IOException {
+		setDrawingColor(color);
 		stream.beginText();
         stream.moveTextPositionByAmount(x, y) ;
         stream.drawString(text);
@@ -243,8 +243,8 @@ public class PdfRenderer {
 				0.3f));
 	}
 
-	public void drawTextAtPointer(String text) throws IOException {
-		drawText(text, x, y);
+	public void drawTextAtPointer(String text,Color color) throws IOException {
+		drawText(text,color, x, y);
 	}
 
     private void drawLine(Line line, Color color, float width, DashPattern pattern) throws IOException {
@@ -397,6 +397,10 @@ public class PdfRenderer {
     public void setFooterMargin(float footerMargin) {
         this.footerMargin = footerMargin;
     }
+    
+    public float getFooterMargin() {
+		return footerMargin;
+	}
 
     public float getTopVerticalMargin() {
         return topVerticalMargin;

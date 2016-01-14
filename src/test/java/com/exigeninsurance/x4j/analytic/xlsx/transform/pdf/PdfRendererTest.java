@@ -19,6 +19,7 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 import static org.mockito.MockitoAnnotations.initMocks;
 
+import java.awt.Color;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -82,7 +83,7 @@ public class PdfRendererTest {
         renderer.prepareNewLine(container.estimateHeight(renderingContext));
         renderer.scheduleForDrawing(container, RenderingParameters.empty());
         renderer.renderCurrentPage();
-        verify(context).drawText(eq(""), anyInt(), anyInt());
+        verify(context).drawText(eq(""), any(Color.class), anyInt(), anyInt());
     }
 
     @Test
@@ -205,7 +206,7 @@ public class PdfRendererTest {
         container.setRenderer(new Renderer() {
             @Override
             public void render(RenderingContext context) throws IOException {
-                context.getPdfContext().drawText("", 0, 0);
+                context.getPdfContext().drawText("",Color.BLACK, 0, 0);
             }
         });
         return container;

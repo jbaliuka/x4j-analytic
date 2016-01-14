@@ -6,6 +6,8 @@
 
 package com.exigeninsurance.x4j.analytic.xlsx.transform.pdf.header.instruction;
 
+import java.awt.Color;
+
 import org.apache.poi.ss.usermodel.Font;
 
 import com.exigeninsurance.x4j.analytic.xlsx.transform.pdf.PdfContext;
@@ -24,7 +26,7 @@ public abstract class TextInstruction extends Instruction {
 	public void draw(RenderingContext context) throws Exception {
 		PdfContext pdfContext = context.getPdfContext();
 		pdfContext.setTextOptions(getFontSize(),  super.getPDFont(getFontStyle()), Font.U_NONE);
-		pdfContext.drawTextAtPointer(evaluateContents(pdfContext));
+		pdfContext.drawTextAtPointer(evaluateContents(pdfContext),Color.BLACK);
 	}
 
 	public float estimateWidth(RenderingContext context)  {

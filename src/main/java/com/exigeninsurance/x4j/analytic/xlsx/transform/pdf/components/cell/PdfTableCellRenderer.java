@@ -28,7 +28,7 @@ public class PdfTableCellRenderer extends AbstractCellRenderer {
             float x = textArea.getLowerLeft().getX() + findHorizontalOffset(text) + findStartingDrawingPoint(textArea.getWidth());
             float y = textArea.getLowerLeft().getY() + findVerticalOffset(textArea.getHeight());
             setTextOptions(pdfContext);
-            pdfContext.drawText(text, x, y);
+            pdfContext.drawText(text,node.getTextColor(), x, y);
         }
         pdfContext.movePointerBy(colWidth, 0);
     }

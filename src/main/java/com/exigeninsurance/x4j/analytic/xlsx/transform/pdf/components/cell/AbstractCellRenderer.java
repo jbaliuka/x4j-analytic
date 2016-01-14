@@ -60,6 +60,7 @@ public abstract class AbstractCellRenderer implements Renderer {
         textArea = drawingArea.expand(-context.getPdfContext().getMargins(), 0);
         fillArea = calculateFillArea(context, drawingArea);
         fill(context);
+        
         drawText(context, value);
         drawBorders(context);
     }

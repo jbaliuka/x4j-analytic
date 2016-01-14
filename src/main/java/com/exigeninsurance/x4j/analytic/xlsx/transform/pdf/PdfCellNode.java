@@ -17,6 +17,7 @@ import org.apache.pdfbox.pdmodel.font.PDFont;
 import org.apache.poi.hssf.util.CellReference;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFColor;
+import org.apache.poi.xssf.usermodel.XSSFFont;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 
 import com.exigeninsurance.x4j.analytic.api.ReportException;
@@ -50,7 +51,7 @@ public class PdfCellNode extends CellNode implements DrawablePdfElement, PdfGrid
 
     private int excelWidth;
 	private float rowHeigth;
-	private Color fillColor;
+	private Color fillColor;	
     private Alignment horizontalAlignment;
     private short verticalAlignment;
 	
@@ -290,4 +291,11 @@ public class PdfCellNode extends CellNode implements DrawablePdfElement, PdfGrid
 	public float getRowHeight() {
 		return rowHeigth;
 	}
+
+	public Color getTextColor() {
+		XSSFColor color = getCell().getCellStyle().getFont().getXSSFColor();		
+		return color == null ? Color.BLACK : ColorHelper.getAwtColor(color);
+	}
+
+	
 }

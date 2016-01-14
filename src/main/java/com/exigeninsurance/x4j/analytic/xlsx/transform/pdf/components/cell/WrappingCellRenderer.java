@@ -37,7 +37,7 @@ public class WrappingCellRenderer extends AbstractCellRenderer {
             for (int i = lines.size() - 1; i > -1; i--) {
                 String item = lines.get(i);
                 float x = textArea.getLowerLeft().getX() + findHorizontalOffset(item) + findStartingDrawingPoint(width);
-				pdfContext.drawText(item, x, y);
+				pdfContext.drawText(item,node.getTextColor(), x, y);
                 y += lineHeight + PdfRenderer.ROW_MARGIN;
             }
         }

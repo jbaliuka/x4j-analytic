@@ -173,7 +173,7 @@ public class AbstractCellRendererTest {
         @Override
         protected void drawText(RenderingContext context, Object value) throws IOException {
 			PdfContext pdfContext = context.getPdfContext();
-			pdfContext.drawText(value.toString(), pdfContext.getX(), pdfContext.getY());
+			pdfContext.drawText(value.toString(),Color.BLACK, pdfContext.getX(), pdfContext.getY());
         }
 
         @Override

@@ -172,12 +172,12 @@ public class PdfContext extends XLXContext {
         renderer.setDrawingOptions(fontSize, font, underline);
     }
 	
-	public void drawText(String text, float x, float y) throws IOException {
-		renderer.drawText(text, x, y);
+	public void drawText(String text,Color color, float x, float y) throws IOException {
+		renderer.drawText(text,color, x, y);
 	}
 	
-	public void drawTextAtPointer(String text) throws IOException {
-		renderer.drawTextAtPointer(text);
+	public void drawTextAtPointer(String text,Color color) throws IOException {
+		renderer.drawTextAtPointer(text,color);
 	}
 
     public void drawBorder(Border border) {
@@ -347,4 +347,13 @@ public class PdfContext extends XLXContext {
 	public void ensureEnoughSpace(float componentHeight) throws Exception {
 		renderer.ensureEnoughSpace(componentHeight);
 	}
+	
+	public float getHeaderMargin(){
+		return renderer.getHeaderMargin();
+	}
+	
+	public float getFooterMargin(){
+		return renderer.getFooterMargin();
+	}
+	
 }
