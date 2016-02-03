@@ -1,12 +1,13 @@
 /*
  * Copyright 2008-2013 Exigen Insurance Solutions, Inc. All Rights Reserved.
  *
-*/
+ */
 
 
 package com.exigeninsurance.x4j.analytic.xlsx.transform.pdf.components.cell;
 
 import java.io.IOException;
+import java.util.List;
 
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
@@ -27,72 +28,86 @@ public class MergedCellRenderer extends AbstractCellRenderer {
 		super(node);
 	}
 
-    @Override
-    protected Rectangle calculateDrawingArea(RenderingContext context) {
+	@Override
+	protected Rectangle calculateDrawingArea(RenderingContext context) {
 		PdfContext pdfContext = context.getPdfContext();
 		if (node.isMerged(pdfContext)) {
-            MergedRegion associatedRegion = node.getMergedRegion(pdfContext);
-            float x = pdfContext.getX();
-            float y = pdfContext.getY();
-            float areaTopY = y + getRowHeight(context);
-            float margins = (associatedRegion.getRegionHeigth() - 1) * PdfRenderer.ROW_MARGIN;
-            float areaBottomY = areaTopY - node.getParent().getHeigth(context, associatedRegion.getVerticalRange()) - margins;
-            float containerRightSide = x + node.getParent().getMergedRegionWidth(context, node, associatedRegion);
-            float containerHeight = areaTopY - areaBottomY;
-            float containerWidth = containerRightSide - x;
+			MergedRegion associatedRegion = node.getMergedRegion(pdfContext);
+			float x = pdfContext.getX();
+			float y = pdfContext.getY();
+			float areaTopY = y + getRowHeight(context);
+			float margins = (associatedRegion.getRegionHeigth() - 1) * PdfRenderer.ROW_MARGIN;
+			float areaBottomY = areaTopY - node.getParent().getHeigth(context, associatedRegion.getVerticalRange()) - margins;
+			float containerRightSide = x + node.getParent().getMergedRegionWidth(context, node, associatedRegion);
+			float containerHeight = areaTopY - areaBottomY;
+			float containerWidth = containerRightSide - x;
 
-            return new Rectangle(new Point(x, areaBottomY), containerWidth, containerHeight);
-        }
-        else {
-            return super.calculateDrawingArea(context);
-        }
+			return new Rectangle(new Point(x, areaBottomY), containerWidth, containerHeight);
+		}
+		else {
+			return super.calculateDrawingArea(context);
+		}
 
-    }
-
-    @Override
-    protected Rectangle calculateFillArea(RenderingContext context, Rectangle drawingArea) {
-        return !node.isMerged(context.getPdfContext()) ? null :
-                new Rectangle(new Point(
-                        drawingArea.getLowerLeft().getX(),
-                        drawingArea.getLowerLeft().getY() - PdfRenderer.ROW_MARGIN / 2),
-                        drawingArea.getWidth(), drawingArea.getHeight() + PdfRenderer.ROW_MARGIN);
-    }
-
-    @Override
-    protected void drawText(RenderingContext context, Object value) throws IOException {
-		PdfContext pdfContext = context.getPdfContext();
-		if (node.isMerged(pdfContext)) {
-            if (value != null) {
-                String text = node.formatValue(pdfContext, value);
-                float x = textArea.getLowerLeft().getX() + findHorizontalOffset(text) + findStartingDrawingPoint(textArea.getWidth());
-                float y = textArea.getLowerLeft().getY() + findVerticalOffset(textArea.getHeight());
-				setTextOptions(pdfContext);
-				pdfContext.drawText(text,node.getTextColor(), x, y);
-            }
-			pdfContext.movePointerBy(drawingArea.getWidth(), 0);
-        }
-    }
+	}
 
 	@Override
-    protected boolean applyFillAndBorders(RenderingContext context) {
-        return node.isMerged(context.getPdfContext());
-    }
+	protected Rectangle calculateFillArea(RenderingContext context, Rectangle drawingArea) {
+		return !node.isMerged(context.getPdfContext()) ? null :
+			new Rectangle(new Point(
+					drawingArea.getLowerLeft().getX(),
+					drawingArea.getLowerLeft().getY() - PdfRenderer.ROW_MARGIN / 2),
+					drawingArea.getWidth(), drawingArea.getHeight() + PdfRenderer.ROW_MARGIN);
+	}
 
-    @Override
-    protected void drawBorders(RenderingContext context) {
+	@Override
+	protected void drawText(RenderingContext context, Object value) throws IOException {
 		PdfContext pdfContext = context.getPdfContext();
 		if (node.isMerged(pdfContext)) {
-            XSSFCell otherCell = getRegionBottomRightCell(pdfContext);
-            drawBorders(pdfContext, otherCell.getCellStyle());
-            drawBorders(pdfContext, node.getCellStyle());
-        }
-    }
+			if (value != null) {
+				String text = node.formatValue(pdfContext, value);
+				if(node.isWrapped()){
+					List<String> lines = node.splitCell(text, textArea.getWidth(), 0);
+		            float lineHeight = node.getMaxFontHeight();
+		            float y = pdfContext.getY() + findVerticalOffset(context, lines);
+		            setTextOptions(pdfContext);
+		            for (int i = lines.size() - 1; i > -1; i--) {
+		                String item = lines.get(i);
+		                float x = textArea.getLowerLeft().getX() + findHorizontalOffset(item) + findStartingDrawingPoint(textArea.getWidth());
+						pdfContext.drawText(item,node.getTextColor(), x, y);
+		                y += lineHeight + PdfRenderer.ROW_MARGIN;
+		            }
 
-    private XSSFCell getRegionBottomRightCell(PdfContext context) {
-        MergedRegion associatedRegion = node.getMergedRegion(context);
-        Range horizontalRange = associatedRegion.getHorizontalRange();
-        Range verticalRange = associatedRegion.getVerticalRange();
-        XSSFRow row = context.getSheet().getRow(verticalRange.getLast());
-        return row.getCell(horizontalRange.getLast());
-    }
+				}else {
+					float x = textArea.getLowerLeft().getX() + findHorizontalOffset(text) + findStartingDrawingPoint(textArea.getWidth());
+					float y = textArea.getLowerLeft().getY() + findVerticalOffset(textArea.getHeight());
+					setTextOptions(pdfContext);
+					pdfContext.drawText(text,node.getTextColor(), x, y);
+				}
+			}
+			pdfContext.movePointerBy(drawingArea.getWidth(), 0);
+		}
+	}
+
+	@Override
+	protected boolean applyFillAndBorders(RenderingContext context) {
+		return node.isMerged(context.getPdfContext());
+	}
+
+	@Override
+	protected void drawBorders(RenderingContext context) {
+		PdfContext pdfContext = context.getPdfContext();
+		if (node.isMerged(pdfContext)) {
+			XSSFCell otherCell = getRegionBottomRightCell(pdfContext);
+			drawBorders(pdfContext, otherCell.getCellStyle());
+			drawBorders(pdfContext, node.getCellStyle());
+		}
+	}
+
+	private XSSFCell getRegionBottomRightCell(PdfContext context) {
+		MergedRegion associatedRegion = node.getMergedRegion(context);
+		Range horizontalRange = associatedRegion.getHorizontalRange();
+		Range verticalRange = associatedRegion.getVerticalRange();
+		XSSFRow row = context.getSheet().getRow(verticalRange.getLast());
+		return row.getCell(horizontalRange.getLast());
+	}
 }

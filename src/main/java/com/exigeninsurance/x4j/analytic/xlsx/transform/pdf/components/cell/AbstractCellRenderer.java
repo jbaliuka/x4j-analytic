@@ -27,6 +27,7 @@ import static org.apache.poi.ss.usermodel.CellStyle.VERTICAL_TOP;
 
 import java.awt.Color;
 import java.io.IOException;
+import java.util.List;
 
 import org.apache.poi.xssf.usermodel.XSSFCellStyle;
 import org.apache.poi.xssf.usermodel.extensions.XSSFCellBorder;
@@ -35,6 +36,7 @@ import com.exigeninsurance.x4j.analytic.xlsx.transform.pdf.Border;
 import com.exigeninsurance.x4j.analytic.xlsx.transform.pdf.DashPattern;
 import com.exigeninsurance.x4j.analytic.xlsx.transform.pdf.PdfCellNode;
 import com.exigeninsurance.x4j.analytic.xlsx.transform.pdf.PdfContext;
+import com.exigeninsurance.x4j.analytic.xlsx.transform.pdf.PdfRenderer;
 import com.exigeninsurance.x4j.analytic.xlsx.transform.pdf.RenderingContext;
 import com.exigeninsurance.x4j.analytic.xlsx.transform.pdf.RenderingParameter;
 import com.exigeninsurance.x4j.analytic.xlsx.transform.pdf.components.Alignment;
@@ -48,6 +50,7 @@ public abstract class AbstractCellRenderer implements Renderer {
     protected Rectangle drawingArea;
     protected Rectangle textArea;
     protected Rectangle fillArea;
+    private VerticalOffsetCalculator calculator = new VerticalOffsetCalculator();
 
     public AbstractCellRenderer(PdfCellNode node) {
         this.node = node;
@@ -64,6 +67,14 @@ public abstract class AbstractCellRenderer implements Renderer {
         drawText(context, value);
         drawBorders(context);
     }
+    
+    public float findVerticalOffset(RenderingContext context, List<String> items) {
+        return calculator.calculate(node.getVerticalAlignment(),
+                items.size(),
+                getRowHeight(context),
+                node.getMaxFontHeight(),
+                PdfRenderer.ROW_MARGIN);
+	}
 
     protected abstract void drawText(RenderingContext context, Object value) throws IOException;
 

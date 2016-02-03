@@ -142,6 +142,10 @@ public class PdfCellNode extends CellNode implements DrawablePdfElement, PdfGrid
 		return WrappingUtil.pdfWrap(value, this, width - margin);
 	}
 	
+	 public boolean isWrapped() {
+	        return cell.getCellStyle().getWrapText();
+	 }
+	
 	public float findTextLength(String value) {
 		
 		short fontHeightInPoints = getCell().getCellStyle().getFont().getFontHeightInPoints();
@@ -295,6 +299,10 @@ public class PdfCellNode extends CellNode implements DrawablePdfElement, PdfGrid
 	public Color getTextColor() {
 		XSSFColor color = getCell().getCellStyle().getFont().getXSSFColor();		
 		return color == null ? Color.BLACK : ColorHelper.getAwtColor(color);
+	}
+
+	public String getAbsoluteRef() {
+		return absoluteRef;
 	}
 
 	

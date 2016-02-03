@@ -17,11 +17,9 @@ import com.exigeninsurance.x4j.analytic.xlsx.transform.pdf.RenderingContext;
 
 public class WrappingCellRenderer extends AbstractCellRenderer {
 
-    private VerticalOffsetCalculator calculator;
-
+  
 	public WrappingCellRenderer(PdfCellNode node) {
-		super(node);
-        calculator = new VerticalOffsetCalculator();
+		super(node);       
 	}
 
     @Override
@@ -50,12 +48,6 @@ public class WrappingCellRenderer extends AbstractCellRenderer {
         return true;
     }
 
-    public float findVerticalOffset(RenderingContext context, List<String> items) {
-        return calculator.calculate(node.getVerticalAlignment(),
-                items.size(),
-                getRowHeight(context),
-                node.getMaxFontHeight(),
-                PdfRenderer.ROW_MARGIN);
-	}
+    
 
 }
