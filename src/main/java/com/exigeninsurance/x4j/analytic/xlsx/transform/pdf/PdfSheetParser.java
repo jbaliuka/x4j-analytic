@@ -57,7 +57,7 @@ public class PdfSheetParser extends SheetParser {
 			cellNode = componentFactory.createHeaderCell(xssfSheet, cell, expr);
 		} else {
 			cellNode = createCell(xssfSheet, cell, expr);
-			if (isWrapped(cell) && !getMergedCells().containsKey(cellNode.getAbsoluteRef())) {
+			if (isWrapped(cell)) {
 				componentFactory.makeCellWrappable(cellNode);
 			}
 		}

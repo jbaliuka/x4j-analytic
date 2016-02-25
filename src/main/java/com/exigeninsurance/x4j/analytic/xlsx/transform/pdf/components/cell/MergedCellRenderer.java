@@ -29,7 +29,7 @@ public class MergedCellRenderer extends AbstractCellRenderer {
 	}
 
 	@Override
-	protected Rectangle calculateDrawingArea(RenderingContext context) {
+	protected Rectangle calculateDrawingArea(RenderingContext context, Object value) {
 		PdfContext pdfContext = context.getPdfContext();
 		if (node.isMerged(pdfContext)) {
 			MergedRegion associatedRegion = node.getMergedRegion(pdfContext);
@@ -37,15 +37,26 @@ public class MergedCellRenderer extends AbstractCellRenderer {
 			float y = pdfContext.getY();
 			float areaTopY = y + getRowHeight(context);
 			float margins = (associatedRegion.getRegionHeigth() - 1) * PdfRenderer.ROW_MARGIN;
-			float areaBottomY = areaTopY - node.getParent().getHeigth(context, associatedRegion.getVerticalRange()) - margins;
 			float containerRightSide = x + node.getParent().getMergedRegionWidth(context, node, associatedRegion);
-			float containerHeight = areaTopY - areaBottomY;
 			float containerWidth = containerRightSide - x;
+			
+			float areaBottomY = 0;
+			if(node.isWrapped()&& value != null){
+				String text = node.formatValue(pdfContext, value);
+				List<String> lines = node.splitCell(text, containerWidth, 0);
+				areaBottomY = areaTopY - node.getParent().getHeigth( context, associatedRegion.getVerticalRange())*lines.size()
+						- margins*lines.size();
+			}else {
+				areaBottomY = areaTopY - node.getParent().getHeigth(context, associatedRegion.getVerticalRange()) - margins;	
+			}
+			
+			float containerHeight = areaTopY - areaBottomY;
+			
 
 			return new Rectangle(new Point(x, areaBottomY), containerWidth, containerHeight);
 		}
 		else {
-			return super.calculateDrawingArea(context);
+			return super.calculateDrawingArea(context,value);
 		}
 
 	}

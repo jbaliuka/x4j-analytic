@@ -59,13 +59,14 @@ public abstract class AbstractCellRenderer implements Renderer {
     public final void render(RenderingContext context) throws IOException {
 		Object value = context.getParams().get(RenderingParameter.CELL_VALUE);
         node.determineAndSetAlignment(context.getPdfContext(), value);
-        drawingArea = calculateDrawingArea(context);
+        drawingArea = calculateDrawingArea(context,value);
         textArea = drawingArea.expand(-context.getPdfContext().getMargins(), 0);
         fillArea = calculateFillArea(context, drawingArea);
         fill(context);
         
         drawText(context, value);
         drawBorders(context);
+        
     }
     
     public float findVerticalOffset(RenderingContext context, List<String> items) {
@@ -80,7 +81,7 @@ public abstract class AbstractCellRenderer implements Renderer {
 
     protected abstract boolean applyFillAndBorders(RenderingContext context);
 
-    protected Rectangle calculateDrawingArea(RenderingContext context) {
+    protected Rectangle calculateDrawingArea(RenderingContext context, Object value) {
 		PdfContext pdfContext = context.getPdfContext();
 		float x = pdfContext.getX();
         float y = pdfContext.getY();

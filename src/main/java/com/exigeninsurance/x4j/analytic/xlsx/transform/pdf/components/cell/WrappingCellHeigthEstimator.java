@@ -7,6 +7,7 @@ package com.exigeninsurance.x4j.analytic.xlsx.transform.pdf.components.cell;
 
 import java.util.List;
 
+import com.exigeninsurance.x4j.analytic.xlsx.transform.MergedRegion;
 import com.exigeninsurance.x4j.analytic.xlsx.transform.pdf.PdfCellNode;
 import com.exigeninsurance.x4j.analytic.xlsx.transform.pdf.PdfContext;
 import com.exigeninsurance.x4j.analytic.xlsx.transform.pdf.PdfRenderer;
@@ -27,7 +28,16 @@ public class WrappingCellHeigthEstimator extends PdfCellEstimator {
 		PdfContext pdfContext = context.getPdfContext();
 		String value = formatValue(context);
         itemHeight = node.getMaxFontHeight();
-        items = node.splitCell(value, node.estimateWidth(context), pdfContext.getMargins());
+        
+        float width=0;
+        if(node.isMerged(context.getPdfContext())){        	
+        	MergedRegion associatedRegion = node.getMergedRegion(pdfContext);			
+        	width = node.getParent().getMergedRegionWidth(context, node, associatedRegion);			
+        }else {
+        	width = node.estimateWidth(context);
+        }
+        
+        items = node.splitCell(value,width, pdfContext.getMargins());
 
         return items.isEmpty() ? 0f : calculateHeight();
 	}
