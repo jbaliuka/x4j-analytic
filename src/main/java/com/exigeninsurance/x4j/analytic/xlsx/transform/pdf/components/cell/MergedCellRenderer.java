@@ -77,7 +77,9 @@ public class MergedCellRenderer extends AbstractCellRenderer {
 			if (value != null) {
 				String text = node.formatValue(pdfContext, value);
 				if(node.isWrapped()){
-					List<String> lines = node.splitCell(text, textArea.getWidth(), 0);
+					MergedRegion associatedRegion = node.getMergedRegion(pdfContext);
+					float width = node.getParent().getMergedRegionWidth(context, node, associatedRegion);					
+					List<String> lines = node.splitCell(text, width, 0);
 		            float lineHeight = node.getMaxFontHeight();
 		            float y = pdfContext.getY() + findVerticalOffset(context, lines);
 		            setTextOptions(pdfContext);

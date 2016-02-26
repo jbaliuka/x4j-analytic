@@ -86,7 +86,9 @@ public class PdfContainer extends Node implements DrawablePdfElement, PdfGridEle
 			DrawablePdfElement child = (DrawablePdfElement) getChildren().get(i);
 			totalWidth += child.estimateWidth(context);
 		}
-		return totalWidth;
+		
+		PdfContext ctx = context.getPdfContext();
+		return Math.min(totalWidth,ctx.getPageWidth() - ctx.getLeftHorizontalMargin() - ctx.getRightHorizontalMargin());
 	}
 
 	private float extractHeigthFromParent(RenderingContext context, Range range) {
