@@ -220,24 +220,24 @@ public class PdfRenderer {
         stream.moveTextPositionByAmount(x, y) ;
         stream.drawString(text);
         stream.endText();
-		drawUnderline(text, x, y);
+		drawUnderline(text,color, x, y);
 	}
 
-	private void drawUnderline(String text, float x, float y) {
+	private void drawUnderline(String text,Color color, float x, float y) {
 		if (underline != Font.U_NONE && !StringUtils.isEmpty(text)) {
 			int fontSize = (int) stream.getFontSize();
 			PDFont font = stream.getFont();
 			float descend = font.getFontDescriptor().getDescent() / 1000 * fontSize;
 
-			drawUnderline(text, descend);
+			drawUnderline(text,color, descend);
 			if (underline == Font.U_DOUBLE || underline == Font.U_DOUBLE_ACCOUNTING) {
-				drawUnderline(text, descend / 2);
+				drawUnderline(text,color, descend / 2);
 			}
 		}
 	}
 
-	private void drawUnderline(String text, float descend) {
-		drawBorder(new Border(Color.BLACK,
+	private void drawUnderline(String text,Color color, float descend) {
+		drawBorder(new Border(color,
 				new Line(x, y + descend, x + PDFHelper.findCellTextLength((int) stream.getFontSize(), stream.getFont(), text), y + descend),
 				DashPattern.SOLID_LINE,
 				0.3f));
@@ -248,12 +248,14 @@ public class PdfRenderer {
 	}
 
     private void drawLine(Line line, Color color, float width, DashPattern pattern) throws IOException {
-        setDrawingColor(color);
+    	stream.setStrokingColor(color);
         stream.setLineWidth(width);
         stream.setDashPattern(pattern);
         stream.drawLine(line.getStart().getX(), line.getStart().getY(), line.getEnd().getX(), line.getEnd().getY());
     }
 	
+	
+
 	public void movePointerTo(float x, float y) throws IOException {
 		stream.beginText();
 		stream.moveTextPositionByAmount(x, y);

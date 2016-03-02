@@ -43,6 +43,7 @@ import com.exigeninsurance.x4j.analytic.xlsx.transform.pdf.components.Alignment;
 import com.exigeninsurance.x4j.analytic.xlsx.transform.pdf.components.Renderer;
 import com.exigeninsurance.x4j.analytic.xlsx.transform.pdf.geometry.Line;
 import com.exigeninsurance.x4j.analytic.xlsx.transform.pdf.geometry.Rectangle;
+import com.exigeninsurance.x4j.analytic.xlsx.utils.ColorHelper;
 
 
 public abstract class AbstractCellRenderer implements Renderer {
@@ -145,7 +146,8 @@ public abstract class AbstractCellRenderer implements Renderer {
         DashPattern pattern = getBorderPattern(cellStyle, borderSide);
         float width = getBorderWidth(getBorderStyle(cellStyle, borderSide));
         Line line = getBorderLine(fillArea, borderSide);
-        return new Border(Color.BLACK, line, pattern, width);
+        Color color = ColorHelper.getAwtColor(cellStyle.getBorderColor(borderSide));
+        return new Border(color, line, pattern, width);
     }
 
     private DashPattern getBorderPattern(XSSFCellStyle cellStyle, XSSFCellBorder.BorderSide borderSide) {

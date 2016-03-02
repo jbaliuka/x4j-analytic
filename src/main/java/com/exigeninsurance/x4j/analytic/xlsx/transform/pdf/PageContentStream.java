@@ -25,6 +25,7 @@ public class PageContentStream extends PDPageContentStream {
     private float fontSize;
     private float lineWidth;
     private Color nonStrokingColor;
+    private Color strokingColor;
 
     public PageContentStream(PDDocument document, PDPage sourcePage) throws IOException {
         super(document, sourcePage);
@@ -61,6 +62,14 @@ public class PageContentStream extends PDPageContentStream {
         if (!color.equals(nonStrokingColor)) {
             nonStrokingColor =  color;
             super.setNonStrokingColor(color);
+        }
+    }
+    
+    @Override
+    public void setStrokingColor(Color color) throws IOException {
+        if (!color.equals(strokingColor)) {
+            strokingColor =  color;
+            super.setStrokingColor(color);
         }
     }
 

@@ -38,6 +38,9 @@ public class ColorHelper {
     }
 
     public static Color getAwtColor(XSSFColor color) {
+    	if(color == null){
+    		return Color.BLACK;
+    	}
         if (color.getRgb() != null) {
             return new Color(ByteBuffer.wrap(color.getRgb()).getInt(), true);
         }

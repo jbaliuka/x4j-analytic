@@ -41,11 +41,12 @@ public class MergedCellRenderer extends AbstractCellRenderer {
 			float containerWidth = containerRightSide - x;
 			
 			float areaBottomY = 0;
-			if(node.isWrapped()&& value != null){
+			if(node.isWrapped()&& value != null){				
 				String text = node.formatValue(pdfContext, value);
 				List<String> lines = node.splitCell(text, containerWidth, 0);
-				areaBottomY = areaTopY - node.getParent().getHeigth( context, associatedRegion.getVerticalRange())*lines.size()
-						- margins*lines.size();
+				float h = PdfRenderer.ROW_MARGIN*( lines.size() - 1 ) + node.getMaxFontHeight()*lines.size();
+				areaTopY = y + h;
+				areaBottomY = areaTopY -  h ;
 			}else {
 				areaBottomY = areaTopY - node.getParent().getHeigth(context, associatedRegion.getVerticalRange()) - margins;	
 			}
@@ -81,7 +82,7 @@ public class MergedCellRenderer extends AbstractCellRenderer {
 					float width = node.getParent().getMergedRegionWidth(context, node, associatedRegion);					
 					List<String> lines = node.splitCell(text, width, 0);
 		            float lineHeight = node.getMaxFontHeight();
-		            float y = pdfContext.getY() + findVerticalOffset(context, lines);
+		            float y = pdfContext.getY() ;
 		            setTextOptions(pdfContext);
 		            for (int i = lines.size() - 1; i > -1; i--) {
 		                String item = lines.get(i);
