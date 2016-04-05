@@ -146,7 +146,8 @@ public abstract class AbstractCellRenderer implements Renderer {
         DashPattern pattern = getBorderPattern(cellStyle, borderSide);
         float width = getBorderWidth(getBorderStyle(cellStyle, borderSide));
         Line line = getBorderLine(fillArea, borderSide);
-        Color color = ColorHelper.getAwtColor(cellStyle.getBorderColor(borderSide));
+        ColorHelper helper = node.getColorHelper();
+        Color color = helper == null ? Color.BLACK : helper.getAwtColor(cellStyle.getBorderColor(borderSide));
         return new Border(color, line, pattern, width);
     }
 

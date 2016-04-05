@@ -167,7 +167,7 @@ public class PdfCellNode extends CellNode implements DrawablePdfElement, PdfGrid
         }
         else {
             XSSFColor xssfColor = ColorHelper.getColorFromStylesSource(cell);
-            return xssfColor != null ? ColorHelper.getAwtColor(xssfColor) : Color.white;
+            return xssfColor != null ? getColorHelper().getAwtColor(xssfColor) : Color.white;
         }
     }
 
@@ -177,7 +177,7 @@ public class PdfCellNode extends CellNode implements DrawablePdfElement, PdfGrid
             if (style != null) {
                 int theme = style.getFill().getBgColor().getTheme();
                 double tint = style.getFill().getBgColor().getTint();
-                return ColorHelper.getAwtColor(theme, tint);
+                return getColorHelper().getAwtColor(theme, tint);
             }
         }
         return null;
@@ -298,7 +298,7 @@ public class PdfCellNode extends CellNode implements DrawablePdfElement, PdfGrid
 
 	public Color getTextColor() {
 		XSSFColor color = getCell().getCellStyle().getFont().getXSSFColor();		
-		return color == null ? Color.BLACK : ColorHelper.getAwtColor(color);
+		return color == null ? Color.BLACK : getColorHelper().getAwtColor(color);
 	}
 
 	public String getAbsoluteRef() {

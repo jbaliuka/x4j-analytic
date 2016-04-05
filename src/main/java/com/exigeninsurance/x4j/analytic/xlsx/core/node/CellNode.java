@@ -6,12 +6,15 @@
 
 package com.exigeninsurance.x4j.analytic.xlsx.core.node;
 
+import org.apache.poi.xssf.model.StylesTable;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFCellStyle;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.openxmlformats.schemas.drawingml.x2006.main.CTOfficeStyleSheet;
 
 import com.exigeninsurance.x4j.analytic.xlsx.core.expression.XLSXExpression;
 import com.exigeninsurance.x4j.analytic.xlsx.transform.PdfStyle;
+import com.exigeninsurance.x4j.analytic.xlsx.transform.xlsx.XLSXStylesTable;
 import com.exigeninsurance.x4j.analytic.xlsx.utils.ColorHelper;
 
 
@@ -22,12 +25,19 @@ abstract public class CellNode extends Node {
 	protected XLSXExpression expression;
 	protected XSSFCell cell;
 	private String axis;
+	private ColorHelper colorHelper;
 	
 
 	public CellNode(XSSFSheet sheet,XSSFCell cell,XLSXExpression expr) {
 		super(sheet);
         expression = expr;
 		this.cell = cell;
+		StylesTable stylesSource = sheet.getWorkbook().getStylesSource();
+		CTOfficeStyleSheet office = null;
+		if(stylesSource instanceof XLSXStylesTable){
+			office = ((XLSXStylesTable)stylesSource).getStyleSheet();
+		}
+		this.setColorHelper(new ColorHelper(office)); 
 	}
 
 
@@ -60,7 +70,7 @@ abstract public class CellNode extends Node {
 	
 	public String getFill(PdfStyle pdfStyle) {
 		if (pdfStyle != null) {
-			return ColorHelper.colorToHex(pdfStyle.getFill().getBgColor());
+			return getColorHelper().colorToHex(pdfStyle.getFill().getBgColor());
 		}
 		return DEFAULT_FILL;
 	}
@@ -68,4 +78,16 @@ abstract public class CellNode extends Node {
     public XSSFCellStyle getCellStyle() {
         return getCell().getCellStyle();
     }
+
+
+
+	public ColorHelper getColorHelper() {
+		return colorHelper; 
+	}
+
+
+
+	public void setColorHelper(ColorHelper colorHelper) {
+		this.colorHelper = colorHelper;
+	}
 }

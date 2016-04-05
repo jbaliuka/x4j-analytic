@@ -16,6 +16,7 @@ import org.apache.poi.hssf.util.CellReference;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFColor;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.openxmlformats.schemas.drawingml.x2006.main.CTOfficeStyleSheet;
 import org.openxmlformats.schemas.spreadsheetml.x2006.main.CTCell;
 
 import com.exigeninsurance.x4j.analytic.model.Link;
@@ -24,6 +25,7 @@ import com.exigeninsurance.x4j.analytic.xlsx.core.expression.XLSXExpression;
 import com.exigeninsurance.x4j.analytic.xlsx.core.node.CellNode;
 import com.exigeninsurance.x4j.analytic.xlsx.transform.SST;
 import com.exigeninsurance.x4j.analytic.xlsx.transform.TableStyle;
+import com.exigeninsurance.x4j.analytic.xlsx.transform.xlsx.XLSXStylesTable;
 import com.exigeninsurance.x4j.analytic.xlsx.transform.xlsx.XLXContext;
 import com.exigeninsurance.x4j.analytic.xlsx.utils.ColorHelper;
 
@@ -44,8 +46,8 @@ class HTMLCellNode extends CellNode {
         setCell(cell);
         CTCell ctCell = cell.getCTCell();
 		s = ctCell.getS();
-		Sset = ctCell.isSetS(); 
-
+		Sset = ctCell.isSetS();
+		
 	}
 
 	@Override
@@ -119,7 +121,7 @@ class HTMLCellNode extends CellNode {
 		else {
             XSSFColor xssfColor = ColorHelper.getColorFromStylesSource(cell);
             if (xssfColor != null) {
-                Color color = ColorHelper.getAwtColor(xssfColor);
+                Color color = getColorHelper().getAwtColor(xssfColor);
                 fill = ColorHelper.awtColorToHex(color);
             }
 		}

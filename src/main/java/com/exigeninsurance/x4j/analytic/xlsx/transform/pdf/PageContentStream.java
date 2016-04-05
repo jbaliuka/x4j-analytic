@@ -59,7 +59,7 @@ public class PageContentStream extends PDPageContentStream {
 
     @Override
     public void setNonStrokingColor(Color color) throws IOException {
-        if (!color.equals(nonStrokingColor)) {
+        if (color != null && !color.equals(nonStrokingColor)) {
             nonStrokingColor =  color;
             super.setNonStrokingColor(color);
         }
@@ -67,7 +67,7 @@ public class PageContentStream extends PDPageContentStream {
     
     @Override
     public void setStrokingColor(Color color) throws IOException {
-        if (!color.equals(strokingColor)) {
+        if (color != null && !color.equals(strokingColor)) {
             strokingColor =  color;
             super.setStrokingColor(color);
         }

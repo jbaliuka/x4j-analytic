@@ -21,6 +21,7 @@ import java.util.HashMap;
 
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import com.exigeninsurance.x4j.analytic.api.ReportContext;
@@ -96,7 +97,7 @@ public class XLSXWorkbookToHTMLTransformTest extends TransformationTest {
 
 	}
 	
-	@Test
+	@Test	
 	public void testColors() throws Exception {
 		ByteArrayOutputStream out = new ByteArrayOutputStream();
 		XLSXWorkbookToHTMLTransaform transform = new XLSXWorkbookToHTMLTransaform(out);
