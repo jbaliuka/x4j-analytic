@@ -31,7 +31,7 @@ public class ColorHelper {
 		if(office != null){			
 			int index = 0;
 			NodeList nodes = office.getDomNode().getOwnerDocument().getElementsByTagNameNS("*", "sysClr");
-			for (int i = 0; i < nodes.getLength(); ++i,++index) {
+			for (int i = 0; i < nodes.getLength(); ++i,index++) {
 				Element e = (Element) nodes.item(i);
 				String val = e.getAttribute("val");
 				if("window".equals(val)){					
@@ -41,7 +41,7 @@ public class ColorHelper {
 				}
 			}			
 			nodes = office.getDomNode().getOwnerDocument().getElementsByTagNameNS("*", "srgbClr");
-			for (int i = 0; i < nodes.getLength(); ++i,++index) {
+			for (int i = 0; i < nodes.getLength(); ++i,index++) {
 				Element e = (Element) nodes.item(i);
 				String val = e.getAttribute("val");
 				themeColors.put(index, Integer.parseInt(val, 16));
