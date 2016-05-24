@@ -1,11 +1,18 @@
 # maven output directory
 target/
 
+#Ignore everuthing in /.idea
+**/.idea
+
+
 # Eclipse files
 bin/
 .settings/
 .classpath
 .project
+
+#Ignore idea settings
+*.iml
 
 # Excel
 ~*

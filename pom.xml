@@ -4,7 +4,7 @@
 
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.exigeninsurance.x4j.analytic</groupId>
-	<version>1.0.13</version>
+	<version>1.0.14</version>
 	<artifactId>x4j-analytic</artifactId>
 	<name>XLSX Transformations</name>	
     <description>
@@ -109,6 +109,13 @@
 			<groupId>org.mockito</groupId>
 			<artifactId>mockito-all</artifactId>
 			<version>1.9.5</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.oracle</groupId>
+			<artifactId>ojdbc14</artifactId>
+			<version>10.2.0.2.0</version>
 			<scope>test</scope>
 		</dependency>
 
