@@ -116,13 +116,13 @@ public class CursorMetadata implements Serializable {
 				}
 
 				oout.flush();
-				byte[] bytes  = out.toByteArray();
-				objectOut.writeInt(bytes .length);
-				objectOut.write(bytes );
+				byte[] bytes = out.toByteArray();
+				objectOut.writeInt(bytes.length);
+				objectOut.write(bytes);
 			} finally {
 				oout.close();
 			}
-		} finally {
+		}finally{
 			out.close();
 		}
 	}
