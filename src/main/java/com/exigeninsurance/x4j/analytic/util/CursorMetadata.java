@@ -116,9 +116,9 @@ public class CursorMetadata implements Serializable {
 				}
 
 				oout.flush();
-				byte[] var14 = out.toByteArray();
-				objectOut.writeInt(var14.length);
-				objectOut.write(var14);
+				byte[] bytes  = out.toByteArray();
+				objectOut.writeInt(bytes .length);
+				objectOut.write(bytes );
 			} finally {
 				oout.close();
 			}
