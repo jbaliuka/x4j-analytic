@@ -5,20 +5,14 @@
 
 package com.exigeninsurance.x4j.analytic.util;
 
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.DataInput;
-import java.io.DataOutput;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-import java.io.Serializable;
+import java.io.*;
+import java.sql.Clob;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 
 import com.exigeninsurance.x4j.analytic.api.Cursor;
-
+import com.exigeninsurance.x4j.analytic.api.CursorMetadataFabric;
 
 
 public class CursorMetadata implements Serializable {
@@ -51,9 +45,39 @@ public class CursorMetadata implements Serializable {
 		String[] columns = new  String[metaData.getColumnCount()];
 		int count =  metaData.getColumnCount();
 		for (int i = 0; i < count; i++) {
-			columns[i] = metaData.getColumnName(i + 1);            
+			columns[i] = metaData.getColumnName(i + 1);
 		}
 		return new CursorMetadata(columns);
+	}
+
+	/*
+	 //Alternative implementation
+	 public static CursorMetadata createFromResultSet(final ResultSet rs) throws SQLException {
+	 	return createFromResultSet(rs, new CursorMetadataFabric(){
+
+			@Override
+			public CursorMetadata createFromResultSet(ResultSet rs) throws SQLException {
+				ResultSetMetaData metaData = rs.getMetaData();
+				String[] columns = new  String[metaData.getColumnCount()];
+				int count =  metaData.getColumnCount();
+				for (int i = 0; i < count; i++) {
+					columns[i] = metaData.getColumnName(i + 1);
+				}
+				return new CursorMetadata(columns);
+			}
+		});
+	 }
+	*/
+
+	/**
+	 * Provide ability for custom fabric and extension of CursorMetadata
+	 * @param rs
+	 * @param cursorMetadataFabric
+	 * @return
+	 * @throws SQLException
+	 */
+	public static CursorMetadata createFromResultSet(ResultSet rs, CursorMetadataFabric cursorMetadataFabric) throws SQLException {
+		return cursorMetadataFabric.createFromResultSet(rs);
 	}
 
 	public Object[] readRow(DataInput data) throws IOException, ClassNotFoundException {
@@ -75,27 +99,46 @@ public class CursorMetadata implements Serializable {
 	}
 
 	public void writeRow(DataOutput objectOut, Cursor rs) throws IOException, SQLException {
-
 		ByteArrayOutputStream out = new ByteArrayOutputStream();
-		try{
-			ObjectOutputStream oout = new ObjectOutputStream(out);	
-			try{
-				
-				for(int i = 0 ; i < columns.length; i++ ){					
-					oout.writeObject( rs.getObject(i + 1));
+
+		try {
+			ObjectOutputStream oout = new ObjectOutputStream(out);
+
+			try {
+				for(int bytes = 0; bytes < this.columns.length; ++bytes) {
+					Object obj=rs.getObject(bytes + 1);
+					if(obj instanceof Clob){
+						oout.writeObject(clobToString((Clob)obj));
+					}
+					else{
+						oout.writeObject(obj);
+					}
 				}
-				
+
 				oout.flush();
 				byte[] bytes = out.toByteArray();
 				objectOut.writeInt(bytes.length);
 				objectOut.write(bytes);
-			}finally{
+			} finally {
 				oout.close();
 			}
 		}finally{
 			out.close();
 		}
-
 	}
-	
+
+	private Serializable clobToString(Clob data) throws SQLException, IOException {
+		StringBuilder sb = new StringBuilder();
+		BufferedReader br = new BufferedReader( data.getCharacterStream());
+		try {
+			String line;
+			while(null != (line = br.readLine())) {
+				sb.append(line);
+			}
+		} finally {
+			br.close();
+		}
+		return sb;
+	}
+
 }

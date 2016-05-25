@@ -12,6 +12,10 @@ import static org.mockito.Mockito.when;
 import static org.mockito.MockitoAnnotations.initMocks;
 
 import java.io.File;
+import java.io.IOException;
+import java.io.Reader;
+import java.io.StringReader;
+import java.sql.Clob;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
@@ -24,6 +28,7 @@ import com.exigeninsurance.x4j.analytic.api.Cursor;
 import com.exigeninsurance.x4j.analytic.util.MockResultSet;
 import com.exigeninsurance.x4j.analytic.util.PersistingCursor;
 import com.exigeninsurance.x4j.analytic.util.ResultSetWrapper;
+import org.mockito.Mockito;
 
 public class PersistingCursorTest {
 
@@ -141,5 +146,35 @@ public class PersistingCursorTest {
         }
     }
 
-   
+    /**
+     * oracle.sql.CLOB is serializable, but fields, that it contains are not.
+     * @throws SQLException
+     */
+   @Test
+    public void verifyCLOBparsing() throws SQLException{
+       oracle.jdbc.internal.OracleConnection mockConnection= Mockito.mock(oracle.jdbc.internal.OracleConnection.class);
+       oracle.sql.ClobDBAccess clobDBAccess= Mockito.mock(oracle.sql.ClobDBAccess.class);
+       when(mockConnection.createClobDBAccess()).thenReturn(clobDBAccess);
+       when(mockConnection.physicalConnectionWithin()).thenReturn(mockConnection);
+       final String str="someString";
+       oracle.sql.CLOB clob=new oracle.sql.CLOB(mockConnection, str.getBytes());
+       when(clobDBAccess.newReader(clob, clob.getBufferSize(), 0l)).thenReturn(new StringReader(str));
+       clob.setPhysicalConnectionOf(mockConnection);
+       Object[] clobData =new Object[]{clob };
+       ResultSet clobRs= create(cols("A"), data(row(clobData)));
+       File file = new File("file");
+       try {
+           Cursor cursor = new PersistingCursor(file, new ResultSetWrapper(clobRs));
+           try {
+               cursor.next();
+               assertThat(cursor.getObject(1), equalTo(clobData[0]));
+               }
+           finally {
+               cursor.close();
+           }
+       } finally {
+           assertTrue(file.delete());
+       }
+   }
+
 }

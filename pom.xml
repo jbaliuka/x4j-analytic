@@ -4,7 +4,7 @@
 
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.exigeninsurance.x4j.analytic</groupId>
-	<version>1.0.13</version>
+	<version>1.0.14</version>
 	<artifactId>x4j-analytic</artifactId>
 	<name>XLSX Transformations</name>	
     <description>
@@ -21,6 +21,14 @@
       <distribution>repo</distribution>
     </license>
   </licenses>
+
+  <repositories>
+	<!-- Repository for ORACLE ojdbc6. -->
+	<repository>
+	    <id>codelds</id>
+	    <url>https://code.lds.org/nexus/content/groups/main-repo</url>
+	</repository>
+  </repositories>
 
   <scm>
     <url>https://github.com/jbaliuka/x4j-analytic.git</url>
@@ -109,6 +117,13 @@
 			<groupId>org.mockito</groupId>
 			<artifactId>mockito-all</artifactId>
 			<version>1.9.5</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.oracle</groupId>
+			<artifactId>ojdbc6</artifactId>
+			<version>11.2.0.3</version>
 			<scope>test</scope>
 		</dependency>
 
