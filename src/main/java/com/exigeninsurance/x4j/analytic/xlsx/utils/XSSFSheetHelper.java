@@ -19,7 +19,7 @@ import org.openxmlformats.schemas.spreadsheetml.x2006.main.CTDefinedName;
 import org.openxmlformats.schemas.spreadsheetml.x2006.main.CTDefinedNames;
 
 @Internal
-public class XSSFSheetHelper {
+public final class XSSFSheetHelper {
 
     private static final Pattern ROWS_RANGE = Pattern.compile("\\$\\d*:\\$\\d*");
 	private static final Pattern COLUMN_RANGE = Pattern.compile("\\$[a-zA-Z]*:\\$[a-zA-Z]*");

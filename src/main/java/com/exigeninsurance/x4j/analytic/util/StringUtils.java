@@ -9,7 +9,7 @@ import java.util.Collection;
 import java.util.Iterator;
 
 
-public class StringUtils {
+public final class StringUtils {
 	private StringUtils() {}
 	
 	public static String join(Object[] arr, String separator) {

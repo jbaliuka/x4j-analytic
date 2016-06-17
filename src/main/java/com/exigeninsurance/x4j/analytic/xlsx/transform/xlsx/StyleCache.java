@@ -12,7 +12,7 @@ import java.util.Map;
 import com.exigeninsurance.x4j.analytic.model.Money;
 
 
-public class StyleCache {
+public final class StyleCache {
 
 	private final Map<XLSXCellNode, Long> styles = new HashMap<XLSXCellNode, Long>();
 	private final CurrencyStyleCache currencyStyles = new CurrencyStyleCache();

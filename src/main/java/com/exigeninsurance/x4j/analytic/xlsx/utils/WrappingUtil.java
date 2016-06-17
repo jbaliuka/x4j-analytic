@@ -16,7 +16,7 @@ import com.exigeninsurance.x4j.analytic.xlsx.transform.pdf.PdfCellNode;
 import com.exigeninsurance.x4j.analytic.xlsx.transform.xlsx.XLXContext;
 
 @Internal
-public class WrappingUtil {
+public final class WrappingUtil {
 
 	public static final String EXCEL_BREAK = " \r\n";
 	private static final char WRAPPING_BREAK = '\n';
