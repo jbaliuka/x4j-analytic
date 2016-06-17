@@ -25,6 +25,11 @@ abstract public class MockResultSet implements ResultSet {
 		return create(columns,rows,0);
 
 	}
+
+    private MockResultSet() {
+
+    }
+
 	public static ResultSet create(final String[] columns,final Object[][] rows, final int generate){
         return (ResultSet) Proxy.newProxyInstance(Thread.currentThread().getContextClassLoader(), new Class[]{ResultSet.class}, new InvocationHandler() {
 

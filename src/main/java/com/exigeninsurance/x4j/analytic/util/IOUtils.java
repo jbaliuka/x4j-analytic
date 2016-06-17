@@ -25,6 +25,10 @@ public class IOUtils {
 	private static final int BUFFER_SIZE = 1024*80;
 	private static final Logger log = LoggerFactory.getLogger(IOUtils.class);
 
+    private IOUtils() {
+
+    }
+
 	public static void delete(File temtFile) {
 		if(!temtFile.delete()){
 			log.warn("unable to delete " + temtFile);

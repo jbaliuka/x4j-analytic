@@ -40,6 +40,10 @@ public class PDFHelper {
     public static final int EMU_PER_POINT = 12700;
     public static final int EMU_PER_CM = 360000;
 
+    private PDFHelper() {
+
+    }
+
     private static final float CHARACTER_WIDTH;
 
     static {
