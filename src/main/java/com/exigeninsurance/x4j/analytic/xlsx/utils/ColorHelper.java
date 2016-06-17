@@ -40,7 +40,7 @@ public class ColorHelper {
 					themeColors.put(index,0xFFFFFF);
 				}
 			}			
-			nodes = office.getDomNode().getOwnerDocument().getElementsByTagNameNS("*", "srgbClr");
+			nodes = office.getDomNode().getOwnerDocument().getElementsByTagNameNS("*", "srgbClr");			
 			for (int i = 0; i < nodes.getLength(); ++i,index++) {
 				Element e = (Element) nodes.item(i);
 				String val = e.getAttribute("val");

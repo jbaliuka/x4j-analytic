@@ -1,4 +1,4 @@
-x4j-analytic
+x4j-analytic [![Build Status](https://travis-ci.org/jbaliuka/x4j-analytic.svg?branch=master)](https://travis-ci.org/jbaliuka/x4j-analytic)
 ============
 x4j-analytic is an open source XLSX format template engine API for Java programming language. 
 X4J is used as the embedded library in Java applications to implement full blown reporting solutions.
