@@ -117,7 +117,7 @@ public class PdfCellNode extends CellNode implements DrawablePdfElement, PdfGrid
 		if (value instanceof Money) {
 			return context.formatMoney((Money) value).replaceAll(NON_BREAKING_SPACE, " ");
 		} else if (value instanceof Number) {
-			Money money = new Money(null, new BigDecimal(((Number) value).doubleValue()));
+			Money money = new Money(null, BigDecimal.valueOf(((Number) value).doubleValue()));
 			return context.formatMoney(money).replaceAll(NON_BREAKING_SPACE," ");
 		} else if (value instanceof Date) {
 			if (value instanceof Timestamp) {

@@ -20,7 +20,7 @@ import com.exigeninsurance.x4j.analytic.xlsx.core.localization.FormatProvider;
 import com.exigeninsurance.x4j.analytic.xlsx.transform.AlignmentFinder;
 
 
-public class XLSXStyleUtil {
+public final class XLSXStyleUtil {
 
 	private final StyleCache styleCache = new StyleCache();
 	private final XSSFSheet sheet;

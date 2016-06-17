@@ -64,7 +64,7 @@ class HTMLCellNode extends CellNode {
                 context.write(context.formatMoney((Money) value));
             }
             else if (value instanceof Number){
-                Money money = new Money(null, new BigDecimal(((Number) value).doubleValue()));
+                Money money = new Money(null, BigDecimal.valueOf(((Number) value).doubleValue()));
                 context.write(context.formatMoney(money));
             }
             else if (value instanceof Date) {
