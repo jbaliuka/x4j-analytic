@@ -97,7 +97,7 @@ abstract public class MockResultSet implements ResultSet {
 			return new Double( Double.valueOf((Double)object) );
 		}else if (cls == java.sql.Date.class){
 			
-			return new java.sql.Date( ((java.util.Date)object).getTime() );
+			return new java.sql.Date( ((Date)object).getTime() );
 		}
 		
 		

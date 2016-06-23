@@ -17,11 +17,12 @@ import org.slf4j.Logger;
 
 import com.exigeninsurance.x4j.analytic.api.Cursor;
 import com.exigeninsurance.x4j.analytic.api.ReportException;
+import org.slf4j.LoggerFactory;
 
 
 public class FileCursor implements Cursor {
 
-	private static final Logger logger = org.slf4j.LoggerFactory.getLogger(FileCursor.class);
+	private static final Logger logger = LoggerFactory.getLogger(FileCursor.class);
 
 	private CursorMetadata metadata;
 	private InputStream fileIn;
