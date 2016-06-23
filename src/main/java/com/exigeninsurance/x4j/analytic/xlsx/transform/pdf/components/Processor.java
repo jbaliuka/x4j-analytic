@@ -11,6 +11,6 @@ import com.exigeninsurance.x4j.analytic.xlsx.transform.xlsx.XLXContext;
 
 public interface Processor {
 	
-	public void process(XLXContext context) throws Exception;
+	void process(XLXContext context) throws Exception;
 
 }

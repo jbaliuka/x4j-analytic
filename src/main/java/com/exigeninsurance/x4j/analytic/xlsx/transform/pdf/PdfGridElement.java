@@ -11,5 +11,5 @@ import com.exigeninsurance.x4j.analytic.xlsx.transform.pdf.geometry.Range;
 
 public interface PdfGridElement {
 
-	public Range getVerticalRange();
+	Range getVerticalRange();
 }

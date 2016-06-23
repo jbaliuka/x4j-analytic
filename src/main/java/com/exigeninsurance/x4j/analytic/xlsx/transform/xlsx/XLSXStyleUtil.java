@@ -90,7 +90,7 @@ public class XLSXStyleUtil {
 	}
 
 	private interface StyleTransformation {
-		public void transform(XSSFCellStyle cellStyle);
+		void transform(XSSFCellStyle cellStyle);
 	}
 
 	private class MoneyTransform implements StyleTransformation {

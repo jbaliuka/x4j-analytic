@@ -70,7 +70,7 @@ public class DefaultReportDataProvider implements ReportDataProvider {
 
 	private void execute(Query query, ReportContext context,
 			ReportDataCallback callback, Connection conn)
-					throws SQLException, Exception {
+					throws Exception {
 
 		String jdbcSql = paramPattern.matcher(query.getSql()).replaceAll("?");
 		PreparedStatement statement = conn.prepareStatement( jdbcSql );

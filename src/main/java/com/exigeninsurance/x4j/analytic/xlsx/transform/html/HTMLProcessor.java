@@ -8,6 +8,7 @@ package com.exigeninsurance.x4j.analytic.xlsx.transform.html;
 
 
 import java.io.OutputStream;
+import java.nio.charset.StandardCharsets;
 import java.util.List;
 
 import org.apache.poi.ss.usermodel.CellStyle;
@@ -60,12 +61,12 @@ public class HTMLProcessor extends WorkbookProcessor {
 
 		buffer.append("</style>");
 
-		out.write( "<html>\n<head>\n".getBytes() );
-		out.write( buffer.toString().getBytes() );
+		out.write( "<html>\n<head>\n".getBytes(StandardCharsets.UTF_8) );
+		out.write( buffer.toString().getBytes(StandardCharsets.UTF_8) );
 
-		out.write("\n</head>\n<body>\n<table id=\"".getBytes());
-		out.write( "workbook".getBytes() );
-		out.write("\"><tr><td>\n".getBytes());
+		out.write("\n</head>\n<body>\n<table id=\"".getBytes(StandardCharsets.UTF_8));
+		out.write( "workbook".getBytes(StandardCharsets.UTF_8) );
+		out.write("\"><tr><td>\n".getBytes(StandardCharsets.UTF_8));
 
 		for(int i = 0; i < workBook.getNumberOfSheets(); i++){
 			nextSheet(reportContext, i);

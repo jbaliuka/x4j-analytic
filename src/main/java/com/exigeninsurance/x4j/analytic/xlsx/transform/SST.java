@@ -7,6 +7,7 @@
 package com.exigeninsurance.x4j.analytic.xlsx.transform;
 
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.text.CharacterIterator;
 import java.text.StringCharacterIterator;
 import java.util.HashMap;
@@ -17,10 +18,10 @@ import org.openxmlformats.schemas.spreadsheetml.x2006.main.CTRst;
 
 
 final public class SST{
-	private static final byte[] XML_SPACE_PRESERVE = " xml:space=\"preserve\"".getBytes();
-	private static final byte[] E = ">".getBytes();
-	private static final byte[] SI_T = "<si><t".getBytes();
-	private static final byte[] T_SI = "</t></si>\n".getBytes();
+	private static final byte[] XML_SPACE_PRESERVE = " xml:space=\"preserve\"".getBytes(StandardCharsets.UTF_8);
+	private static final byte[] E = ">".getBytes(StandardCharsets.UTF_8);
+	private static final byte[] SI_T = "<si><t".getBytes(StandardCharsets.UTF_8);
+	private static final byte[] T_SI = "</t></si>\n".getBytes(StandardCharsets.UTF_8);
 
 	private final UTF8OutputStream out;
 	private final Map<String,Long> cache = new HashMap< String, Long>();

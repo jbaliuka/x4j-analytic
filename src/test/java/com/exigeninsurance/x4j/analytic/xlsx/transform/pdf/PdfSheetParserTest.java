@@ -260,7 +260,7 @@ public class PdfSheetParserTest {
 	}
 
 	private interface WithSheet {
-		public void execute(XSSFSheet sheet) throws Exception;
+		void execute(XSSFSheet sheet) throws Exception;
 	}
 
 }

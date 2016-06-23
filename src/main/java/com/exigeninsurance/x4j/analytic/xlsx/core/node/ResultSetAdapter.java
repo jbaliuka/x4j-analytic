@@ -13,19 +13,19 @@ import com.exigeninsurance.x4j.analytic.xlsx.core.groups.GroupState;
 
 public interface ResultSetAdapter {
 	
-	public boolean next(String group);
+	boolean next(String group);
 	
-	public void getRow(Map<String, Object> destination);
+	void getRow(Map<String, Object> destination);
 	
-	public void close(String column);
+	void close(String column);
 	
-	public void addGroup(String group, GroupState initialState);
+	void addGroup(String group, GroupState initialState);
 	
-	public boolean last();
+	boolean last();
 	
-	public boolean first();
+	boolean first();
 	
-	public void push(String group);
+	void push(String group);
 	
-	public void pop();
+	void pop();
 }
