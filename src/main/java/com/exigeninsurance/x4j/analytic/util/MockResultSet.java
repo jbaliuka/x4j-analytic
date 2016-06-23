@@ -62,7 +62,7 @@ abstract public class MockResultSet implements ResultSet {
                     }else {
                         int index = 0;
                         for (String colName : columns){
-                            if(colName.toUpperCase().equals(args[0].toString().toUpperCase())){
+                            if(colName.equalsIgnoreCase(args[0].toString())){
                                 if(generate > 0 && rows[currentRow][ index ] instanceof String){
                                     rows[currentRow][ index ] = System.currentTimeMillis() + "0";
                                 }

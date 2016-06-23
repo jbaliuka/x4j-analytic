@@ -255,7 +255,7 @@ public class ReportMetadata implements Serializable{
 		if (templates != null) {
 			List <Format> formats = templates.getFormat();
 			for (Format format : formats) {
-				if (format.getName().trim().toLowerCase().equals(cleanedUpFormat)) {
+				if (format.getName().trim().equalsIgnoreCase(cleanedUpFormat)) {
 					return true;
 				}
 			}
@@ -271,7 +271,7 @@ public class ReportMetadata implements Serializable{
 		if (templates != null) {
 			List <Format> formats = templates.getFormat();
 			for (Format format : formats) {
-				if (format.getName().trim().toLowerCase().equals(cleanedUpFormat)) {
+				if (format.getName().trim().equalsIgnoreCase(cleanedUpFormat)) {
 					return format.getTemplate();
 				}
 			}
