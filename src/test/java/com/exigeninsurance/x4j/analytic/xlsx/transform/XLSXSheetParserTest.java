@@ -13,6 +13,7 @@ import static org.junit.Assert.assertEquals;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -369,7 +370,7 @@ public class XLSXSheetParserTest {
 		
 		ReportContext reportContext = new ReportContext(new ReportMetadata());
 
-		java.io.InputStream is = getClass().getResourceAsStream("/testTables.xlsx");
+		InputStream is = getClass().getResourceAsStream("/testTables.xlsx");
 		Assert.assertNotNull(is);
 		
 		try{
@@ -395,7 +396,7 @@ public class XLSXSheetParserTest {
 		
 		ReportContext reportContext = new ReportContext(new ReportMetadata());
 
-		java.io.InputStream is = getClass().getResourceAsStream("/testTables.xlsx");
+		InputStream is = getClass().getResourceAsStream("/testTables.xlsx");
 		Assert.assertNotNull(is);
 		try{
 

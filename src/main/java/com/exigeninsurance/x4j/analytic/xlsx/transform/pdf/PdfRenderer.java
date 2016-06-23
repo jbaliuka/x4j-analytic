@@ -66,7 +66,7 @@ public class PdfRenderer {
 
     private Set<ImageInfo> imageLocations = new HashSet<ImageInfo>();
     private List<Border> borders = new ArrayList<Border>();
-	private byte underline = org.apache.poi.ss.usermodel.Font.U_NONE;
+	private byte underline = Font.U_NONE;
 
 	public PdfRenderer(PdfContext context, PDDocument document) {
 		this.context = context;
