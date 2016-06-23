@@ -8,7 +8,6 @@ package com.exigeninsurance.x4j.analytic.xlsx.transform.html;
 
 
 import java.io.OutputStream;
-import java.util.List;
 
 import org.apache.poi.ss.usermodel.CellStyle;
 import org.apache.poi.ss.usermodel.Font;
@@ -48,7 +47,7 @@ public class HTMLProcessor extends WorkbookProcessor {
 		this.workBook = workBook;
 	}
 
-	public void processSheets(	ReportContext reportContext, List<String> savedParts	)
+	public void processSheets(ReportContext reportContext)
 	throws  Exception {
 		StringBuffer buffer = new StringBuffer();
 		buffer.append("<style>");
@@ -79,7 +78,7 @@ public class HTMLProcessor extends WorkbookProcessor {
 
 		SheetParser parser = new HTMLSheetParser(sheet,reportContext);
 		
-        parser.setMacroParser(new MacroParser(sheet, new MacroNodeFactoryImpl(sheet)));
+        parser.setMacroParser(new MacroParser(new MacroNodeFactoryImpl(sheet)));
 		Node root = parser.parse(sheet);
 
 		XLXContext context = new XLXContext(null,sheet,reportContext,out);
@@ -87,7 +86,7 @@ public class HTMLProcessor extends WorkbookProcessor {
 		context.setDataProvider(getDataProvider());
 		context.setTemplateProvider(getTemplateProvider());
 		context.setFormatProvider(getFormatProvider());
-		context.setStyles(styles);
+		context.setStyles();
 		context.parseTableStyles(workBook);
 
 		root.process(context);

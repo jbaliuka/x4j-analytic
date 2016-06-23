@@ -60,7 +60,7 @@ final public class XLSXFactory extends POIXMLFactory{
 			XLSXSheet.class
 	){};
 	
-	private POIXMLRelation getDescriptor(PackageRelationship rel,PackagePart part){
+	private POIXMLRelation getDescriptor(PackageRelationship rel){
 		
 		if(THEME.getRelation().equals(rel.getRelationshipType())){
 			return THEME;
@@ -80,7 +80,7 @@ final public class XLSXFactory extends POIXMLFactory{
 	@Override
 	public POIXMLDocumentPart createDocumentPart(PackageRelationship rel, PackagePart part){
 		
-        POIXMLRelation descriptor = getDescriptor(rel,part);
+        POIXMLRelation descriptor = getDescriptor(rel);
         
         if(descriptor == null || getClass(descriptor) == null){         
             return new POIXMLDocumentPart(part, rel);

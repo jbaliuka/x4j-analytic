@@ -9,13 +9,12 @@ package com.exigeninsurance.x4j.analytic.xlsx.transform.html;
 import org.apache.poi.xssf.model.Table;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 
-import com.exigeninsurance.x4j.analytic.xlsx.core.node.Node;
 import com.exigeninsurance.x4j.analytic.xlsx.core.node.TableNode;
 import com.exigeninsurance.x4j.analytic.xlsx.transform.xlsx.XLXContext;
 
 
 final class HTMLTableNode extends TableNode {
-	public HTMLTableNode(XSSFSheet sheet, Node parent, Table table) {
+	public HTMLTableNode(XSSFSheet sheet, Table table) {
 		super(sheet, table);
 	}
 

@@ -220,10 +220,10 @@ public class PdfRenderer {
         stream.moveTextPositionByAmount(x, y) ;
         stream.drawString(text);
         stream.endText();
-		drawUnderline(text,color, x, y);
+		drawUnderline(text,color);
 	}
 
-	private void drawUnderline(String text,Color color, float x, float y) {
+	private void drawUnderline(String text, Color color) {
 		if (underline != Font.U_NONE && !StringUtils.isEmpty(text)) {
 			int fontSize = (int) stream.getFontSize();
 			PDFont font = stream.getFont();

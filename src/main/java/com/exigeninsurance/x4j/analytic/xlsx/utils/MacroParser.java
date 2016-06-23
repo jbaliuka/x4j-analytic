@@ -12,7 +12,6 @@ import java.util.Set;
 import java.util.StringTokenizer;
 
 import org.apache.poi.util.Internal;
-import org.apache.poi.xssf.usermodel.XSSFSheet;
 
 import com.exigeninsurance.x4j.analytic.api.ReportException;
 import com.exigeninsurance.x4j.analytic.xlsx.core.node.Node;
@@ -48,7 +47,7 @@ public class MacroParser {
         ALL_MACROS.add(TABLE_MACRO);
     }
 
-    public MacroParser(XSSFSheet sheet, MacroNodeFactory nodeFactory) {
+    public MacroParser(MacroNodeFactory nodeFactory) {
         this.nodeFactory = nodeFactory;
     }
 

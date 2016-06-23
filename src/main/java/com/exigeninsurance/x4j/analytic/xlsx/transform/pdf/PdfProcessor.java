@@ -27,7 +27,6 @@ import com.exigeninsurance.x4j.analytic.xlsx.transform.pdf.header.rule.EvenHeade
 import com.exigeninsurance.x4j.analytic.xlsx.transform.pdf.header.rule.FirstHeaderFooterRule;
 import com.exigeninsurance.x4j.analytic.xlsx.transform.pdf.header.rule.OddFooterRule;
 import com.exigeninsurance.x4j.analytic.xlsx.transform.pdf.header.rule.OddHeaderRule;
-import com.exigeninsurance.x4j.analytic.xlsx.transform.xlsx.XLSXStylesTable;
 import com.exigeninsurance.x4j.analytic.xlsx.transform.xlsx.XLSXWorkbook;
 import com.exigeninsurance.x4j.analytic.xlsx.utils.MacroNodeFactory;
 import com.exigeninsurance.x4j.analytic.xlsx.utils.MacroNodeFactoryImpl;
@@ -80,7 +79,7 @@ public class PdfProcessor extends WorkbookProcessor {
     private void parseSheetAndProcess(XSSFSheet sheet, ComponentFactory componentFactory, MacroNodeFactory macroNodeFactory) throws Exception {
         PdfSheetParser parser = new PdfSheetParser( reportContext);
         
-        parser.setMacroParser(new MacroParser(sheet, macroNodeFactory));
+        parser.setMacroParser(new MacroParser(macroNodeFactory));
         parser.setComponentFactory(componentFactory);
         Node root = parser.parse(sheet);
         prepareContextForNewSheet(sheet, parser);
@@ -113,7 +112,7 @@ public class PdfProcessor extends WorkbookProcessor {
 		context.setTemplateProvider(getTemplateProvider());
 		context.setFormatProvider(getFormatProvider());
 		context.parseTableStyles(workBook);
-		context.setStyles((XLSXStylesTable) workBook.getStylesSource());
+		context.setStyles();
 		context.setHeaderMap(extractHeaders(workBook));
 		context.setFooterMap(extractFooters(workBook));
 		context.setColumnWidths(workBook);

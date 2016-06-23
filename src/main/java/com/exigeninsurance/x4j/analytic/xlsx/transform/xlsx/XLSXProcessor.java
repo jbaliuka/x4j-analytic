@@ -214,7 +214,7 @@ final class XLSXProcessor extends WorkbookProcessor {
 
 		SheetParser parser = new XLSXSheetParser(reportContext);
 		
-        parser.setMacroParser(new MacroParser(sheet, new MacroNodeFactoryImpl(sheet)));
+        parser.setMacroParser(new MacroParser(new MacroNodeFactoryImpl(sheet)));
 		Node root = parser.parse(sheet);
 		File sheetData = IOUtils.createTempFile("sheetData");
 		try {
@@ -225,7 +225,7 @@ final class XLSXProcessor extends WorkbookProcessor {
 				context.setDataProvider(getDataProvider());
 				context.setTemplateProvider(getTemplateProvider());
 				context.setFormatProvider(getFormatProvider());
-				context.setStyles((XLSXStylesTable) workBook.getStylesSource());
+				context.setStyles();
 				context.setMergedCells(parser.getMergedCells());
 				context.setRepeatingRows(XSSFSheetHelper.getRepeatingRows(sheet.getWorkbook(), sheet.getWorkbook().getSheetIndex(sheet.getSheetName())));
 				translateSheetName(sheet, context);

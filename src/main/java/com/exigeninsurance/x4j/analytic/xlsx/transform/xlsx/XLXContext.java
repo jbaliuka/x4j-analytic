@@ -201,7 +201,7 @@ public class XLXContext {
 		return node.getStyle();
 	}
 
-	public void setStyles(XLSXStylesTable styles) {
+	public void setStyles() {
 
 		formatUtil = new FormatUtil(formatProvider, reportContext.getLocale());
 		xlsxStyleUtil = new XLSXStyleUtil(sheet, formatProvider, reportContext.getLocale(), getAlignmentFinder());

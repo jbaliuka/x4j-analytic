@@ -13,7 +13,7 @@ public class IllegalState extends GroupState {
 		throw new IllegalStateException();
 	}
 
-	public GroupState transitionOnNext(boolean next) {
+	public GroupState transitionOnNext() {
 		throw new IllegalStateException();
 	}
 

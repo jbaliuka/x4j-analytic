@@ -9,7 +9,6 @@ package com.exigeninsurance.x4j.analytic.xlsx.transform.html;
 import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
-import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.List;
 
@@ -48,7 +47,7 @@ final public class XLSXWorkbookToHTMLTransaform extends BaseTransform {
 					
 					processor.setFormatProvider(getFormatProvider());
 					List<String> savedParts = java.util.Collections.emptyList();
-					processor.processSheets(reportContext, savedParts);
+					processor.processSheets(reportContext);
 
 				} catch (Exception e) {
 					log.error(e.getMessage(), e);
@@ -62,8 +61,7 @@ final public class XLSXWorkbookToHTMLTransaform extends BaseTransform {
 
 	}
 
-	protected File createWorkbookFile(ReportContext reportContext,
-			InputStream in, File saveTo) throws Exception {
+	protected File createWorkbookFile() throws Exception {
 		return IOUtils.createTempFile("html");
 	}
 

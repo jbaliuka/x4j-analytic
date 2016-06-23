@@ -101,7 +101,7 @@ public class PdfSheetParser extends SheetParser {
 	}
 	
 	@Override
-    public Node createRowNode(XSSFSheet xssfSheet, Node top, XSSFRow row) {
+    public Node createRowNode(XSSFSheet xssfSheet, XSSFRow row) {
 		if (isTableHeader(row.getRowNum())) {
 			return componentFactory.createTableHeaderRow(xssfSheet, createOneRowRange(row.getRowNum()));
 		}
@@ -128,7 +128,7 @@ public class PdfSheetParser extends SheetParser {
 
     @Override
 	public TableNode createTableNode(XSSFSheet sheet, Node top, Table table) {
-		return new PdfTableNode(sheet, top, table);
+		return new PdfTableNode(sheet, table);
 	}
 
 	@Override
@@ -150,13 +150,13 @@ public class PdfSheetParser extends SheetParser {
     }
 
     @Override
-	public Node createEmtyCell(XSSFSheet sheet, XSSFCell cell, Node parent) {
+	public Node createEmtyCell(XSSFSheet sheet, XSSFCell cell) {
 		
 		return componentFactory.createEmptyCell(sheet, cell);
 	}	
 	
 	@Override
-	public Node createEmptyRow(XSSFSheet sheet, Node parent, int row) {
+	public Node createEmptyRow(XSSFSheet sheet, int row) {
 		return componentFactory.createEmptyRow(sheet, createOneRowRange(row));
 	}
 
@@ -184,7 +184,7 @@ public class PdfSheetParser extends SheetParser {
             if (pictureNode instanceof PdfPictureNode) {
                 for (int i = last + 1; i < ((PdfPictureNode) pictureNode).getPictureData().getFromCol(); i++) {
                     XSSFCell xssfCell = row.getCell(i, Row.CREATE_NULL_AS_BLANK);
-                    rowNode.getChildren().add(createEmtyCell(getSheet(), xssfCell, rowNode));
+                    rowNode.getChildren().add(createEmtyCell(getSheet(), xssfCell));
                 }
                 rowNode.getChildren().add(pictureNode);
                 ((PdfPictureNode) pictureNode).setParent((PdfContainer) rowNode);

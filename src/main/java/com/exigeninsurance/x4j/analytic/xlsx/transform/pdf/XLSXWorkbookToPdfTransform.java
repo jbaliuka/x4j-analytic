@@ -9,7 +9,6 @@ package com.exigeninsurance.x4j.analytic.xlsx.transform.pdf;
 import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
-import java.io.InputStream;
 import java.io.OutputStream;
 
 import com.exigeninsurance.x4j.analytic.api.ReportContext;
@@ -53,8 +52,7 @@ public class XLSXWorkbookToPdfTransform extends BaseTransform {
 
 	}
 
-	protected File createWorkbookFile(ReportContext reportContext,
-			InputStream in, File saveTo) throws Exception {
+	protected File createWorkbookFile() throws Exception {
 
 		return IOUtils.createTempFile("pdf");
 	}

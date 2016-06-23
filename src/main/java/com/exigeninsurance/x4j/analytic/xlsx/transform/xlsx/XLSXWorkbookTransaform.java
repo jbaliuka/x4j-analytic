@@ -53,8 +53,7 @@ final public class XLSXWorkbookTransaform extends BaseTransform {
 		process(reportContext, saveTo, savedParts, workbook);
 	}
 
-	protected File createWorkbookFile(ReportContext reportContext,
-			InputStream in, File saveTo) throws Exception {
+	protected File createWorkbookFile() throws Exception {
 		return IOUtils.createTempFile("template");
 	}
 
