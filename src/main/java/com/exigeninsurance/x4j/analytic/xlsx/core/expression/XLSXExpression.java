@@ -12,7 +12,7 @@ import com.exigeninsurance.x4j.analytic.xlsx.transform.xlsx.XLXContext;
 public interface XLSXExpression {
 
 	
-	public abstract Object evaluate(XLXContext context) throws Exception;
+	Object evaluate(XLXContext context) throws Exception;
 
 	
 

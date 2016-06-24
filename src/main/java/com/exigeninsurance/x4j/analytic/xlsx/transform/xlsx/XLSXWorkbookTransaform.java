@@ -15,6 +15,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.RandomAccessFile;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.zip.Deflater;
@@ -153,7 +154,7 @@ final public class XLSXWorkbookTransaform extends BaseTransform {
 			head = head.replaceFirst("@uniqueCount@",
 					Long.toString(sst.getUnique()));
 
-			raf.write(head.getBytes());
+			raf.write(head.getBytes(StandardCharsets.UTF_8));
 		}finally{
 			raf.close();
 		}

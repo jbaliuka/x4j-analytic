@@ -11,6 +11,6 @@ import com.exigeninsurance.x4j.analytic.xlsx.transform.pdf.RenderingContext;
 
 public interface Estimator {
 	
-	public float estimate(RenderingContext context);
+	float estimate(RenderingContext context);
 
 }

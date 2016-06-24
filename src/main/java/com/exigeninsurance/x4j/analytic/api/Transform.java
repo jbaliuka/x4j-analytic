@@ -26,10 +26,10 @@ public interface Transform {
 	 * @param saveTo output
 	 * @throws Exception
 	 */
-	public void process(ReportContext reportContext, InputStream template, File saveTo) throws Exception;
+    void process(ReportContext reportContext, InputStream template, File saveTo) throws Exception;
 	
-	public void setDataProvider(ReportDataProvider dataProvider);
+	void setDataProvider(ReportDataProvider dataProvider);
 	
-	public void setTemplateProvider(TemplateResolver resolver);
+	void setTemplateProvider(TemplateResolver resolver);
 
 }

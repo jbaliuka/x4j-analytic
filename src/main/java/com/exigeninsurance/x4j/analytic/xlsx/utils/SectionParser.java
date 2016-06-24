@@ -55,11 +55,11 @@ public class SectionParser {
     }
 
     private interface ParseState {
-        public void processCharacter(SectionParser context, char token);
+        void processCharacter(SectionParser context, char token);
 
-        public void processAmpersand(SectionParser context, char token);
+        void processAmpersand(SectionParser context, char token);
 
-        public void processEnd(SectionParser context);
+        void processEnd(SectionParser context);
     }
 
     private void addSection(String contents, char sectionExpression) {

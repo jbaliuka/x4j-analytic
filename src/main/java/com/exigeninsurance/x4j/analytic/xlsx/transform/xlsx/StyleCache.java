@@ -80,13 +80,10 @@ public final class StyleCache {
 				if (currencyCd != null ? !currencyCd.equals(styleKey.currencyCd) : styleKey.currencyCd != null){
 					return false;
 				}
-					
-				if (!node.equals(styleKey.node)){
-					return false;
-				}
 
-				return true;
-			}
+                return node.equals(styleKey.node);
+
+            }
 
 			@Override
 			public int hashCode() {

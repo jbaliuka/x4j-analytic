@@ -11,5 +11,5 @@ import com.exigeninsurance.x4j.analytic.xlsx.transform.PdfStyle;
 
 public interface Style {
 
-	public PdfStyle getStyle(com.exigeninsurance.x4j.analytic.xlsx.transform.TableStyle tableStyle);
+	PdfStyle getStyle(com.exigeninsurance.x4j.analytic.xlsx.transform.TableStyle tableStyle);
 }

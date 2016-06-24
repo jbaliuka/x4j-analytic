@@ -11,5 +11,5 @@ import com.exigeninsurance.x4j.analytic.xlsx.transform.pdf.PdfContext;
 
 public interface Notifier {
 	
-	public void notify(PdfContext context);
+	void notify(PdfContext context);
 }

@@ -10,17 +10,17 @@ package com.exigeninsurance.x4j.analytic.xlsx.transform.pdf;
 
 public interface DrawablePdfElement {
 	
-	public void draw(RenderingContext renderingContext) throws Exception;
+	void draw(RenderingContext renderingContext) throws Exception;
 		
-	public float estimateWidth(RenderingContext context);
+	float estimateWidth(RenderingContext context);
 	
-	public float estimateHeight(RenderingContext context);
+	float estimateHeight(RenderingContext context);
 	
-	public void notify(PdfContext context);
+	void notify(PdfContext context);
 	
-	public void setParent(PdfContainer element);
+	void setParent(PdfContainer element);
 	
-	public PdfContainer getParent();
+	PdfContainer getParent();
 	
-	public float getHeigth();
+	float getHeigth();
 }

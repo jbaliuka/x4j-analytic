@@ -11,6 +11,8 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 
 import com.exigeninsurance.x4j.analytic.xlsx.core.node.Node;
 
+import java.nio.charset.StandardCharsets;
+
 
 public final class XLSXRowNode extends Node {
 
@@ -18,11 +20,11 @@ public final class XLSXRowNode extends Node {
 
 	private static final byte GT = '>';
 
-	private static final byte[] ROW_HEAD = "<row r=\"".getBytes();
+	private static final byte[] ROW_HEAD = "<row r=\"".getBytes(StandardCharsets.UTF_8);
 
-	private static final byte[] ROW_TAIL = "</row>".getBytes();
+	private static final byte[] ROW_TAIL = "</row>".getBytes(StandardCharsets.UTF_8);
 
-	private static final byte[] SPANS = " spans=\"".getBytes();
+	private static final byte[] SPANS = " spans=\"".getBytes(StandardCharsets.UTF_8);
 
 	private byte[] spans;
 
@@ -42,7 +44,7 @@ public final class XLSXRowNode extends Node {
 				}
 
 			}
-			spans = buffer.toString().getBytes();
+			spans = buffer.toString().getBytes(StandardCharsets.UTF_8);
 		}
 	}
 

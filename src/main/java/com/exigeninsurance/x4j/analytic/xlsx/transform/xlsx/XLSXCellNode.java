@@ -8,6 +8,7 @@ package com.exigeninsurance.x4j.analytic.xlsx.transform.xlsx;
 
 import java.io.IOException;
 import java.math.BigDecimal;
+import java.nio.charset.StandardCharsets;
 import java.sql.Timestamp;
 import java.util.Date;
 
@@ -32,14 +33,14 @@ import com.exigeninsurance.x4j.analytic.xlsx.utils.WrappingUtil;
 
 public final class XLSXCellNode extends CellNode {
 
-	private static final byte[] F_END = "</f>".getBytes();
-	private static final byte[] F = "<f>".getBytes();
-	private static final byte[] C_R = "<c r=\"".getBytes();
-	private static final byte[] C_TAIL = "</c>".getBytes();
-	private static final byte[] S = " s=\"".getBytes();
-	private static final byte[] T = " t=\"".getBytes();
-	private static final byte[] V = "<v>".getBytes();
-	private static final byte[] V_TAIL = "</v>".getBytes();	
+	private static final byte[] F_END = "</f>".getBytes(StandardCharsets.UTF_8);
+	private static final byte[] F = "<f>".getBytes(StandardCharsets.UTF_8);
+	private static final byte[] C_R = "<c r=\"".getBytes(StandardCharsets.UTF_8);
+	private static final byte[] C_TAIL = "</c>".getBytes(StandardCharsets.UTF_8);
+	private static final byte[] S = " s=\"".getBytes(StandardCharsets.UTF_8);
+	private static final byte[] T = " t=\"".getBytes(StandardCharsets.UTF_8);
+	private static final byte[] V = "<v>".getBytes(StandardCharsets.UTF_8);
+	private static final byte[] V_TAIL = "</v>".getBytes(StandardCharsets.UTF_8);
 	private static final byte QT = '\"';
 	private static final byte GT = '>';
 	private String formulaStringValue;
