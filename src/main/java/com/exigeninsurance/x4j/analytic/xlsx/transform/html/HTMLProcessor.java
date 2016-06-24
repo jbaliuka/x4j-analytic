@@ -50,7 +50,7 @@ public class HTMLProcessor extends WorkbookProcessor {
 
 	public void processSheets(	ReportContext reportContext, List<String> savedParts	)
 	throws  Exception {
-		StringBuffer buffer = new StringBuffer();
+		StringBuilder buffer = new StringBuilder();
 		buffer.append("<style>");
 
 		int len =  styles._getXfsSize();
@@ -94,7 +94,7 @@ public class HTMLProcessor extends WorkbookProcessor {
 		context.flush();
 	}
 
-	private void appendStyle(StringBuffer buffer, int i) {
+	private void appendStyle(StringBuilder buffer, int i) {
 		buffer.append(".c").append(i).append("{");
 		XSSFCellStyle style  = styles.getStyleAt(i);
 		appendFontStyle(buffer, style);
@@ -102,7 +102,7 @@ public class HTMLProcessor extends WorkbookProcessor {
 		buffer.append("}\n");
 	}
 
-	private void appendAlign(StringBuffer buffer, XSSFCellStyle style) {
+	private void appendAlign(StringBuilder buffer, XSSFCellStyle style) {
 		switch(style.getAlignment()){
 		case CellStyle.ALIGN_GENERAL:
 			break;
@@ -118,7 +118,7 @@ public class HTMLProcessor extends WorkbookProcessor {
 		}
 	}
 
-	private void appendFontStyle(StringBuffer buffer, XSSFCellStyle style) {
+	private void appendFontStyle(StringBuilder buffer, XSSFCellStyle style) {
 		XSSFFont font = style.getFont();
 		buffer.append("font-size:").append(font.getFontHeightInPoints()).append("pt;");
 

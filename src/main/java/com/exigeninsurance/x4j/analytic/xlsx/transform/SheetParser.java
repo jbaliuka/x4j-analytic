@@ -7,13 +7,7 @@
 package com.exigeninsurance.x4j.analytic.xlsx.transform;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-import java.util.Stack;
+import java.util.*;
 
 import org.apache.poi.POIXMLDocumentPart;
 import org.apache.poi.POIXMLRelation;
@@ -59,7 +53,7 @@ public abstract class SheetParser {
 			) {
 	};
 
-	private final Stack<Node> stack = new Stack<Node>();
+	private final Deque<Node> stack = new ArrayDeque<Node>();
 	private int lastRowNum;
 
 	private XSSFSheet sheet;
@@ -77,8 +71,8 @@ public abstract class SheetParser {
 	private final boolean showRowColHeaders = true;
 
 	private ReportContext reportContext;
-	private final Stack<SimpleRange> tableRanges = new Stack<SimpleRange>();
-	private final Stack<SimpleRange> openLoops = new Stack<SimpleRange>();
+	private final Deque<SimpleRange> tableRanges = new ArrayDeque<SimpleRange>();
+	private final Deque<SimpleRange> openLoops = new ArrayDeque<SimpleRange>();
 	private Map<String, MergedRegion> mergedCellMap;
 	private Collection<MergedRegion> mergedRegions = new ArrayList<MergedRegion>();
 
@@ -415,10 +409,10 @@ public abstract class SheetParser {
 	}
 
 	private boolean forEachLoops(int row) {
-		if (!openLoops.empty()) {
+		if (!openLoops.isEmpty()) {
 			return true;
 		}
-		if (tableRanges.empty()) {
+		if (tableRanges.isEmpty()) {
 			return false;
 		}
 		for (SimpleRange range : tableRanges) {
