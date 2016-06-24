@@ -20,6 +20,9 @@ import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 
+import oracle.jdbc.internal.OracleConnection;
+import oracle.sql.CLOB;
+import oracle.sql.ClobDBAccess;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mock;
@@ -152,12 +155,12 @@ public class PersistingCursorTest {
      */
    @Test
     public void verifyCLOBparsing() throws SQLException{
-       oracle.jdbc.internal.OracleConnection mockConnection= Mockito.mock(oracle.jdbc.internal.OracleConnection.class);
-       oracle.sql.ClobDBAccess clobDBAccess= Mockito.mock(oracle.sql.ClobDBAccess.class);
+       OracleConnection mockConnection= Mockito.mock(OracleConnection.class);
+       ClobDBAccess clobDBAccess= Mockito.mock(ClobDBAccess.class);
        when(mockConnection.createClobDBAccess()).thenReturn(clobDBAccess);
        when(mockConnection.physicalConnectionWithin()).thenReturn(mockConnection);
        final String str="someString";
-       oracle.sql.CLOB clob=new oracle.sql.CLOB(mockConnection, str.getBytes());
+       CLOB clob=new CLOB(mockConnection, str.getBytes());
        when(clobDBAccess.newReader(clob, clob.getBufferSize(), 0l)).thenReturn(new StringReader(str));
        clob.setPhysicalConnectionOf(mockConnection);
        Object[] clobData =new Object[]{clob };

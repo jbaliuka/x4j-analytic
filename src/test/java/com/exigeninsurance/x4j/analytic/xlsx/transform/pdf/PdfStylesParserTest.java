@@ -20,6 +20,7 @@ import com.exigeninsurance.x4j.analytic.xlsx.transform.PdfStyle;
 import com.exigeninsurance.x4j.analytic.xlsx.transform.PdfStylesTable;
 import com.exigeninsurance.x4j.analytic.xlsx.transform.TableStyle;
 import com.exigeninsurance.x4j.analytic.xlsx.transform.XLSXFill;
+import org.w3c.dom.Node;
 
 public class PdfStylesParserTest {
 	
@@ -42,7 +43,7 @@ public class PdfStylesParserTest {
 	public void testParseDfxs() throws IOException {
         try {
             parser = new PdfStylesParser(stream);
-            List<org.w3c.dom.Node> result = parser.parseDxfs();
+            List<Node> result = parser.parseDxfs();
             int expectedSize = DXFS_SIZE;
             int actualSize = result.size();
             assertEquals(expectedSize, actualSize);
@@ -55,7 +56,7 @@ public class PdfStylesParserTest {
 	public void testParseTableStyles() throws IOException {
         try {
             parser = new PdfStylesParser(stream);
-            List<org.w3c.dom.Node> result = parser.parseTableStyles();
+            List<Node> result = parser.parseTableStyles();
             int expectedSize = TABLE_STYLES_SIZE;
             int actualSize = result.size();
             assertEquals(expectedSize, actualSize);
@@ -80,7 +81,7 @@ public class PdfStylesParserTest {
 	public void testProducePdfStyle() throws IOException {
         try {
             parser = new PdfStylesParser(stream);
-            List<org.w3c.dom.Node> dxfs = parser.parseDxfs();
+            List<Node> dxfs = parser.parseDxfs();
             PdfStyle style = parser.produceStyle(dxfs.get(0));
 
             assertNotNull(style);
@@ -109,7 +110,7 @@ public class PdfStylesParserTest {
     public void testProducePdfStyleNoFill() throws IOException {
         try {
             parser = new PdfStylesParser(stream);
-            List<org.w3c.dom.Node> dxfs = parser.parseDxfs();
+            List<Node> dxfs = parser.parseDxfs();
             PdfStyle style = parser.produceStyle(dxfs.get(2));
             assertNotNull(style);
 
@@ -125,7 +126,7 @@ public class PdfStylesParserTest {
 	public void testProduceTableStyle() throws IOException {
         try {
             parser = new PdfStylesParser(stream);
-            List<org.w3c.dom.Node> tableStyles = parser.parseTableStyles();
+            List<Node> tableStyles = parser.parseTableStyles();
             // need to parse dxfs manually
             parser.parseDxfs();
             parser.producePdfStyles();
