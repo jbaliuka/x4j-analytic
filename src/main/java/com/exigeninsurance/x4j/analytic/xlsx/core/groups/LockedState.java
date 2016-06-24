@@ -15,7 +15,7 @@ public class LockedState extends GroupState {
 		this.previousState = previousState;
 	}
 
-	public GroupState transitionOnNext(boolean next) {
+	public GroupState transitionOnNext() {
 		return previousState;
 	}
 

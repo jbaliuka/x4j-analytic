@@ -32,7 +32,7 @@ import com.exigeninsurance.x4j.analytic.xlsx.transform.xlsx.XLXContext;
 	}
 
 	@Override
-    public Node createRowNode(XSSFSheet sheet, Node parent, XSSFRow row) {
+    public Node createRowNode(XSSFSheet sheet, XSSFRow row) {
 
 		return new XMLRowNode(sheet);
 	}
@@ -57,11 +57,11 @@ import com.exigeninsurance.x4j.analytic.xlsx.transform.xlsx.XLXContext;
 
     @Override
 	public TableNode createTableNode(XSSFSheet sheet, Node top, Table table) {
-		return new XMLTableNode(sheet, top, table);
+		return new XMLTableNode(sheet, table);
 	}
 
 	@Override
-	public Node createEmptyRow(XSSFSheet sheet,Node parent, int row) {
+	public Node createEmptyRow(XSSFSheet sheet, int row) {
 
 		return new Node(sheet){
 			@Override
@@ -72,19 +72,19 @@ import com.exigeninsurance.x4j.analytic.xlsx.transform.xlsx.XLXContext;
 	}
 
 	@Override
-	public Node createEmtyCell(XSSFSheet sheet, XSSFCell cell, Node parent) {
+	public Node createEmtyCell(XSSFSheet sheet, XSSFCell cell) {
 
 		return new EmptyNode(sheet);
 	}
 
-	protected String tail(String str) {
+	protected String tail() {
 
 		return  "";
 
 	}
 
 
-	protected String head(String str) {
+	protected String head() {
 		
 
 		return "";

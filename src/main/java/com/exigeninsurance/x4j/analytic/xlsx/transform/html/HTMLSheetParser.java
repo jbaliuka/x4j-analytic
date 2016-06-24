@@ -33,7 +33,7 @@ class HTMLSheetParser extends SheetParser {
 	}
 
 	@Override
-    public Node createRowNode(XSSFSheet sheet, Node parent, XSSFRow row) {
+    public Node createRowNode(XSSFSheet sheet, XSSFRow row) {
 
 		return new HTMLRowNode(sheet, row);
 	}
@@ -48,11 +48,11 @@ class HTMLSheetParser extends SheetParser {
 	@Override
 	public TableNode createTableNode(XSSFSheet sheet, Node top, Table table) {
 
-		return new HTMLTableNode(sheet, top, table);
+		return new HTMLTableNode(sheet, table);
 	}
 
 	@Override
-	public Node createEmptyRow(XSSFSheet sheet,Node parent, int row) {
+	public Node createEmptyRow(XSSFSheet sheet, int row) {
 
 		return new Node(sheet){
 			@Override
@@ -64,12 +64,12 @@ class HTMLSheetParser extends SheetParser {
 	}
 
 	@Override
-	public Node createEmtyCell(XSSFSheet sheet, XSSFCell cell, Node parent) {
+	public Node createEmtyCell(XSSFSheet sheet, XSSFCell cell) {
 
 		return new TextNode(sheet,"<td>&nbsp;</td>");
 	}
 
-	protected String head(String str) {
+	protected String head() {
 		
 
 		return "\n<table id=\""+ sheet.getSheetName() +"\">\n";
@@ -89,7 +89,7 @@ class HTMLSheetParser extends SheetParser {
 	@Override
 	public Node createTotalsNode(XSSFSheet xssfSheet, TableNode tableNode,
 			XSSFRow row) {
-		return createRowNode(xssfSheet, tableNode, row);
+		return createRowNode(xssfSheet, row);
 	}
 
     @Override

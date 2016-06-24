@@ -14,7 +14,7 @@ public class OpenState extends GroupState {
 		return new IllegalState();
 	}
 
-	public GroupState transitionOnNext(boolean next) {
+	public GroupState transitionOnNext() {
 		return this;
 	}
 	

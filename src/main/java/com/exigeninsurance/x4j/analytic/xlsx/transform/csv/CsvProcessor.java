@@ -16,7 +16,6 @@ import com.exigeninsurance.x4j.analytic.xlsx.core.node.Node;
 import com.exigeninsurance.x4j.analytic.xlsx.core.node.TableNode;
 import com.exigeninsurance.x4j.analytic.xlsx.transform.SheetParser;
 import com.exigeninsurance.x4j.analytic.xlsx.transform.WorkbookProcessor;
-import com.exigeninsurance.x4j.analytic.xlsx.transform.xlsx.XLSXStylesTable;
 import com.exigeninsurance.x4j.analytic.xlsx.transform.xlsx.XLSXWorkbook;
 import com.exigeninsurance.x4j.analytic.xlsx.transform.xlsx.XLXContext;
 import com.exigeninsurance.x4j.analytic.xlsx.utils.MacroNodeFactoryImpl;
@@ -39,26 +38,25 @@ public class CsvProcessor extends WorkbookProcessor {
 	public void processSheets(	ReportContext reportContext, List<String> savedParts	)
 	throws  Exception {
 		for(int i = 0; i < workBook.getNumberOfSheets(); i++){
-			nextSheet(reportContext, savedParts, i);
+			nextSheet(reportContext, i);
 		}
 	}
 
 	private void nextSheet(
-			ReportContext reportContext,
-			List<String> savedParts,
-			int index
-	)
+            ReportContext reportContext,
+            int index
+    )
 	throws  Exception {
 		XSSFSheet sheet = workBook.getSheetAt(index);
 
 		SheetParser parser = new CsvSheetParser(sheet,reportContext);
 		
-        parser.setMacroParser(new MacroParser(sheet, new MacroNodeFactoryImpl(sheet)));
+        parser.setMacroParser(new MacroParser(new MacroNodeFactoryImpl(sheet)));
 		Node root = parser.parse(sheet);
 
 		XLXContext context = new XLXContext(null,sheet,reportContext,out);
 		context.setFormatProvider(getFormatProvider());
-		context.setStyles((XLSXStylesTable) workBook.getStylesSource());
+		context.setStyles();
 		context.setDataProvider(getDataProvider());
 		context.setTemplateProvider(getTemplateProvider());
 		trimChildren(root);

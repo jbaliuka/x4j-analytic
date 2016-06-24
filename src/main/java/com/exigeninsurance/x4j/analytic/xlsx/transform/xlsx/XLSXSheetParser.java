@@ -31,7 +31,7 @@ public class XLSXSheetParser extends SheetParser {
 		super(reportContext);
 	}
 
-	public XLSXSheetParser(XLSXStylesTable styles) {
+	public XLSXSheetParser() {
 		super(null);
 	}
 
@@ -50,7 +50,7 @@ public class XLSXSheetParser extends SheetParser {
     }
 
     @Override
-    public Node createRowNode(XSSFSheet xssfSheet, Node top, XSSFRow row) {
+    public Node createRowNode(XSSFSheet xssfSheet, XSSFRow row) {
 		return new XLSXRowNode(xssfSheet, row);
 	}
 
@@ -77,7 +77,7 @@ public class XLSXSheetParser extends SheetParser {
 	@Override
 	public Node createTotalsNode(XSSFSheet xssfSheet, TableNode tableNode,
 			XSSFRow row) {
-		return createRowNode(xssfSheet, tableNode, row);
+		return createRowNode(xssfSheet, row);
 	}
 
     @Override

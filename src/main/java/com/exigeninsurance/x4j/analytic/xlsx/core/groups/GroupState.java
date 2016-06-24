@@ -9,7 +9,7 @@ package com.exigeninsurance.x4j.analytic.xlsx.core.groups;
 
 public abstract class GroupState {
 	
-	public abstract GroupState transitionOnNext(boolean next);
+	public abstract GroupState transitionOnNext();
 	
 	protected abstract GroupState transitionOnSkip();
 

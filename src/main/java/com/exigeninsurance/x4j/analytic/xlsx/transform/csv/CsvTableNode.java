@@ -9,13 +9,12 @@ package com.exigeninsurance.x4j.analytic.xlsx.transform.csv;
 import org.apache.poi.xssf.model.Table;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 
-import com.exigeninsurance.x4j.analytic.xlsx.core.node.Node;
 import com.exigeninsurance.x4j.analytic.xlsx.core.node.TableNode;
 
 
 public class CsvTableNode extends TableNode {
 
-	public CsvTableNode(XSSFSheet sheet, Node parent, Table table) {
+	public CsvTableNode(XSSFSheet sheet, Table table) {
 		super(sheet, table);
 
 	}

@@ -65,7 +65,7 @@ public final class TableParser {
 		forEach.setRows(new TableExpression(tableName));
 
 		XSSFRow template = sheet.getRow(row.getRowNum() + headerRowCount);
-		Node templateNode = sheetParser.createRowNode(sheet, forEach, template );
+		Node templateNode = sheetParser.createRowNode(sheet, template );
 				
 		for( int i = 0; i < template.getLastCellNum(); i++){
 
@@ -151,7 +151,7 @@ public final class TableParser {
 			
 			for( CTTableColumn ctCol  : table.getCTTable().getTableColumns().getTableColumnArray()){
 				if(ctCol.isSetTotalsRowFunction()){							
-					buildTotalsCell(templateNode, table, tRow, totalsRow,
+					buildTotalsCell(templateNode, tRow, totalsRow,
 							index);
 				}else {
 					XSSFCell cell = sheet.getRow(endRow).getCell(index, Row.CREATE_NULL_AS_BLANK);
@@ -166,12 +166,12 @@ public final class TableParser {
 
 		for (int i = 0; i < lastCol; i++) {
 			XSSFCell cell = tRow.getCell(i, Row.CREATE_NULL_AS_BLANK);
-			totalsRow.getChildren().add(sheetParser.createEmtyCell(sheet, cell, templateNode));
+			totalsRow.getChildren().add(sheetParser.createEmtyCell(sheet, cell));
 		}
 	}
 
-	private void buildTotalsCell(Node templateNode, Table table,
-			XSSFRow tRow, Node totalsRow, int index) {
+	private void buildTotalsCell(Node templateNode,
+                                 XSSFRow tRow, Node totalsRow, int index) {
 
 		CellNode tCellNode = findParentCell(templateNode, index);
 

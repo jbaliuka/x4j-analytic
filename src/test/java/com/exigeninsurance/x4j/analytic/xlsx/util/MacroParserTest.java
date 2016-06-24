@@ -36,7 +36,7 @@ public class MacroParserTest {
     @Test
     public void testParseValidMacro() {
         XSSFSheet sheet = null;
-        MacroParser parser = new MacroParser(sheet, new MacroNodeFactoryImpl(sheet));
+        MacroParser parser = new MacroParser(new MacroNodeFactoryImpl(sheet));
 
         Node ifNode = parser.createMacroNode("#if (1==1)");
 
@@ -48,7 +48,7 @@ public class MacroParserTest {
     @Test(expected=IllegalArgumentException.class)
     public void testParseMalformedMacro() {
         XSSFSheet sheet = null;
-        MacroParser parser = new MacroParser(sheet, new MacroNodeFactoryImpl(sheet));
+        MacroParser parser = new MacroParser(new MacroNodeFactoryImpl(sheet));
 
         parser.createMacroNode("#for row in");
     }

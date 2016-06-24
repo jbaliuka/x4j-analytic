@@ -60,7 +60,7 @@ public class XLSXSheetParserTest {
         reportContext = new ReportContext(new ReportMetadata());
         parameters = reportContext.getParameters();
         parser = new XLSXSheetParser( reportContext);
-        parser.setMacroParser(new MacroParser(sheet, new MacroNodeFactoryImpl(sheet)));
+        parser.setMacroParser(new MacroParser(new MacroNodeFactoryImpl(sheet)));
     }
 
     @Test
