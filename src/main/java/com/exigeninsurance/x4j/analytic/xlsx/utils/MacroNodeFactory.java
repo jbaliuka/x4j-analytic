@@ -13,11 +13,11 @@ import com.exigeninsurance.x4j.analytic.xlsx.core.node.Node;
 @Internal
 public interface MacroNodeFactory {
 
-    public Node parseSetMacro(String macro);
+    Node parseSetMacro(String macro);
 
-    public Node parseForMacro(String macro);
+    Node parseForMacro(String macro);
 
-    public Node parseEvalMacro(String macro);
+    Node parseEvalMacro(String macro);
 
-    public Node parseIfMacro(String macro);
+    Node parseIfMacro(String macro);
 }

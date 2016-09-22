@@ -35,7 +35,7 @@ abstract public class BaseTransform implements Transform {
 	private FormatProvider formatProvider;
 
 	public final void process(ReportContext reportContext, InputStream in, File saveTo) throws Exception {
-		File template = createWorkbookFile(reportContext, in, saveTo);
+		File template = createWorkbookFile();
 
 		try {
 			IOUtils.copy(in, template);
@@ -100,7 +100,7 @@ abstract public class BaseTransform implements Transform {
 
 	protected abstract void doProcess(XLSXWorkbook workbook,ReportContext reportContext, File saveTo) throws Exception;
 
-	protected abstract File createWorkbookFile(ReportContext reportContext, InputStream in, File saveTo) throws Exception;
+	protected abstract File createWorkbookFile() throws Exception;
 
 
 

@@ -7,13 +7,7 @@
 package com.exigeninsurance.x4j.analytic.xlsx.transform;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-import java.util.Stack;
+import java.util.*;
 
 import org.apache.poi.POIXMLDocumentPart;
 import org.apache.poi.POIXMLRelation;
@@ -59,7 +53,7 @@ public abstract class SheetParser {
 			) {
 	};
 
-	private final Stack<Node> stack = new Stack<Node>();
+	private final Deque<Node> stack = new ArrayDeque<Node>();
 	private int lastRowNum;
 
 	private XSSFSheet sheet;
@@ -77,8 +71,8 @@ public abstract class SheetParser {
 	private final boolean showRowColHeaders = true;
 
 	private ReportContext reportContext;
-	private final Stack<SimpleRange> tableRanges = new Stack<SimpleRange>();
-	private final Stack<SimpleRange> openLoops = new Stack<SimpleRange>();
+	private final Deque<SimpleRange> tableRanges = new ArrayDeque<SimpleRange>();
+	private final Deque<SimpleRange> openLoops = new ArrayDeque<SimpleRange>();
 	private Map<String, MergedRegion> mergedCellMap;
 	private Collection<MergedRegion> mergedRegions = new ArrayList<MergedRegion>();
 
@@ -94,7 +88,7 @@ public abstract class SheetParser {
 
 	protected abstract Node createPictureNode(XSSFSheet sheet, Picture picture);
 
-	public abstract Node createRowNode(XSSFSheet xssfSheet, Node top, XSSFRow row);
+	public abstract Node createRowNode(XSSFSheet xssfSheet, XSSFRow row);
 
 	public abstract CellNode createCellNode(XSSFSheet xssfSheet, XSSFCell cell, int i, XLSXExpression expr, Node parent);
 
@@ -204,7 +198,7 @@ public abstract class SheetParser {
 	}
 
 
-	protected String sheetData(String str) {
+	protected String sheetData() {
 
 		return "";
 
@@ -245,7 +239,7 @@ public abstract class SheetParser {
 		}
 
 		if (row == null) {
-			Node node = createEmptyRow(sheet, top, getCurrentRow());
+			Node node = createEmptyRow(sheet, getCurrentRow());
 			insertPictures(node, pictureNodes);
 			pushLeafNode(top, node);
 			return;
@@ -259,7 +253,7 @@ public abstract class SheetParser {
 				value = value == null ? "" : value.trim();
 
 				if (MacroParser.isMacro(value)) {
-					parseMacro(top, cell, value);
+					parseMacro(top, value);
 					return;
 				} else {
 					Table table = isTable(cell.getRowIndex());
@@ -289,7 +283,7 @@ public abstract class SheetParser {
 		return false;
 	}
 
-	private void parseMacro(Node top, XSSFCell cell, String value) {
+	private void parseMacro(Node top, String value) {
 		if (MacroParser.isLeafMacro(value)) {
 			pushLeafNode(top, macroParser.createMacroNode(value));
 		} else if (MacroParser.isBranchMacro(value)) {
@@ -317,13 +311,13 @@ public abstract class SheetParser {
 
 
 		int len = row.getCTRow().getCArray().length;
-		Node rowNode = len == 0 ? createEmptyRow(sheet, top, getCurrentRow()) : createRowNode(row.getSheet(), top, row);
+		Node rowNode = len == 0 ? createEmptyRow(sheet, getCurrentRow()) : createRowNode(row.getSheet(), row);
 
 		for (int i = 0; i < row.getLastCellNum(); i++) {
 			XSSFCell cell = row.getCell(i);
 			Node cellNode;
 			if (cell == null) {
-				cellNode = createEmtyCell(sheet, row.getCell(i, Row.CREATE_NULL_AS_BLANK), rowNode);
+				cellNode = createEmtyCell(sheet, row.getCell(i, Row.CREATE_NULL_AS_BLANK));
 			} else {
 				cellNode = createCellNode(row.getSheet(), cell, cell.getColumnIndex(), CellExpressionParser.parse(cell), rowNode);
 			}
@@ -415,10 +409,10 @@ public abstract class SheetParser {
 	}
 
 	private boolean forEachLoops(int row) {
-		if (!openLoops.empty()) {
+		if (!openLoops.isEmpty()) {
 			return true;
 		}
-		if (tableRanges.empty()) {
+		if (tableRanges.isEmpty()) {
 			return false;
 		}
 		for (SimpleRange range : tableRanges) {
@@ -449,11 +443,11 @@ public abstract class SheetParser {
 		return new TableNode(sheet, table);
 	}
 
-	public Node createEmptyRow(XSSFSheet sheet, Node parent, int row) {
+	public Node createEmptyRow(XSSFSheet sheet, int row) {
 		return new EmptyNode(sheet);
 	}
 
-	public Node createEmtyCell(XSSFSheet sheet, XSSFCell cell, Node parent) {
+	public Node createEmtyCell(XSSFSheet sheet, XSSFCell cell) {
 
 		return new Node(sheet) {
 			@Override

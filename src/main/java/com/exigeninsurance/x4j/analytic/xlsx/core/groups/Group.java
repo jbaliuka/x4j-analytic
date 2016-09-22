@@ -35,7 +35,7 @@ public class Group {
 	}
 
 	public void transitionOnNext(boolean next) {
-		state = state.transitionOnNext(next);	
+		state = state.transitionOnNext();
 		first = false;
 	}
 	

@@ -11,6 +11,7 @@ import static com.exigeninsurance.x4j.analytic.util.MockResultSet.data;
 import static com.exigeninsurance.x4j.analytic.util.MockResultSet.row;
 
 import java.io.ByteArrayOutputStream;
+import java.io.InputStream;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -78,7 +79,7 @@ public class QueryProcessingTest extends TestCase {
 
     public void testParseTable() throws Exception {
 
-        java.io.InputStream is = getClass().getResourceAsStream("/testTables.xlsx");
+        InputStream is = getClass().getResourceAsStream("/testTables.xlsx");
         Assert.assertNotNull(is);
         try {
 

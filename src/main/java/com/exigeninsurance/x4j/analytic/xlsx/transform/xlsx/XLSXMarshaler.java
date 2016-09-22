@@ -50,7 +50,7 @@ final class XLSXMarshaler {
 		marshalRelationship(out);
 
 		if(workBook.getCalculationChain() != null){
-			saveCalculationChain(savedParts, workBook, out);
+			saveCalculationChain(savedParts, workBook);
 		}
 
 		saveStyles(savedParts, workBook, out);
@@ -198,9 +198,8 @@ final class XLSXMarshaler {
     }
 
     private void saveCalculationChain(
-			List<String> savedParts,
-			XSSFWorkbook workBook,
-			ZipOutputStream out) {
+            List<String> savedParts,
+            XSSFWorkbook workBook) {
 
 		String entryName = getEntryName(workBook.getCalculationChain().getPackagePart());	
 		savedParts.add(entryName);

@@ -16,7 +16,7 @@ public enum Alignment {
 
 	private final short excel;
 
-	private Alignment(short excel) {
+	Alignment(short excel) {
 		this.excel = excel;
 	}
 

@@ -114,10 +114,10 @@ public class TableNode extends Node{
 		CTConnection connection = buildConnection(context);
 		CTMapInfo ctMapInfo = info.getCTMapInfo();		
 		CTMap map = buildXMLMap(connection, ctMapInfo);		
-		buildSchema(context,ctMapInfo, map);
+		buildSchema(ctMapInfo, map);
 	}
 
-	private void buildSchema(XLXContext context, CTMapInfo ctMapInfo, CTMap map) {
+	private void buildSchema(CTMapInfo ctMapInfo, CTMap map) {
 		CTSchema schema = ctMapInfo.addNewSchema();
 		schema.setID(map.getSchemaID());
 

@@ -12,7 +12,7 @@ import java.util.Map;
 import com.exigeninsurance.x4j.analytic.model.Money;
 
 
-public class StyleCache {
+public final class StyleCache {
 
 	private final Map<XLSXCellNode, Long> styles = new HashMap<XLSXCellNode, Long>();
 	private final CurrencyStyleCache currencyStyles = new CurrencyStyleCache();
@@ -80,13 +80,10 @@ public class StyleCache {
 				if (currencyCd != null ? !currencyCd.equals(styleKey.currencyCd) : styleKey.currencyCd != null){
 					return false;
 				}
-					
-				if (!node.equals(styleKey.node)){
-					return false;
-				}
 
-				return true;
-			}
+                return node.equals(styleKey.node);
+
+            }
 
 			@Override
 			public int hashCode() {

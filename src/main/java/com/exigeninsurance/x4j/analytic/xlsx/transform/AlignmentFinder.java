@@ -53,6 +53,6 @@ public class AlignmentFinder {
 	}
 
 	private boolean isEnabled(Attribute a) {
-		return a == null || a.getValue().toLowerCase().equals("enabled");
+		return a == null || a.getValue().equalsIgnoreCase("enabled");
 	}
 }

@@ -157,7 +157,7 @@ public class PdfSheetParserTest {
 				prepareParser(sheet);
 				sheet.createRow(5);
 				XSSFCell cell = sheet.getRow(5).getCell(10, Row.CREATE_NULL_AS_BLANK);
-				PdfCellNode pdfCell = (PdfCellNode) parser.createEmtyCell(sheet, cell, parent);
+				PdfCellNode pdfCell = (PdfCellNode) parser.createEmtyCell(sheet, cell);
 
 				cellDoesntExpandColumn(pdfCell);
 			}
@@ -172,7 +172,7 @@ public class PdfSheetParserTest {
 				prepareParser(sheet);
 				sheet.createRow(5);
 				XSSFCell cell = sheet.getRow(5).getCell(10, Row.CREATE_NULL_AS_BLANK);
-				PdfCellNode pdfCell = (PdfCellNode) parser.createEmtyCell(sheet, cell, parent);
+				PdfCellNode pdfCell = (PdfCellNode) parser.createEmtyCell(sheet, cell);
 
 				assertThat(pdfCell.getStylingComponent(), instanceOf(NoStyle.class));
 				assertThat(pdfCell.getRenderer(), instanceOf(EmptyCellRenderer.class));
@@ -239,13 +239,13 @@ public class PdfSheetParserTest {
 	}
 
 	private void prepareParser(XSSFSheet sheet) throws IOException {
-		parser.setMacroParser(new MacroParser(sheet, new MacroNodeFactoryImpl(sheet)));
+		parser.setMacroParser(new MacroParser(new MacroNodeFactoryImpl(sheet)));
 		parser.parse(sheet);
 	}
 
 	private void setPreprocessingMode(XSSFSheet sheet) {
 		parser.setComponentFactory(preprocessingFactory);
-		parser.setMacroParser(new MacroParser(sheet, new PreprocessingMacroFactory(sheet)));
+		parser.setMacroParser(new MacroParser(new PreprocessingMacroFactory(sheet)));
 	}
 
 	private void using(String sheetPath, WithSheet actions) throws Exception {
@@ -260,7 +260,7 @@ public class PdfSheetParserTest {
 	}
 
 	private interface WithSheet {
-		public void execute(XSSFSheet sheet) throws Exception;
+		void execute(XSSFSheet sheet) throws Exception;
 	}
 
 }

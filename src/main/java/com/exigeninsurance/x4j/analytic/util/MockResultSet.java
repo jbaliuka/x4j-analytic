@@ -25,6 +25,11 @@ abstract public class MockResultSet implements ResultSet {
 		return create(columns,rows,0);
 
 	}
+
+    private MockResultSet() {
+
+    }
+
 	public static ResultSet create(final String[] columns,final Object[][] rows, final int generate){
         return (ResultSet) Proxy.newProxyInstance(Thread.currentThread().getContextClassLoader(), new Class[]{ResultSet.class}, new InvocationHandler() {
 
@@ -62,7 +67,7 @@ abstract public class MockResultSet implements ResultSet {
                     }else {
                         int index = 0;
                         for (String colName : columns){
-                            if(colName.toUpperCase().equals(args[0].toString().toUpperCase())){
+                            if(colName.equalsIgnoreCase(args[0].toString())){
                                 if(generate > 0 && rows[currentRow][ index ] instanceof String){
                                     rows[currentRow][ index ] = System.currentTimeMillis() + "0";
                                 }
@@ -97,7 +102,7 @@ abstract public class MockResultSet implements ResultSet {
 			return new Double( Double.valueOf((Double)object) );
 		}else if (cls == java.sql.Date.class){
 			
-			return new java.sql.Date( ((java.util.Date)object).getTime() );
+			return new java.sql.Date( ((Date)object).getTime() );
 		}
 		
 		

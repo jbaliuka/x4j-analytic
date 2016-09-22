@@ -242,7 +242,7 @@ public class PdfLayoutTransformerTest {
 		cell = row.createCell(0);
 		cell.setCellValue("#end");
 
-        parser.setMacroParser(new MacroParser(sheet, new MacroNodeFactoryImpl(sheet)));
+        parser.setMacroParser(new MacroParser(new MacroNodeFactoryImpl(sheet)));
 		
 		CellRangeAddress cra = new CellRangeAddress(1, 2, 0, 1);
 		sheet.addMergedRegion(cra);

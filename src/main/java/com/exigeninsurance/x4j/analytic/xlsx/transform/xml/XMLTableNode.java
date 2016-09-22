@@ -20,7 +20,7 @@ import com.exigeninsurance.x4j.analytic.xlsx.transform.xlsx.XLXContext;
 
 
 final class XMLTableNode extends TableNode {
-	public XMLTableNode(XSSFSheet sheet, Node parent, Table table) {
+	public XMLTableNode(XSSFSheet sheet, Table table) {
 		super(sheet, table);
 	}
 

@@ -7,10 +7,7 @@
 package com.exigeninsurance.x4j.analytic.xlsx.core.node;
 
 import java.sql.ResultSet;
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.Map;
-import java.util.Stack;
+import java.util.*;
 
 import org.apache.commons.collections.map.CaseInsensitiveMap;
 import org.apache.commons.lang.ObjectUtils;
@@ -34,7 +31,7 @@ public class GroupAdapter implements ResultSetAdapter {
 	@SuppressWarnings("unchecked")
 	private Map<String, Object> nextRow = new CaseInsensitiveMap();
  	private final LinkedHashMap<String, Group> groups = new LinkedHashMap<String, Group>();
- 	private final Stack<String> stack = new Stack<String>();
+ 	private final Deque<String> stack = new ArrayDeque<String>();
 
 	public GroupAdapter(ResultSet rs) {
         this(ResultSetWrapper.wrap(rs));

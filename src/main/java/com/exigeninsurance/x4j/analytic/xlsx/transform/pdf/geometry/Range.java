@@ -9,20 +9,20 @@ package com.exigeninsurance.x4j.analytic.xlsx.transform.pdf.geometry;
 
 public interface Range {
 	
-	public boolean inside(int number);
+	boolean inside(int number);
 	
-	public int getFirst();
+	int getFirst();
 	
-	public int getLast();
+	int getLast();
 	
-	public void setFirst(int number);
+	void setFirst(int number);
 	
-	public void setLast(int number);
+	void setLast(int number);
 	
-	public Range copy();
+	Range copy();
 
-	public boolean contains(Range range);
+	boolean contains(Range range);
 
-	public int length();
+	int length();
 
 }

@@ -60,8 +60,8 @@ public class PdfStylesParser {
 
     private XPathFactory xPathFactory;
     private Element root;
-	private List<org.w3c.dom.Node> dxfs = new ArrayList<org.w3c.dom.Node>();
-	private List<org.w3c.dom.Node> tableStyles = new ArrayList<org.w3c.dom.Node>();
+	private List<Node> dxfs = new ArrayList<Node>();
+	private List<Node> tableStyles = new ArrayList<Node>();
 	private final List<PdfStyle> pdfStyles = new ArrayList<PdfStyle>();
 	private final Map<String,TableStyle> pdfTableStyles = new HashMap<String,TableStyle>();
 	
@@ -90,7 +90,7 @@ public class PdfStylesParser {
 		return table;
 	}
 	
-	public TableStyle produceTableStyle(org.w3c.dom.Node tableStyleNode) {
+	public TableStyle produceTableStyle(Node tableStyleNode) {
 		TableStyle tableStyle = new TableStyle();
 		tableStyle.setName(extractAttribute(NAME, tableStyleNode));
 		tableStyle.setPivot(Boolean.parseBoolean(extractAttribute(PIVOT, tableStyleNode)));
@@ -103,7 +103,7 @@ public class PdfStylesParser {
 		return extractAttribute(DEFAULT_TABLE_STYLE, tableStyles);
 	}
 	
-	public List<org.w3c.dom.Node> parseDxfs() {
+	public List<Node> parseDxfs() {
         dxfs = fetchItems("/styleSheet/dxfs/dxf");
         return dxfs;
     }
@@ -129,9 +129,9 @@ public class PdfStylesParser {
         return style;
     }
 	
-	private ThemeColor produceColor(String prefix, org.w3c.dom.Node node) {
+	private ThemeColor produceColor(String prefix, Node node) {
 		ThemeColor color = new ThemeColor();
-		org.w3c.dom.Node patternFillNode = getNode(PATTERN_FILL, node);
+		Node patternFillNode = getNode(PATTERN_FILL, node);
 		if (patternFillNode == null) {
 			return PDFHelper.WHITE_COLOR;
 		}
@@ -139,7 +139,7 @@ public class PdfStylesParser {
 		String colorName = prefix + "Color";
 		
 		for (int i = 0; i < children.getLength(); i++) {
-			org.w3c.dom.Node current = children.item(i);
+			Node current = children.item(i);
 			if (current.getNodeName().equals(colorName)) {
 				NamedNodeMap attributes = current.getAttributes();
 				Node themeNode = attributes.getNamedItem(THEME);
@@ -166,7 +166,7 @@ public class PdfStylesParser {
 		Node node = null;
 		NodeList children = parent.getChildNodes();
 		for (int i = 0; i < children.getLength(); i++) {
-			org.w3c.dom.Node current = children.item(i);
+			Node current = children.item(i);
 			if (current instanceof Element) {
 				String type = extractAttribute(TYPE, current);
 				if (type.equals(typeName)) {
@@ -205,7 +205,7 @@ public class PdfStylesParser {
     }
 	
 	private void produceTableStyles() {
-		for (org.w3c.dom.Node tableStyle : tableStyles) {
+		for (Node tableStyle : tableStyles) {
 			TableStyle style = produceTableStyle(tableStyle);
 			pdfTableStyles.put(style.getName(), style);
 		}
@@ -248,7 +248,7 @@ public class PdfStylesParser {
         return node;
     }
 
-    private Node getNode(String name, org.w3c.dom.Node startingNode) {
+    private Node getNode(String name, Node startingNode) {
         NodeList nodes = startingNode.getChildNodes();
         for (int i = 0; i < nodes.getLength(); i++) {
             Node node = nodes.item(i);

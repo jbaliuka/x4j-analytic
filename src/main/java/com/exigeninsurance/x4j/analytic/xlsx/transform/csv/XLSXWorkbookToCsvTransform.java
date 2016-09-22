@@ -9,8 +9,8 @@ package com.exigeninsurance.x4j.analytic.xlsx.transform.csv;
 import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
-import java.io.InputStream;
 import java.io.OutputStream;
+import java.util.Collections;
 import java.util.List;
 
 import org.slf4j.Logger;
@@ -35,8 +35,7 @@ public class XLSXWorkbookToCsvTransform extends BaseTransform {
 		this.output = output;
 	}
 
-	protected File createWorkbookFile(ReportContext reportContext,
-			InputStream in, File saveTo) throws Exception {
+	protected File createWorkbookFile() throws Exception {
 		return IOUtils.createTempFile("csv");
 	}
 
@@ -50,7 +49,7 @@ public class XLSXWorkbookToCsvTransform extends BaseTransform {
 				processor.setDataProvider(getDataProvider());
 				processor.setTemplateProvider(getTemplateProvider());				
 				processor.setFormatProvider(getFormatProvider());
-				List<String> savedParts = java.util.Collections.emptyList();
+				List<String> savedParts = Collections.emptyList();
 				processor.processSheets(reportContext, savedParts);
 
 			} catch (Exception e) {

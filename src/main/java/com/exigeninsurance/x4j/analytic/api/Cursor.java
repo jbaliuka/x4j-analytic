@@ -17,15 +17,15 @@ import com.exigeninsurance.x4j.analytic.util.CursorMetadata;
 
 public interface Cursor {
 
-    public void close();
+    void close();
     
-    public boolean isClosed();
+    boolean isClosed();
 
-    public boolean next();
+    boolean next();
 
-    public CursorMetadata getMetadata();
+    CursorMetadata getMetadata();
 
-    public Object getObject(int i);
+    Object getObject(int i);
 
-    public void reset();
+    void reset();
 }

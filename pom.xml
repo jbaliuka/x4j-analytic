@@ -1,48 +1,51 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+	</properties>
 
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.exigeninsurance.x4j.analytic</groupId>
 	<version>1.0.15</version>
 	<artifactId>x4j-analytic</artifactId>
-	<name>XLSX Transformations</name>	
-    <description>
+	<name>XLSX Transformations</name>
+	<description>
     x4j-analytic is an open source XLSX format template engine API for Java programming language. 
     X4J is used as the embedded library in Java applications to implement full blown reporting solutions.
     </description>
-  
-  <url>https://github.com/jbaliuka/x4j-analytic</url>
 
-  <licenses>
-    <license>
-      <name>The Apache Software License, Version 2.0</name>
-      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
-      <distribution>repo</distribution>
-    </license>
-  </licenses>
+	<url>https://github.com/jbaliuka/x4j-analytic</url>
 
-  <repositories>
-	<!-- Repository for ORACLE ojdbc6. -->
-	<repository>
-	    <id>codelds</id>
-	    <url>https://code.lds.org/nexus/content/groups/main-repo</url>
-	</repository>
-  </repositories>
+	<licenses>
+		<license>
+			<name>The Apache Software License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
 
-  <scm>
-    <url>https://github.com/jbaliuka/x4j-analytic.git</url>
-     <connection>scm:git:https://github.com/jbaliuka/x4j-analytic.git</connection>
-  </scm>
-	
- <developers>
-    <developer>
-      <id>jbaliuka</id>
-      <name>Juozas Baliuka</name>
-      <email>jbaliuka@gmail.com</email>
-    </developer>
-  </developers>	
-	
+	<repositories>
+		<!-- Repository for ORACLE ojdbc6. -->
+		<repository>
+			<id>codelds</id>
+			<url>https://code.lds.org/nexus/content/groups/main-repo</url>
+		</repository>
+	</repositories>
+
+	<scm>
+		<url>https://github.com/jbaliuka/x4j-analytic.git</url>
+		<connection>scm:git:https://github.com/jbaliuka/x4j-analytic.git</connection>
+	</scm>
+
+	<developers>
+		<developer>
+			<id>jbaliuka</id>
+			<name>Juozas Baliuka</name>
+			<email>jbaliuka@gmail.com</email>
+		</developer>
+	</developers>
+
 	<dependencies>
 
 		<dependency>
@@ -79,7 +82,7 @@
 			<groupId>org.apache.poi</groupId>
 			<artifactId>poi-ooxml</artifactId>
 			<version>3.6</version>
- 			<exclusions>
+			<exclusions>
 				<exclusion>
 					<artifactId>poi-ooxml-schemas</artifactId>
 					<groupId>org.apache.poi</groupId>
@@ -129,15 +132,31 @@
 
 
 	</dependencies>
-      	<build>
+	<build>
 
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>				
+				<artifactId>maven-compiler-plugin</artifactId>
 				<configuration>
 					<source>1.6</source>
 					<target>1.6</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.eluder.coveralls</groupId>
+				<artifactId>coveralls-maven-plugin</artifactId>
+				<version>4.2.0</version>
+			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>cobertura-maven-plugin</artifactId>
+				<version>2.7</version>
+				<configuration>
+					<format>xml</format>
+					<maxmem>256m</maxmem>
+					<!-- aggregated reports for multi-module projects -->
+					<aggregate>true</aggregate>
 				</configuration>
 			</plugin>
 		</plugins>

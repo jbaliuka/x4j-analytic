@@ -36,6 +36,10 @@ public class ReportUtil {
 	private static final String MODEL_PACKAGE = "com.exigeninsurance.x4j.analytic.model";
 	public static final JexlEngine ENGINE = new JexlEngine();
 
+    private ReportUtil() {
+
+    }
+
 	public static void validate(InputStream is,final List<String> messages){
 		try {
 			JAXBContext	jc = JAXBContext.newInstance( MODEL_PACKAGE );

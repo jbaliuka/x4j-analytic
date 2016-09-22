@@ -42,19 +42,31 @@ public class XLSXSheetTail extends Node {
     }
 
     private String margins(XSSFSheet sheet) {
-        String margins = "";
+        StringBuffer stringBuffer = new StringBuffer(64);
         CTPageMargins pageMargins = sheet.getCTWorksheet().getPageMargins();
         if (pageMargins != null) {
-            margins += "<pageMargins";
-            margins += " footer=\"" + pageMargins.getFooter() + "\"";
-            margins += " header=\"" + pageMargins.getHeader() + "\"";
-            margins += " bottom=\"" + pageMargins.getBottom() + "\"";
-            margins += " top=\"" + pageMargins.getTop() + "\"";
-            margins += " right=\"" + pageMargins.getRight() + "\"";
-            margins += " left=\"" + pageMargins.getLeft() + "\"";
-            margins += "/>";
+            stringBuffer.append("<pageMargins");
+            stringBuffer.append(" footer=\"");
+            stringBuffer.append(pageMargins.getFooter());
+            stringBuffer.append("\"");
+            stringBuffer.append(" header=\"");
+            stringBuffer.append(pageMargins.getHeader());
+            stringBuffer.append("\"");
+            stringBuffer.append(" bottom=\"");
+            stringBuffer.append(pageMargins.getBottom());
+            stringBuffer.append("\"");
+            stringBuffer.append(" top=\"");
+            stringBuffer.append(pageMargins.getTop());
+            stringBuffer.append("\"");
+            stringBuffer.append(" right=\"");
+            stringBuffer.append(pageMargins.getRight());
+            stringBuffer.append("\"");
+            stringBuffer.append(" left=\"");
+            stringBuffer.append(pageMargins.getLeft());
+            stringBuffer.append("\"");
+            stringBuffer.append("/>");
         }
-        return margins;
+        return stringBuffer.toString();
     }
 
     private String headerFooter(XLXContext context, XSSFSheet sheet) {
@@ -69,15 +81,15 @@ public class XLSXSheetTail extends Node {
     }
 
     private String attributes(CTHeaderFooter headerFooter) {
-        String text = "";
+        StringBuffer stringBuffer = new StringBuffer();
         if (headerFooter.isSetDifferentFirst()) {
-            text += " differentFirst=\"1\"";
+            stringBuffer.append(" differentFirst=\"1\"");
         }
         if (headerFooter.isSetDifferentOddEven()) {
-            text += " differentOddEven=\"1\"";
+            stringBuffer.append(" differentOddEven=\"1\"");
         }
-        text += ">";
-        return text;
+        stringBuffer.append(">");
+        return stringBuffer.toString();
     }
 
     private String headerFooter(XLXContext context, CTHeaderFooter headerFooter) {
@@ -180,20 +192,26 @@ public class XLSXSheetTail extends Node {
 
 
     private String drawings(XSSFSheet sheet) {
-        String drawings = "";
         CTWorksheet ctWorksheet = sheet.getCTWorksheet();
         CTDrawing drawing = ctWorksheet.getDrawing();
         CTLegacyDrawing legacyDrawing = ctWorksheet.getLegacyDrawing();
         CTLegacyDrawing legacyDrawingHF = ctWorksheet.getLegacyDrawingHF();
+        StringBuffer stringBuffer = new StringBuffer(32);
         if (drawing != null) {
-            drawings += "<drawing r:id=\"" + drawing.getId() + "\" />";
+            stringBuffer.append("<drawing r:id=\"");
+            stringBuffer.append(drawing.getId());
+            stringBuffer.append("\" />");
         }
         if (legacyDrawing != null) {
-            drawings += "<legacyDrawing r:id=\"" + legacyDrawing.getId() + "\" />";
+            stringBuffer.append("<legacyDrawing r:id=\"");
+            stringBuffer.append(legacyDrawing.getId());
+            stringBuffer.append("\" />");
         }
         if (legacyDrawingHF != null) {
-            drawings += "<legacyDrawingHF r:id=\"" + legacyDrawingHF.getId() + "\" />";
+            stringBuffer.append("<legacyDrawingHF r:id=\"");
+            stringBuffer.append(legacyDrawingHF.getId());
+            stringBuffer.append("\" />");
         }
-        return drawings;
+        return stringBuffer.toString();
     }
 }

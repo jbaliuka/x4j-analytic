@@ -11,6 +11,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -214,7 +215,7 @@ final class XLSXProcessor extends WorkbookProcessor {
 
 		SheetParser parser = new XLSXSheetParser(reportContext);
 		
-        parser.setMacroParser(new MacroParser(sheet, new MacroNodeFactoryImpl(sheet)));
+        parser.setMacroParser(new MacroParser(new MacroNodeFactoryImpl(sheet)));
 		Node root = parser.parse(sheet);
 		File sheetData = IOUtils.createTempFile("sheetData");
 		try {
@@ -225,7 +226,7 @@ final class XLSXProcessor extends WorkbookProcessor {
 				context.setDataProvider(getDataProvider());
 				context.setTemplateProvider(getTemplateProvider());
 				context.setFormatProvider(getFormatProvider());
-				context.setStyles((XLSXStylesTable) workBook.getStylesSource());
+				context.setStyles();
 				context.setMergedCells(parser.getMergedCells());
 				context.setRepeatingRows(XSSFSheetHelper.getRepeatingRows(sheet.getWorkbook(), sheet.getWorkbook().getSheetIndex(sheet.getSheetName())));
 				translateSheetName(sheet, context);
@@ -256,9 +257,9 @@ final class XLSXProcessor extends WorkbookProcessor {
 		String str = toString(sheet);
 		int index = str.indexOf("<cols/>");
 		if(index > 0){
-			out.write((str.substring(0, index) + "<sheetData>").getBytes());
+			out.write((str.substring(0, index) + "<sheetData>").getBytes(StandardCharsets.UTF_8));
 		}else {
-			out.write(str.substring(0, str.indexOf("<row")).getBytes());
+			out.write(str.substring(0, str.indexOf("<row")).getBytes(StandardCharsets.UTF_8));
 		}
 	}
 
@@ -275,7 +276,7 @@ final class XLSXProcessor extends WorkbookProcessor {
 		} catch (IOException e) {
 			throw new ReportException(e);
 		}
-		return new String(bout.toByteArray());
+		return new String(bout.toByteArray(), StandardCharsets.UTF_8);
 	}
 
 	private void setColWidths(XSSFSheet sheet, XLXContext context) {

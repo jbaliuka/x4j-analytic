@@ -13,5 +13,5 @@ import com.exigeninsurance.x4j.analytic.xlsx.transform.pdf.RenderingContext;
 
 public interface Renderer {
 
-	public void render(RenderingContext context) throws IOException;
+	void render(RenderingContext context) throws IOException;
 }

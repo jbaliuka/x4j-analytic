@@ -8,7 +8,7 @@ package com.exigeninsurance.x4j.analytic.xlsx.transform.html;
 
 
 import java.io.OutputStream;
-import java.util.List;
+import java.nio.charset.StandardCharsets;
 
 import org.apache.poi.ss.usermodel.CellStyle;
 import org.apache.poi.ss.usermodel.Font;
@@ -48,9 +48,9 @@ public class HTMLProcessor extends WorkbookProcessor {
 		this.workBook = workBook;
 	}
 
-	public void processSheets(	ReportContext reportContext, List<String> savedParts	)
+	public void processSheets(ReportContext reportContext)
 	throws  Exception {
-		StringBuffer buffer = new StringBuffer();
+		StringBuilder buffer = new StringBuilder();
 		buffer.append("<style>");
 
 		int len =  styles._getXfsSize();
@@ -60,12 +60,12 @@ public class HTMLProcessor extends WorkbookProcessor {
 
 		buffer.append("</style>");
 
-		out.write( "<html>\n<head>\n".getBytes() );
-		out.write( buffer.toString().getBytes() );
+		out.write( "<html>\n<head>\n".getBytes(StandardCharsets.UTF_8) );
+		out.write( buffer.toString().getBytes(StandardCharsets.UTF_8) );
 
-		out.write("\n</head>\n<body>\n<table id=\"".getBytes());
-		out.write( "workbook".getBytes() );
-		out.write("\"><tr><td>\n".getBytes());
+		out.write("\n</head>\n<body>\n<table id=\"".getBytes(StandardCharsets.UTF_8));
+		out.write( "workbook".getBytes(StandardCharsets.UTF_8) );
+		out.write("\"><tr><td>\n".getBytes(StandardCharsets.UTF_8));
 
 		for(int i = 0; i < workBook.getNumberOfSheets(); i++){
 			nextSheet(reportContext, i);
@@ -79,7 +79,7 @@ public class HTMLProcessor extends WorkbookProcessor {
 
 		SheetParser parser = new HTMLSheetParser(sheet,reportContext);
 		
-        parser.setMacroParser(new MacroParser(sheet, new MacroNodeFactoryImpl(sheet)));
+        parser.setMacroParser(new MacroParser(new MacroNodeFactoryImpl(sheet)));
 		Node root = parser.parse(sheet);
 
 		XLXContext context = new XLXContext(null,sheet,reportContext,out);
@@ -87,14 +87,14 @@ public class HTMLProcessor extends WorkbookProcessor {
 		context.setDataProvider(getDataProvider());
 		context.setTemplateProvider(getTemplateProvider());
 		context.setFormatProvider(getFormatProvider());
-		context.setStyles(styles);
+		context.setStyles();
 		context.parseTableStyles(workBook);
 
 		root.process(context);
 		context.flush();
 	}
 
-	private void appendStyle(StringBuffer buffer, int i) {
+	private void appendStyle(StringBuilder buffer, int i) {
 		buffer.append(".c").append(i).append("{");
 		XSSFCellStyle style  = styles.getStyleAt(i);
 		appendFontStyle(buffer, style);
@@ -102,7 +102,7 @@ public class HTMLProcessor extends WorkbookProcessor {
 		buffer.append("}\n");
 	}
 
-	private void appendAlign(StringBuffer buffer, XSSFCellStyle style) {
+	private void appendAlign(StringBuilder buffer, XSSFCellStyle style) {
 		switch(style.getAlignment()){
 		case CellStyle.ALIGN_GENERAL:
 			break;
@@ -118,7 +118,7 @@ public class HTMLProcessor extends WorkbookProcessor {
 		}
 	}
 
-	private void appendFontStyle(StringBuffer buffer, XSSFCellStyle style) {
+	private void appendFontStyle(StringBuilder buffer, XSSFCellStyle style) {
 		XSSFFont font = style.getFont();
 		buffer.append("font-size:").append(font.getFontHeightInPoints()).append("pt;");
 
