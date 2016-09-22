@@ -30,6 +30,7 @@ import java.io.IOException;
 import java.util.List;
 
 import org.apache.poi.xssf.usermodel.XSSFCellStyle;
+import org.apache.poi.xssf.usermodel.XSSFColor;
 import org.apache.poi.xssf.usermodel.extensions.XSSFCellBorder;
 
 import com.exigeninsurance.x4j.analytic.xlsx.transform.pdf.Border;
@@ -147,7 +148,8 @@ public abstract class AbstractCellRenderer implements Renderer {
         float width = getBorderWidth(getBorderStyle(cellStyle, borderSide));
         Line line = getBorderLine(fillArea, borderSide);
         ColorHelper helper = node.getColorHelper();
-        Color color = helper == null ? Color.BLACK : helper.getAwtColor(cellStyle.getBorderColor(borderSide));
+        XSSFColor borderColor = cellStyle.getBorderColor(borderSide);
+        Color color = helper == null || borderColor.isAuto() ? Color.BLACK : helper.getAwtColor(borderColor);
         return new Border(color, line, pattern, width);
     }
 
