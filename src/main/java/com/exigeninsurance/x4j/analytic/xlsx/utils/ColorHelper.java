@@ -11,6 +11,7 @@ import java.nio.ByteBuffer;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.apache.poi.ss.usermodel.IndexedColors;
 import org.apache.poi.util.Internal;
 import org.apache.poi.xssf.model.StylesTable;
 import org.apache.poi.xssf.usermodel.XSSFCell;
@@ -63,6 +64,9 @@ public class ColorHelper {
 			return new Color(ByteBuffer.wrap(color.getRgb()).getInt(), true);
 		}
 		else {
+			if(color.getIndexed() == 64){
+				return Color.BLACK;	
+			}
 			return getAwtColor(color.getTheme(), color.getTint());
 		}
 	}
